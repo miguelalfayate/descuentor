@@ -52,94 +52,111 @@ Documentación completa disponible en la carpeta `/memoria`.
 Índice de las secciones:
 
 1. Introducción
-   1.1. Motivación
-   1.2. Objetivos
-   1.3. Alcance
+   1. Motivación
+   2. Objetivos
+   3. Alcance
 
 2. Contexto tecnológico
-   2.1. Análisis de la competencia
-   2.2. Tecnologías existentes
-   2.3. Comparativa de soluciones
+   1. Análisis de la competencia
+   2. Tecnologías existentes
+   3. Comparativa de soluciones
 
 3. Análisis y Diseño
-   3.1. Requisitos
-       3.1.1. Funcionales
-       3.1.2. No Funcionales
-   3.2. Arquitectura
-       3.2.1. [Sistema](memoria/3.2-arquitectura/3.2.1-sistema.md)
-       3.2.2. Base de Datos
-       3.2.3. API Endpoints
-       3.2.4. Integraciones
+   1. Requisitos
+          1. Funcionales
+          1. No Funcionales
+   2. Arquitectura
+      1. [Sistema](memoria/3.2-arquitectura/3.2.1-sistema.md)
+      2. [Base de Datos](memoria/3.2-arquitectura/3.2.2-base-de-datos.md)
+      3. API Endpoints
+      4. Integraciones
 
 4. Metodología
-   4.1. Proceso de desarrollo (Git Workflow)
-   4.2. Herramientas
-   4.3. Planificación (Timeline, Risk Assessment
+   1. Proceso de desarrollo (Git Workflow)
+   2. Herramientas
+   3. Planificación (Timeline, Risk Assessment
 
 5. Implementación
-   5.1. Frontend
-       5.1.1. Blazor WebApp
-       5.1.2. Chrome Extension
-   5.2. Backend
-       5.2.1. API
-       5.2.2. Scraper
-   5.3. Seguridad
-       5.3.1. Autenticación
-       5.3.2. Gestión de secretos
-       5.3.3. Protección de datos
-   5.4. Testing
-       5.4.1. Estrategia
-       5.4.2. Unit Tests
-       5.4.3. Integration Tests
+   1. Frontend
+      1. Blazor WebApp
+      2. Chrome Extension
+   2. Backend
+      1. API
+      2. Scraper
+   3. Seguridad
+      1. Autenticación
+      2. Gestión de secretos
+      3. Protección de datos
+   4. Testing
+      1. Estrategia
+      2. Unit Tests
+      3. Integration Tests
 
 6. Despliegue
-   6.1. Entornos
-       6.1.1. Desarrollo local
-       6.1.2. Producción
-   6.2. Docker
-       6.2.1. Configuración
-       6.2.2. Imágenes
-   6.3. CI CD
-       6.3.1. Pipeline
-       6.3.2. Automatización
-   6.4. Monitorización
-       6.4.1. Logging
-       6.4.2. Métricas
-       6.4.3. Alertas
+   1. Entornos
+      1. Desarrollo local
+
+      2. Producción
+
+   2. Docker
+      1. Configuración
+      2. Imágenes
+
+   3. CI/CD
+      1. Pipeline
+      2. Automatización
+
+   4. Monitorización
+      1. Logging
+      2. Métricas
+      3. Alertas
 
 7. Resultados
-   7.1. Rendimiento
-       7.1.1. Pruebas de carga
-       7.1.2. Benchmarks
-       7.1.3. Optimizaciones
-   7.2. Métricas de uso
-   7.3. Feedback de usuarios
+   1. Rendimiento
+      1. Pruebas de carga
+
+      2. Benchmarks
+
+      3. Optimizaciones
+
+   2. Métricas de uso
+
+   3. Feedback de usuarios
 
 8. Aspectos Legales
-   8.1. Licencias
-   8.2. Privacidad
-   8.3. Términos de uso
-   8.4. GDPR
+   1. Licencias
+
+   2. Privacidad
+
+   3. Términos de uso
+
+   4. GDPR
 
 9. Conclusiones
-   9.1. Objetivos cumplidos
-   9.2. Limitaciones
-   9.3. Trabajo futuro
-       9.3.1. Mejoras propuestas
-       9.3.2. Nuevas funcionalidades
+   1. Objetivos cumplidos
+
+   2. Limitaciones
+
+   3. Trabajo futuro
+      1. Mejoras propuestas
+
+      2. Nuevas funcionalidades
 
 10. Anexos
-    10.1. Guías
-        10.1.1. Instalación
-        10.1.2. Manual de usuario
-        10.1.3. Manual de administrador
-    10.2. Mantenimiento
-        10.2.1. Backups
-        10.2.2. Actualizaciones
-        10.2.3. Troubleshooting
-    10.3. Referencias técnicas
-        10.3.1. API Docs
-        10.3.2. Configuración del sistema
+    1. Guías
+       1. Instalación
+       2. Manual de usuario
+       3. Manual de administrador
+
+    2. Mantenimiento
+       1. Backups
+       2. Actualizaciones
+       3. Troubleshooting
+
+    3. Referencias técnicas
+       1. API Docs
+       2. Configuración del sistema
+
 
 Bibliografía
 
