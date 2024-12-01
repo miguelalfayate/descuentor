@@ -62,9 +62,9 @@ Documentación completa disponible en la carpeta `/memoria`.
    3. Comparativa de soluciones
 
 3. Análisis y Diseño
-   1. Requisitos
-          1. Funcionales
-          1. No Funcionales
+   1. RequisitosF
+         1. Funcionales
+         2. No Funcionales
    2. Arquitectura
       1. [Sistema](memoria/3.2-arquitectura/3.2.1-sistema.md)
       2. [Base de Datos](memoria/3.2-arquitectura/3.2.2-base-de-datos.md)
@@ -74,7 +74,7 @@ Documentación completa disponible en la carpeta `/memoria`.
 4. Metodología
    1. Proceso de desarrollo (Git Workflow)
    2. Herramientas
-   3. Planificación (Timeline, Risk Assessment
+   3. Planificación (Timeline, Risk Assessment)
 
 5. Implementación
    1. Frontend
