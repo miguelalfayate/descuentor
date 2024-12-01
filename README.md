@@ -62,12 +62,12 @@ Documentación completa disponible en la carpeta `/memoria`.
    3. Comparativa de soluciones
 
 3. Análisis y Diseño
-   1. RequisitosF
+   1. Requisitos
          1. Funcionales
          2. No Funcionales
    2. Arquitectura
-      1. [Sistema](memoria/3.2-arquitectura/3.2.1-sistema.md)
-      2. [Base de Datos](memoria/3.2-arquitectura/3.2.2-base-de-datos.md)
+      1. [Sistema](memoria/3-analisis-y-diseño/3.2-arquitectura/3.2.1-sistema.md)
+      2. [Base de Datos](memoria/3-analisis-y-diseño/3.2-arquitectura/3.2.2-base-de-datos.md)
       3. API Endpoints
       4. Integraciones
 
