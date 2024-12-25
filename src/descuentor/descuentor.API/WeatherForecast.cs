@@ -1,4 +1,4 @@
-namespace DescuentorAPI;
+namespace descuentor.API;
 
 public class WeatherForecast
 {
