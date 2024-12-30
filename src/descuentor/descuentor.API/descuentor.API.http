@@ -1,6 +1,6 @@
-@descuentor.API_HostAddress = http://localhost:5113
+@Descuentor.API_HostAddress = http://localhost:5095
 
-GET {{descuentor.API_HostAddress}}/weatherforecast/
+GET {{Descuentor.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

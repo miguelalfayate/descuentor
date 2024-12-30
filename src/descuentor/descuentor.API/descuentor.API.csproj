@@ -17,4 +17,9 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Descuentor.Aplicacion\Descuentor.Aplicacion.csproj" />
+      <ProjectReference Include="..\Descuentor.Infraestructura\Descuentor.Infraestructura.csproj" />
+    </ItemGroup>
+
 </Project>

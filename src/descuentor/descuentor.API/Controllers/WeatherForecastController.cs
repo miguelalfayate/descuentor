@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace descuentor.API.Controllers;
+namespace Descuentor.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]

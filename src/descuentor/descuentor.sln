@@ -1,6 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "descuentor.API", "descuentor.API\descuentor.API.csproj", "{CA525485-58DC-4C6B-9820-73BAE0D6C21B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descuentor.Dominio", "Descuentor.Dominio\Descuentor.Dominio.csproj", "{6E23B820-2C13-4DAB-8D83-6FA1EAAA843B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descuentor.Aplicacion", "Descuentor.Aplicacion\Descuentor.Aplicacion.csproj", "{449D7992-FD80-4B12-84B8-3BF94E19B392}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E23B820-2C13-4DAB-8D83-6FA1EAAA843B} = {6E23B820-2C13-4DAB-8D83-6FA1EAAA843B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descuentor.Infraestructura", "Descuentor.Infraestructura\Descuentor.Infraestructura.csproj", "{AAE8781E-C6CF-4D05-8366-38368ABC67D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{449D7992-FD80-4B12-84B8-3BF94E19B392} = {449D7992-FD80-4B12-84B8-3BF94E19B392}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descuentor.API", "Descuentor.API\Descuentor.API.csproj", "{B6F70E67-283A-4B17-8CDF-42ED77AA3A1C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{449D7992-FD80-4B12-84B8-3BF94E19B392} = {449D7992-FD80-4B12-84B8-3BF94E19B392}
+		{6E23B820-2C13-4DAB-8D83-6FA1EAAA843B} = {6E23B820-2C13-4DAB-8D83-6FA1EAAA843B}
+		{AAE8781E-C6CF-4D05-8366-38368ABC67D4} = {AAE8781E-C6CF-4D05-8366-38368ABC67D4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +25,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CA525485-58DC-4C6B-9820-73BAE0D6C21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA525485-58DC-4C6B-9820-73BAE0D6C21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA525485-58DC-4C6B-9820-73BAE0D6C21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA525485-58DC-4C6B-9820-73BAE0D6C21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E23B820-2C13-4DAB-8D83-6FA1EAAA843B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E23B820-2C13-4DAB-8D83-6FA1EAAA843B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E23B820-2C13-4DAB-8D83-6FA1EAAA843B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E23B820-2C13-4DAB-8D83-6FA1EAAA843B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449D7992-FD80-4B12-84B8-3BF94E19B392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449D7992-FD80-4B12-84B8-3BF94E19B392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449D7992-FD80-4B12-84B8-3BF94E19B392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449D7992-FD80-4B12-84B8-3BF94E19B392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE8781E-C6CF-4D05-8366-38368ABC67D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE8781E-C6CF-4D05-8366-38368ABC67D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE8781E-C6CF-4D05-8366-38368ABC67D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE8781E-C6CF-4D05-8366-38368ABC67D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F70E67-283A-4B17-8CDF-42ED77AA3A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F70E67-283A-4B17-8CDF-42ED77AA3A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F70E67-283A-4B17-8CDF-42ED77AA3A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F70E67-283A-4B17-8CDF-42ED77AA3A1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
