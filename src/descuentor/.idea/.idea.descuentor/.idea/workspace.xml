@@ -8,25 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1">
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Interfaces/IApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Interfaces/ICurrentUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioProductoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioProductoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/descuentor.API/Servicios/CurrentUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Descuentor.Aplicacion.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Descuentor.Aplicacion.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/Producto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/Producto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20241229100324_InicialIdentity.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20241229100324_InicialIdentity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +136,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735146278574</updated>
-      <workItem from="1735146280356" duration="43972000" />
+      <workItem from="1735146280356" duration="44327000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -172,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735643092454</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se implementa la inserción de productos y se vinculan con un usuario">
+      <option name="closed" value="true" />
+      <created>1735674294081</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735674294081</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +174,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core" />
     <MESSAGE value="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1" />
+    <MESSAGE value="Se implementa la inserción de productos y se vinculan con un usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se implementa la inserción de productos y se vinculan con un usuario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
