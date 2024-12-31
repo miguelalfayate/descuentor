@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace Descuentor.Infraestructura;
 
@@ -13,7 +14,8 @@ public static class DependencyInjection
     public static IServiceCollection AddInfraestructura(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("defaultConnection")));
+            options.UseNpgsql(configuration.GetConnectionString("defaultConnection"))
+                );
         
         services.AddDataProtection();
         
@@ -25,8 +27,6 @@ public static class DependencyInjection
             })
             .AddBearerToken(IdentityConstants.BearerScheme)
             .AddIdentityCookies(o => { });
-            
-        
         
             // .AddCookie(IdentityConstants.ApplicationScheme, options =>
             // {

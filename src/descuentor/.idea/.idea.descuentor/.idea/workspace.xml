@@ -8,34 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/Configuracion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/HistorialPrecio.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/Producto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/TiendaOnline.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/UsuarioConfiguracion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/UsuarioProducto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuario.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/RolesSeed.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/UsuariosSeed.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/ModelosIdentity/RolAplicacion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/ModelosIdentity/UsuarioAplicacion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/EmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Dockerfile" afterDir="false" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
+      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/UsuariosRolesSeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/RolesSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/RolesSeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/UsuariosSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/UsuariosSeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/descuentor.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/WeatherForecast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/WeatherForecast.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/descuentor.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/descuentor.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/descuentor.API.http" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/descuentor.API.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.sln" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +45,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c799c236b08a4458877f6ba872d7b92381000/eb/c34dea3b/IEmailSender`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eeaf281031b3ffe3d44a91e71a5808c8d236a9caabbb947871e6dc415bd8b/Migration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9342fb513b7b524925c79d9822cd3ecaf072c50231aa3b469875f4c2cdf/IdentityDbContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
@@ -155,8 +138,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735146278574</updated>
-      <workItem from="1735146280356" duration="24217000" />
+      <workItem from="1735146280356" duration="32851000" />
     </task>
+    <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
+      <option name="closed" value="true" />
+      <created>1735550824312</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735550824312</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,5 +158,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core" />
   </component>
 </project>

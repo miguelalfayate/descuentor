@@ -1,12 +1,13 @@
 using Descuentor.Aplicacion;
 using Descuentor.Infraestructura;
+using Descuentor.Infraestructura.InsercionesDatos;
 using Descuentor.Infraestructura.ModelosIdentity;
 
 namespace Descuentor.API;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +39,13 @@ public class Program
         app.MapControllers();
 
         app.MapGroup("/identity").MapIdentityApi<UsuarioAplicacion>();
+        
+        // Cuando se ejecuta la app se añaden las contraseñas a los usuarios
+        using (var scope = app.Services.CreateScope())
+        {
+            var scopedProvider = scope.ServiceProvider;
+            await UsuariosSeed.SeedUsersAsync(scopedProvider);
+        }
 
         app.Run();
     }
