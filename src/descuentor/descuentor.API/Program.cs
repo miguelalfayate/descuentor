@@ -1,4 +1,7 @@
+using Descuentor.API.Servicios;
 using Descuentor.Aplicacion;
+using Descuentor.Aplicacion.Funcionalidades.Productos.Commands;
+using Descuentor.Aplicacion.Interfaces;
 using Descuentor.Infraestructura;
 using Descuentor.Infraestructura.InsercionesDatos;
 using Descuentor.Infraestructura.ModelosIdentity;
@@ -16,6 +19,11 @@ public class Program
         builder.Services.AddAplicacion();
 
         builder.Services.AddControllers();
+        builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CrearProductoCommandHandler).Assembly));
+        
+        builder.Services.AddScoped<ICurrentUser, CurrentUser>();
+        
+        
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

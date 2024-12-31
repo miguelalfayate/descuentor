@@ -1,5 +1,7 @@
+using Descuentor.Dominio.Interfaces;
 using Descuentor.Infraestructura.Contextos;
 using Descuentor.Infraestructura.ModelosIdentity;
+using Descuentor.Infraestructura.Repositorios;
 using Descuentor.Infraestructura.Servicios;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -50,7 +52,8 @@ public static class DependencyInjection
             .AddDefaultTokenProviders();
         
         services.AddTransient<IEmailSender<UsuarioAplicacion>, EmailSender>();
-        
+        services.AddScoped<IProductoRepository, ProductoRepository>();
+        services.AddScoped<IUsuarioProductoRepository, UsuarioProductoRepository>();
         return services;
     }
 }

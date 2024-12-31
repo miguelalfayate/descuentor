@@ -10,6 +10,8 @@ public class Producto
 
     [Required]
     public string? Nombre { get; set; }
+    
+    public string? Descripcion { get; set; }
 
     [Required]
     public string Url { get; set; } = null!;

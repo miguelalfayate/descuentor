@@ -77,6 +77,9 @@ namespace Descuentor.Infraestructura.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("text");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("text");
@@ -301,31 +304,31 @@ namespace Descuentor.Infraestructura.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b5700130-81fe-4379-b450-129dfd51c209",
+                            ConcurrencyStamp = "6240bdce-50ac-41d0-b09b-ac53babf537d",
                             Email = "admin@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2024, 12, 31, 10, 47, 6, 324, DateTimeKind.Utc).AddTicks(8720),
+                            FechaCreacion = new DateTime(2024, 12, 31, 16, 48, 51, 211, DateTimeKind.Utc).AddTicks(8790),
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DOMAIN.COM",
-                            NormalizedUserName = "ADMIN",
+                            NormalizedUserName = "ADMIN@DOMAIN.COM",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
-                            UserName = "admin"
+                            UserName = "admin@domain.com"
                         },
                         new
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0a4dcd24-b4ba-48f1-9cf7-6036cca69e6a",
+                            ConcurrencyStamp = "4e696da3-407b-490e-aeb2-2418856146a3",
                             Email = "user1@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2024, 12, 31, 10, 47, 6, 324, DateTimeKind.Utc).AddTicks(8790),
+                            FechaCreacion = new DateTime(2024, 12, 31, 16, 48, 51, 211, DateTimeKind.Utc).AddTicks(8860),
                             LockoutEnabled = false,
                             NormalizedEmail = "USER1@DOMAIN.COM",
-                            NormalizedUserName = "USER1",
+                            NormalizedUserName = "USER1@DOMAIN.COM",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
-                            UserName = "user1"
+                            UserName = "user1@domain.com"
                         });
                 });
 

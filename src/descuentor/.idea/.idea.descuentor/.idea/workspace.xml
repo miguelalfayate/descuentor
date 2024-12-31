@@ -8,14 +8,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/UsuariosRolesSeed.cs" afterDir="false" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1">
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Interfaces/IApplicationDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Interfaces/ICurrentUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioProductoRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioProductoRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/descuentor.API/Servicios/CurrentUser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Descuentor.Aplicacion.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Descuentor.Aplicacion.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/Producto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Entidades/Producto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/RolesSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/RolesSeed.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/UsuariosSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/UsuariosSeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20241229100324_InicialIdentity.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20241229100324_InicialIdentity.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/descuentor.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Program.cs" afterDir="false" />
     </list>
@@ -43,7 +51,15 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3ec93589f9c64e22b96b232895e2861031400/d2/5c48f7cd/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c799c236b08a4458877f6ba872d7b92381000/eb/c34dea3b/IEmailSender`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b445ceb1c5ab1d07b7b55412b10a5e21169ec87228ca8ad8a18a6982f3278/ControllerBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61c385f367fd6f7ec5d88a97447717853ad6c059bf89947783b4268b28c2a949/HttpContextAccessor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6fc42e86e61f40fb414f634b57c7b5ee22ee51bbb6c81dbd89f29b3a837b964/DateTime.Unix.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71f8a5297672ad56962c6af62f7241a092ad7d95eaee4ef564601be5d8e37b38/Int32.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8056cd3f452fefb9834f05cdb275b762dd41f27b7766cd71174e78592dc495b/Monitor.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/db7395f4add94e6d10e515b3e55373f2821f8323de7dc8e314d78feefacf5584/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eeaf281031b3ffe3d44a91e71a5808c8d236a9caabbb947871e6dc415bd8b/Migration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9342fb513b7b524925c79d9822cd3ecaf072c50231aa3b469875f4c2cdf/IdentityDbContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -61,7 +77,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -138,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735146278574</updated>
-      <workItem from="1735146280356" duration="32851000" />
+      <workItem from="1735146280356" duration="43972000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -148,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735550824312</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1">
+      <option name="closed" value="true" />
+      <created>1735643092454</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735643092454</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +183,26 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core" />
+    <MESSAGE value="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs</url>
+          <line>33</line>
+          <properties documentPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="1294" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1323" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
