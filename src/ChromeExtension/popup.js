@@ -1,115 +1,135 @@
-// Importar configuraciones de tiendas
-import { getConfigForDomain } from './storeConfigs.js';
-
-// Verificar autenticación al cargar
-async function checkAuth() {
-    const isAuthenticated = await authService.isAuthenticated();
-    if (!isAuthenticated) {
-      window.location.href = 'login.html';
-      return;
-    }
-  }
-  
-  // Verificar autenticación al iniciar
-  checkAuth();
-
-document.getElementById('captureBtn').addEventListener('click', async () => {
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-  try {
-    // Obtener token actual
-    const accessToken = await authService.getAccessToken();
-    if (!accessToken) {
-      throw new Error('No autorizado');
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', async () => {
+    // Verificar autenticación al cargar
+    async function checkAuth() {
+        const isAuthenticated = await authService.isAuthenticated();
+        console.log('isAuthenticated');
+        if (!isAuthenticated) {
+            window.location.href = 'login.html';
+            return;
+        }
     }
 
-    // Ejecutar script en la página para extraer información
-    const result = await chrome.scripting.executeScript({
-      target: { tabId: tab.id },
-      files: ['storeConfigs.js'], // Inyectar configuraciones
-    });
+    // Verificar autenticación al iniciar
+    await checkAuth();
 
-    const productInfo = await chrome.scripting.executeScript({
-      target: { tabId: tab.id },
-      function: getProductInfo,
-    });
+    const captureBtn = document.getElementById('captureBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const resultDiv = document.getElementById('result');
 
-    const data = productInfo[0].result;
-    
-    if (!data) {
-      throw new Error('Tienda no soportada');
-    }
+    // Verificar el host al cargar la página
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const host = new URL(tab.url).hostname.replace('www.', '');
+    console.log(host);
 
-    // Actualizar la llamada a la API para incluir el token
-    const response = await fetch('http://localhost:5095/api/Productos', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accessToken}`
-        },
-        body: JSON.stringify(productInfo)
-      });
+    // Verificar si la tienda online es soportada
+    // const tiendaActual = tiendasOnline[host];
+    // console.log(tiendaActual);
 
-    if (response.ok) {
-      document.getElementById('result').innerHTML = `
-        <div style="color: green;">✓ Producto capturado correctamente</div>
-        <div style="margin-top: 10px;">
-          <strong>Título:</strong> ${data.title}<br>
-          <strong>Precio:</strong> ${data.price}<br>
-        </div>`;
+    // if (!tiendaActual) {
+    //     captureBtn.disabled = true;
+    //     resultDiv.innerHTML = `
+    //         <div style="color: red;">
+    //             ✗ Tienda online no soportada
+    //         </div>`;
+    // }
+    // else {
+    //     captureBtn.disabled = false;
+    // }
+
+    // const tiendasAceptadas = Object.values(tiendasOnline).map(tienda => tienda.host);
+    //const esTiendaAceptada = Object.values(tiendasOnline).some(tienda => host.includes(tienda.host))
+    const esTiendaAceptada = Object.keys(tiendasOnline).some(tienda => host.includes(tienda))
+
+    //const esTiendaAceptada = tiendasAceptadas.includes(host);
+    console.log(esTiendaAceptada);
+
+    if (!esTiendaAceptada) {
+        captureBtn.disabled = true;
+        resultDiv.innerHTML = `
+            <div style="color: red;">
+                ✗ Tienda online no soportada
+            </div>`;
     } else {
-      throw new Error('Error al guardar el producto');
+        captureBtn.disabled = false;
     }
 
-} catch (error) {
-    if (error.message === 'No autorizado') {
-      window.location.href = 'login.html';
-    } else {
-      document.getElementById('result').innerHTML = `
-        <div style="color: red;">
-          ✗ Error: ${error.message}
-        </div>`;
+    // Manejo de captura de producto al hacer clic en el botón
+    if (captureBtn) {
+        captureBtn.addEventListener('click', async () => {
+
+            //const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            try {
+
+                // Obtener token actual
+                const accessToken = await authService.getAccessToken();
+                if (!accessToken) {
+                    throw new Error('No autorizado');
+                }
+
+                const datosProducto = await obtenerDatos(host, tab.id);
+                console.log(datosProducto.result);
+
+                datosProducto.result.precioActual = parseFloat(datosProducto.result.precioActual.replace(",", ".").replace("€", "").trim());    
+                console.log(datosProducto.result.precioActual);
+
+                if (!datosProducto) {
+                    throw new Error('No se encontró ningún producto');
+                }
+
+                // Llamada a la API
+                const response = await fetch('http://localhost:5095/api/productos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: JSON.stringify(datosProducto.result)
+                });
+
+                console.log(response);
+
+                if (response.ok) {
+
+                    resultDiv.innerHTML = `
+                    <div style="color: green;">✓ Producto capturado correctamente</div>
+                    <div style="margin-top: 10px;">
+                        <strong>Título:</strong> ${datosProducto.result.nombre}<br>
+                        <strong>Precio:</strong> ${datosProducto.result.precioActual}<br>
+                        <strong>Descripción:</strong> ${datosProducto.result.descripcion}<br>
+                        <strong>Imagen:</strong> ${datosProducto.result.urlImagen}<br>
+                        <strong>URL:</strong> ${datosProducto.result.url}<br>
+                        <strong>Tienda:</strong> ${datosProducto.result.tiendaOnlineId}
+                    </div>`;
+                } else {
+                    throw new Error('Error al guardar el producto');
+                }
+
+            } catch (error) {
+                if (error.message === 'No autorizado') {
+                    window.location.href = 'login.html';
+                }
+                else {
+                    resultDiv.innerHTML = `
+              <div style="color: red;">
+                ✗ Error: ${error.message}
+              </div>`;
+                }
+            }
+        });
     }
-  }
+
+    // Manejo del logout
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', async () => {
+            await authService.logout();
+            window.location.href = 'login.html';
+        });
+    }
 });
 
-// Agregar botón de logout
-document.getElementById('logoutBtn')?.addEventListener('click', async () => {
-    await authService.logout();
-    window.location.href = 'login.html';
-  });
 
-// Función que se ejecuta en el contexto de la página
-function getProductInfo() {
-  const url = window.location.href;
-  const config = getConfigForDomain(url);
-  
-  if (!config) {
-    return null;
-  }
 
-  // Función auxiliar para extraer texto seguro
-  const safeQuerySelector = (selector) => {
-    try {
-      const element = document.querySelector(selector);
-      return element ? element.textContent.trim() : '';
-    } catch {
-      return '';
-    }
-  };
 
-  // Función para obtener URL de imagen
-  const getImageUrl = (selector) => {
-    const img = document.querySelector(selector);
-    return img ? (img.src || img.getAttribute('data-src') || '') : '';
-  };
 
-  return {
-    url: url,
-    nombre: safeQuerySelector(config.title),
-    precioActual: safeQuerySelector(config.price),
-    descripcion: safeQuerySelector(config.description),
-    urlImagen: getImageUrl(config.image),
-    tiendaOnlineId: new URL(url).hostname
-  };
-}
+

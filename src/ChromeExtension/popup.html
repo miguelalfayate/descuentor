@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Product Tracker</title>
-  <style>
-    body {
-      width: 300px;
-      padding: 10px;
-    }
-    button {
-      width: 100%;
-      padding: 8px;
-      margin-top: 10px;
-    }
-    #result {
-      margin-top: 10px;
-      word-wrap: break-word;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Descuentor</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        #result {
+            margin-top: 10px;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
+
 <body>
-  <h3>Product Tracker</h3>
-  <button id="captureBtn">Capturar Producto</button>
-  <div id="result"></div>
-  <script src="popup.js"></script>
+    <h3>Descuentor</h3>
+    <button id="captureBtn">Añadir a Lista de deseos</button>
+    <button id="logoutBtn">Logout</button>
+    <div id="result"></div>
+    <!-- Cargar scripts en orden -->
+    <script src="storeConfigs.js"></script>
+    <script src="authService.js"></script>
+    <script src="popup.js"></script>
 </body>
+
 </html>
