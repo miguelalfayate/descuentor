@@ -399,3 +399,6 @@ FodyWeavers.xsd
 .DS_Store
 .DS_Store
 memoria/.DS_Store
+src/descuentor/.idea/.idea.descuentor/.idea/workspace.xml
+.gitignore
+.DS_Store

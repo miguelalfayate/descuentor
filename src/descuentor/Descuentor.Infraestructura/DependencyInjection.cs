@@ -20,15 +20,19 @@ public static class DependencyInjection
                 );
         
         services.AddDataProtection();
+
+        services.AddAuthorization()
+            .AddAuthentication()
+            .AddBearerToken(IdentityConstants.BearerScheme);
         
-        services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
-                options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
-                options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-            })
-            .AddBearerToken(IdentityConstants.BearerScheme)
-            .AddIdentityCookies(o => { });
+        // services.AddAuthentication(options =>
+        //     {
+        //         options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+        //         options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+        //         options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+        //     })
+        //     .AddBearerToken(IdentityConstants.BearerScheme)
+        //     .AddIdentityCookies(o => { });
         
             // .AddCookie(IdentityConstants.ApplicationScheme, options =>
             // {
@@ -41,19 +45,23 @@ public static class DependencyInjection
             //     options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
             // });
 
-        services.AddIdentityCore<UsuarioAplicacion>(options =>
-            {
-                options.SignIn.RequireConfirmedAccount = false;
-                //options.Tokens.AuthenticatorTokenProvider = TokenOptions.DefaultAuthenticatorProvider;
-            })
-            .AddRoles<RolAplicacion>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddSignInManager<SignInManager<UsuarioAplicacion>>()
-            .AddDefaultTokenProviders();
+            services.AddIdentityCore<UsuarioAplicacion>(options =>
+                {
+                    options.SignIn.RequireConfirmedAccount = false;
+                    //options.Tokens.AuthenticatorTokenProvider = TokenOptions.DefaultAuthenticatorProvider;
+                })
+                .AddRoles<RolAplicacion>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddSignInManager<SignInManager<UsuarioAplicacion>>()
+                .AddDefaultTokenProviders();
         
         services.AddTransient<IEmailSender<UsuarioAplicacion>, EmailSender>();
+        services.AddTransient<IScrapingService, ScrapingService>();
+        services.AddTransient<ITiendaOnlineFactory, TiendaOnlineFactory>();
+
         services.AddScoped<IProductoRepository, ProductoRepository>();
         services.AddScoped<IUsuarioProductoRepository, UsuarioProductoRepository>();
+        services.AddScoped<IHistorialPrecioRepository, HistorialPrecioRepository>();
         return services;
     }
 }

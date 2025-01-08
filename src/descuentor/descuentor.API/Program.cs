@@ -5,6 +5,8 @@ using Descuentor.Aplicacion.Interfaces;
 using Descuentor.Infraestructura;
 using Descuentor.Infraestructura.InsercionesDatos;
 using Descuentor.Infraestructura.ModelosIdentity;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace Descuentor.API;
 
@@ -26,7 +28,37 @@ public class Program
         
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(options =>
+        {
+            options.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+            options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                In = ParameterLocation.Header,
+                Description = "Please enter a valid token",
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                BearerFormat = "JWT",
+                Scheme = "Bearer"
+            });
+            options.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type=ReferenceType.SecurityScheme,
+                            Id="Bearer"
+                        }
+                    },
+                    new string[]{}
+                }
+            });
+        });
+            
+        
+        
+        
         
         builder.Services.AddSingleton(TimeProvider.System);
 
@@ -39,6 +71,12 @@ public class Program
             app.UseSwaggerUI();
         }
 
+        app.UseCors(x => x
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()
+            .SetIsOriginAllowed(origin => true));
+        
         app.UseHttpsRedirection();
 
         app.UseAuthentication();

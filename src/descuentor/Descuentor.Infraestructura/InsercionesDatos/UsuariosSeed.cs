@@ -48,7 +48,7 @@ public class UsuariosSeed : IEntityTypeConfiguration<UsuarioAplicacion>
         var normalUser = await userManager.FindByNameAsync("user1");
         if (normalUser != null)
         {
-            await userManager.AddPasswordAsync(normalUser, "User1234!");
+                await userManager.AddPasswordAsync(normalUser, "User1234!");
         }
     }
 }

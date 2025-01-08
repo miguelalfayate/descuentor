@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const datosProducto = await obtenerDatos(host, tab.id);
                 console.log(datosProducto.result);
 
-                datosProducto.result.precioActual = parseFloat(datosProducto.result.precioActual.replace(",", ".").replace("€", "").trim());    
+                datosProducto.result.precioActual = parseFloat(datosProducto.result.precioActual.replace(",", ".").replace(".", "").replace("€", "").trim());    
                 console.log(datosProducto.result.precioActual);
 
                 if (!datosProducto) {

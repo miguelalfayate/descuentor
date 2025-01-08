@@ -15,4 +15,8 @@
       <ProjectReference Include="..\Descuentor.Dominio\Descuentor.Dominio.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Funcionalidades\HistorialPrecios\Queries\" />
+    </ItemGroup>
+
 </Project>
