@@ -1,0 +1,33 @@
+@page "/perfil"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@attribute [Authorize]
+
+<h3>Perfil de Usuario</h3>
+
+@if (authState.User.Identity.IsAuthenticated)
+{
+    <p>Bienvenido, @authState.User.Identity.Name!</p>
+}
+
+@code {
+    
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    
+    private AuthenticationState authState;
+
+    protected override async Task OnInitializedAsync()
+    {
+        authState = await authenticationStateTask;
+        if (!authState.User.Identity.IsAuthenticated)
+        {
+            Console.WriteLine("Nombre " + authState.User.Identity.Name);
+            Navigation.NavigateTo("login");
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿@using Descuentor.Web.Autenticacion
+@using Microsoft.AspNetCore.Components.Authorization
+@inject StorageChangeMonitor StorageMonitor
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+            <NotAuthorized>
+                <p>Lo siento, no estás autorizado para ver esta página.</p>
+            </NotAuthorized>
+        </AuthorizeRouteView>
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p>Lo siento, no hay nada en esta dirección.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await StorageMonitor.InitializeAsync();
+        await base.OnInitializedAsync();
+    }
+}
