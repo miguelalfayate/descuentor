@@ -1,0 +1,59 @@
+@page "/login"
+@using Descuentor.Aplicacion.Dtos
+@using Descuentor.Web.Servicios
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject IJSRuntime JsRuntime
+@inject TokenService TokenService
+@using System.ComponentModel.DataAnnotations
+@rendermode InteractiveServer
+
+<h3>Login</h3>
+
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="email">Email:</label>
+        <InputText id="email" @bind-Value="loginModel.Email" />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <InputText id="password" @bind-Value="loginModel.Password" type="password" />
+    </div>
+    <button type="submit">Login</button>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+    //private LoginModel loginModel2 = new LoginModel{Email = "", Password = ""};
+
+
+    private async Task HandleLogin()
+    {
+        
+        Console.WriteLine("Lanzado");
+        var response = await Http.PostAsJsonAsync("http://localhost:5095/identity/login", loginModel);
+        if (response.IsSuccessStatusCode)
+        {
+            var tokens = await response.Content.ReadFromJsonAsync<TokenResponse>();
+            // Guardar tokens en el almacenamiento local
+            await TokenService.SetTokensAsync(tokens?.AccessToken!, tokens?.RefreshToken!, tokens.ExpiresIn);
+            //await JsRuntime.InvokeVoidAsync("localStorage.setItem", "accessToken", tokens?.AccessToken);
+            //await JsRuntime.InvokeVoidAsync("localStorage.setItem", "refreshToken", tokens?.RefreshToken);
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            // Manejar error de login
+        }
+    }
+
+    public class LoginModel
+    {
+        public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
+    }
+    
+}
