@@ -84,7 +84,7 @@ namespace Descuentor.Infraestructura.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<decimal?>("PrecioActual")
+                    b.Property<decimal?>("PrecioInicial")
                         .HasColumnType("numeric");
 
                     b.Property<int>("TiendaOnlineId")
@@ -304,10 +304,10 @@ namespace Descuentor.Infraestructura.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6240bdce-50ac-41d0-b09b-ac53babf537d",
+                            ConcurrencyStamp = "c0f526f5-c692-423a-8084-84327082b995",
                             Email = "admin@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2024, 12, 31, 16, 48, 51, 211, DateTimeKind.Utc).AddTicks(8790),
+                            FechaCreacion = new DateTime(2025, 1, 12, 21, 55, 20, 225, DateTimeKind.Utc).AddTicks(4340),
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DOMAIN.COM",
                             NormalizedUserName = "ADMIN@DOMAIN.COM",
@@ -319,10 +319,10 @@ namespace Descuentor.Infraestructura.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4e696da3-407b-490e-aeb2-2418856146a3",
+                            ConcurrencyStamp = "4d79018e-0bf6-495a-b5c9-c34b4897997e",
                             Email = "user1@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2024, 12, 31, 16, 48, 51, 211, DateTimeKind.Utc).AddTicks(8860),
+                            FechaCreacion = new DateTime(2025, 1, 12, 21, 55, 20, 225, DateTimeKind.Utc).AddTicks(4410),
                             LockoutEnabled = false,
                             NormalizedEmail = "USER1@DOMAIN.COM",
                             NormalizedUserName = "USER1@DOMAIN.COM",
@@ -458,11 +458,13 @@ namespace Descuentor.Infraestructura.Migrations
 
             modelBuilder.Entity("Descuentor.Dominio.Entidades.Producto", b =>
                 {
-                    b.HasOne("Descuentor.Dominio.Entidades.TiendaOnline", null)
+                    b.HasOne("Descuentor.Dominio.Entidades.TiendaOnline", "TiendaOnline")
                         .WithMany("Productos")
                         .HasForeignKey("TiendaOnlineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("TiendaOnline");
                 });
 
             modelBuilder.Entity("Descuentor.Dominio.Entidades.UsuarioConfiguracion", b =>

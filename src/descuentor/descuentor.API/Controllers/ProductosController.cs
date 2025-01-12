@@ -1,4 +1,7 @@
+using Descuentor.API.Servicios;
+using Descuentor.Aplicacion.Dtos;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Commands;
+using Descuentor.Aplicacion.Funcionalidades.Productos.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,5 +25,16 @@ public class ProductosController : ControllerBase
     {
         var result = await _mediator.Send(command);
         return Ok(result);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> ObtenerProductoPaginacion([FromQuery]ObtenerProductosPaginacionQuery query)
+    {
+        var (productos, numeroProductos) = await _mediator.Send(query);
+        
+        var numeroProductosPagina = query.NumeroProductosPagina;
+        HttpContext.InsertarParametrosPaginacionEnRespuesta(numeroProductos,numeroProductosPagina);
+        
+        return Ok(productos);
     }
 }

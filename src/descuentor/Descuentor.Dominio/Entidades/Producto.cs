@@ -18,11 +18,10 @@ public class Producto
 
     public string? UrlImagen { get; set; }
 
-    public decimal? PrecioActual { get; set; }
+    public decimal? PrecioInicial { get; set; }
 
     [ForeignKey(nameof(TiendaOnline))]
     public int TiendaOnlineId { get; set; }
-    [NotMapped]
     public TiendaOnline TiendaOnline { get; set; } = null!;
 
     // Relación con HistorialPrecio

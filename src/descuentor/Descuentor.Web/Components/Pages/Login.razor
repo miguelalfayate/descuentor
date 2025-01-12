@@ -1,59 +1,66 @@
 @page "/login"
+
 @using Descuentor.Aplicacion.Dtos
-@using Descuentor.Web.Servicios
-@inject HttpClient Http
+@using Descuentor.Aplicacion.Interfaces
 @inject NavigationManager Navigation
-@inject IJSRuntime JsRuntime
-@inject TokenService TokenService
+@inject IAuthService AuthService
 @using System.ComponentModel.DataAnnotations
 @rendermode InteractiveServer
 
 <h3>Login</h3>
 
-<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+<EditForm Model="_loginRequest" OnValidSubmit="HandleLogin">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div>
         <label for="email">Email:</label>
-        <InputText id="email" @bind-Value="loginModel.Email" />
+        <InputText id="email" @bind-Value="_loginRequest.Email" />
     </div>
     <div>
         <label for="password">Password:</label>
-        <InputText id="password" @bind-Value="loginModel.Password" type="password" />
+        <InputText id="password" @bind-Value="_loginRequest.Password" type="password" />
     </div>
     <button type="submit">Login</button>
 </EditForm>
 
 @code {
-    private LoginModel loginModel = new LoginModel();
+    private LoginRequest _loginRequest = new LoginRequest();
     //private LoginModel loginModel2 = new LoginModel{Email = "", Password = ""};
 
 
     private async Task HandleLogin()
     {
-        
         Console.WriteLine("Lanzado");
-        var response = await Http.PostAsJsonAsync("http://localhost:5095/identity/login", loginModel);
-        if (response.IsSuccessStatusCode)
+        
+        try
         {
-            var tokens = await response.Content.ReadFromJsonAsync<TokenResponse>();
-            // Guardar tokens en el almacenamiento local
-            await TokenService.SetTokensAsync(tokens?.AccessToken!, tokens?.RefreshToken!, tokens.ExpiresIn);
-            //await JsRuntime.InvokeVoidAsync("localStorage.setItem", "accessToken", tokens?.AccessToken);
-            //await JsRuntime.InvokeVoidAsync("localStorage.setItem", "refreshToken", tokens?.RefreshToken);
-            Navigation.NavigateTo("/");
+            var result = await AuthService.Login(_loginRequest);
+            if (result.AccessToken != "")
+            {
+                Navigation.NavigateTo("/");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            // Manejar error de login
+            // Manejar el error
         }
+        
+        
+        
+        // var response = await Http.PostAsJsonAsync("http://localhost:5095/identity/login", loginModel);
+        // if (response.IsSuccessStatusCode)
+        // {
+        //     var tokens = await response.Content.ReadFromJsonAsync<TokenResponse>();
+        //     // Guardar tokens en el almacenamiento local
+        //     await TokenService.SetTokensAsync(tokens?.AccessToken!, tokens?.RefreshToken!, tokens.ExpiresIn);
+        //     //await JsRuntime.InvokeVoidAsync("localStorage.setItem", "accessToken", tokens?.AccessToken);
+        //     //await JsRuntime.InvokeVoidAsync("localStorage.setItem", "refreshToken", tokens?.RefreshToken);
+        //     
+        // }
+        // else
+        // {
+        //     // Manejar error de login
+        // }
     }
-
-    public class LoginModel
-    {
-        public string Email { get; set; } = null!;
-        public string Password { get; set; } = null!;
-    }
-    
 }

@@ -1,0 +1,35 @@
+@page "/login"
+@using System.ComponentModel.DataAnnotations
+
+<h3>Simple Form</h3>
+
+<EditForm Model="@simpleModel" OnValidSubmit="HandleValidSubmit">
+
+    <div>
+        <label for="name">Name:</label>
+        <InputText id="name" @bind-Value="simpleModel.Name" />
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <InputNumber id="age" @bind-Value="simpleModel.Age" />
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    private SimpleModel simpleModel = new SimpleModel();
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine($"Submitted: {simpleModel.Name}, {simpleModel.Age}");
+    }
+
+    public class SimpleModel
+    {
+        [Required]
+        public string Name { get; set; } = string.Empty;
+
+        [Range(1, 120)]
+        public int Age { get; set; }
+    }
+}

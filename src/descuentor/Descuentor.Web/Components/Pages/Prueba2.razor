@@ -1,0 +1,39 @@
+@page "/prueba2"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+@rendermode InteractiveServer
+
+<AuthorizeView>
+    <Authorized>
+        <h3>Welcome to the main page!</h3>
+        <!-- Contenido para usuarios autenticados -->
+    </Authorized>
+    <NotAuthorized>
+        <h3>Not authorized</h3>
+        <!-- Contenido para usuarios no autenticados -->
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private bool _isInitialized;
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationState { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !_isInitialized)
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            Console.WriteLine("Estado1: " + authState.User.Identity.Name);
+            if (!authState.User.Identity.IsAuthenticated)
+            {
+                Navigation.NavigateTo("/login");
+            }
+            _isInitialized = true;
+        }
+    }
+}

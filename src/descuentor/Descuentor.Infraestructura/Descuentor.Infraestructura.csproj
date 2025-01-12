@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Descuentor.Aplicacion\Descuentor.Aplicacion.csproj" />
       <ProjectReference Include="..\Descuentor.Dominio\Descuentor.Dominio.csproj" />
     </ItemGroup>
 

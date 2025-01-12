@@ -1,6 +1,10 @@
 using Blazored.LocalStorage;
+using Descuentor.Aplicacion.Interfaces;
 using Descuentor.Web.Components;
+using Descuentor.Web.Proveedores;
 using Descuentor.Web.Servicios;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Descuentor.Web;
 
@@ -20,7 +24,23 @@ public class Program
         builder.Services.AddScoped<HttpClient>();
         builder.Services.AddScoped<TokenService>(); // Registrar TokenService
         
+        builder.Services.AddScoped<IAuthService, AuthService>();
+        
+        builder.Services.AddAuthorizationCore();
+        builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+        
         builder.Services.AddBlazoredLocalStorage();
+        
+        // Configure authentication
+        // builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        //     .AddCookie(options =>
+        //     {
+        //         options.LoginPath = "/login";
+        //     });
+        
+        builder.Services.AddAuthentication()
+            .AddBearerToken(IdentityConstants.BearerScheme);
+        // builder.Services.AddAuthentication(IdentityConstants.BearerScheme);
 
         var app = builder.Build();
 
@@ -35,6 +55,12 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseStaticFiles();
+        
+        app.UseRouting();
+
+        app.UseAuthentication();
+        app.UseAuthorization();
+        
         app.UseAntiforgery();
 
         app.MapRazorComponents<App>()
