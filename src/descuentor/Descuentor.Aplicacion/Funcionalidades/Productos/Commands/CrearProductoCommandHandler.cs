@@ -27,7 +27,7 @@ public class CrearProductoCommandHandler : IRequestHandler<CrearProductoCommand,
             Descripcion = request.Descripcion,
             UrlImagen = request.UrlImagen,
             TiendaOnlineId = request.TiendaOnlineId,
-            PrecioActual = request.PrecioActual
+            PrecioInicial = request.PrecioInicial
         };
 
         var result = await _productoRepository.AddAsync(producto);

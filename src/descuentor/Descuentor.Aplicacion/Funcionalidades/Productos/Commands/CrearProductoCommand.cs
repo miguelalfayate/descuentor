@@ -7,5 +7,5 @@ public record CrearProductoCommand(
     string Url,
     string? Descripcion,
     string? UrlImagen,
-    decimal? PrecioActual,
+    decimal? PrecioInicial,
     int TiendaOnlineId) : IRequest<int>;
