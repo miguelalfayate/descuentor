@@ -7,7 +7,8 @@
 const tiendasOnline = {
     'amazon.es': {
         nombre: '#productTitle',
-        precioActual: '#priceblock_ourprice, .a-price .a-offscreen',
+        //precioActual: 'span[class*="a-price-whole"]',
+        precioActual: 'span[class*="a-offscreen"]',
         descripcion: '#productDescription p',
         urlImagen: '#landingImage',
         tiendaOnlineId: 1
@@ -32,7 +33,7 @@ async function obtenerDatos(host, idPestana) {
             return {
                 url: window.location.href,
                 nombre: document.querySelector(tiendaActual.nombre)?.innerText,
-                precioActual: document.querySelector(tiendaActual.precioActual)?.innerText,
+                precioInicial: document.querySelector(tiendaActual.precioActual)?.innerText + "",
                 descripcion: document.querySelector(tiendaActual.descripcion)?.innerText,
                 urlImagen: document.querySelector(tiendaActual.urlImagen)?.src,
                 tiendaOnlineId: tiendaActual.tiendaOnlineId

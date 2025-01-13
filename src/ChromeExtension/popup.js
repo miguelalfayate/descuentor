@@ -70,8 +70,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const datosProducto = await obtenerDatos(host, tab.id);
                 console.log(datosProducto.result);
 
-                datosProducto.result.precioActual = parseFloat(datosProducto.result.precioActual.replace(",", ".").replace(".", "").replace("€", "").trim());    
-                console.log(datosProducto.result.precioActual);
+
+                var precio = datosProducto.result.precioInicial;
+                console.log(precio);
+                datosProducto.result.precioInicial = parseFloat(datosProducto.result.precioInicial.replace(".", "").replace(",", ".").replace("€", "").trim());
 
                 if (!datosProducto) {
                     throw new Error('No se encontró ningún producto');
@@ -95,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div style="color: green;">✓ Producto capturado correctamente</div>
                     <div style="margin-top: 10px;">
                         <strong>Título:</strong> ${datosProducto.result.nombre}<br>
-                        <strong>Precio:</strong> ${datosProducto.result.precioActual}<br>
+                        <strong>Precio:</strong> ${datosProducto.result.precioInicial}<br>
                         <strong>Descripción:</strong> ${datosProducto.result.descripcion}<br>
                         <strong>Imagen:</strong> ${datosProducto.result.urlImagen}<br>
                         <strong>URL:</strong> ${datosProducto.result.url}<br>
