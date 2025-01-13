@@ -46,7 +46,7 @@ public class
                 Url = p.Url,
                 UrlImagen = p.UrlImagen!,
                 PrecioInical = p.PrecioInicial,
-                PrecioActual = p.HistorialPrecios?.FirstOrDefault()?.Precio ?? 0,
+                PrecioActual = p.HistorialPrecios?.FirstOrDefault()?.Precio ?? p.PrecioInicial,
                 TiendaNombre = p.TiendaOnline.Nombre! ?? "Sin tienda"
             }).ToList();
 
