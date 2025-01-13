@@ -75,6 +75,7 @@ public class Program
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials()
+            .WithExposedHeaders("*")
             .SetIsOriginAllowed(origin => true));
         
         app.UseHttpsRedirection();
