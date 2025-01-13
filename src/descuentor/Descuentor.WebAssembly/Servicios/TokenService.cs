@@ -1,8 +1,6 @@
 using Blazored.LocalStorage;
-using Microsoft.JSInterop;
-using System.Threading.Tasks;
 
-namespace Descuentor.Web.Servicios
+namespace Descuentor.WebAssembly.Servicios
 {
     public class TokenService
     {

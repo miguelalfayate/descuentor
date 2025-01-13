@@ -61,15 +61,7 @@ public class ProductoRepository : IProductoRepository
         if (!string.IsNullOrEmpty(campoOrden))
         {
             var campo = campoOrden.ToLower();
-
-            if (campo == "id")
-            {
-                if (ordenAscendente)
-                    queryable = queryable.OrderBy(x => x.Id);
-                else
-                    queryable = queryable.OrderByDescending(x => x.Id);
-            }
-            else if (campo == "nombre")
+            if (campo == "nombre")
             {
                 if (ordenAscendente)
                     queryable = queryable.OrderBy(x => x.Nombre);

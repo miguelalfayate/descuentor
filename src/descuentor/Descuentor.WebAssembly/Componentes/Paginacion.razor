@@ -1,0 +1,147 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @foreach (var enlace in Enlaces)
+        {
+            <li @onclick=@(()=> PaginaSeleccionadaInterno(enlace))
+                style="cursor: pointer"
+                class="page-item @(enlace.Habilitada ? null : "disabled")
+                                @(enlace.Activa ? "active" : null)">
+                <a class="page-link">@enlace.Texto</a>
+            </li>
+        }
+    </ul>
+</nav>
+
+@code {
+    /// <summary>
+    /// Página actual seleccionada en la paginación.
+    /// </summary>
+    [Parameter] public int PaginaActual { get; set; } = 1;
+
+    /// <summary>
+    /// Número total de páginas disponibles para la paginación.
+    /// </summary>
+    [Parameter] public int PaginasTotales { get; set; }
+
+    /// <summary>
+    /// Radio de páginas a mostrar alrededor de la página actual. Define el rango de páginas visibles.
+    /// </summary>
+    [Parameter] public int Radio { get; set; } = 3;
+
+    /// <summary>
+    /// Evento que se dispara cuando se selecciona una página diferente.
+    /// </summary>
+    [Parameter] public EventCallback<int> PaginaSeleccionada { get; set; }
+
+    /// <summary>
+    /// Lista de enlaces de paginación generados dinámicamente.
+    /// </summary>
+    List<PaginasModel> Enlaces = new List<PaginasModel>();
+
+    /// <summary>
+    /// Lógica interna que maneja la selección de una página.
+    /// </summary>
+    private async Task PaginaSeleccionadaInterno(PaginasModel paginasModel)
+    {
+        // Si la página seleccionada es la misma que la actual, no hacer nada.
+        if (paginasModel.Pagina == PaginaActual)
+        {
+            return;
+        }
+
+        // Si la página no está habilitada, no hacer nada.
+        if (!paginasModel.Habilitada)
+        {
+            return;
+        }
+
+        // Invocar el callback para informar sobre la nueva página seleccionada.
+        await PaginaSeleccionada.InvokeAsync(paginasModel.Pagina);
+    }
+
+    /// <summary>
+    /// Este método se ejecuta cuando las propiedades del componente cambian.
+    /// Genera los enlaces de paginación basados en la página actual y el número total de páginas.
+    /// </summary>
+    protected override void OnParametersSet()
+    {
+        // Inicializa la lista 'Enlaces' para almacenar los enlaces de navegación de las páginas.
+        Enlaces = new List<PaginasModel>();
+
+        // Verifica si el enlace para la página anterior debe estar habilitado.
+        // Si la página actual no es la primera, el enlace "Anterior" estará habilitado.
+        var enlaceAnteriorHabilitada = PaginaActual != 1;
+
+        // Calcula el número de la página anterior, restando 1 a la página actual.
+        var enlaceAnteriorPagina = PaginaActual - 1;
+
+        // Agrega un enlace para la página anterior a la lista de enlaces.
+        Enlaces.Add(new PaginasModel
+        {
+            // Texto del enlace
+            Texto = "Anterior",
+            // Página correspondiente al enlace
+            Pagina = enlaceAnteriorPagina,
+            // Habilita o deshabilita el enlace según la página actual
+            Habilitada = enlaceAnteriorHabilitada
+        });
+
+        // Bucle para agregar enlaces de las páginas visibles, según el radio alrededor de la página actual.
+        for (int i = 1; i <= PaginasTotales; i++)
+        {
+            // Agrega enlaces para las páginas que están dentro del rango del radio alrededor de la página actual.
+            if (i >= PaginaActual - Radio && i <= PaginaActual + Radio)
+            {
+                // Agrega un enlace para la página i, marcando la página activa si coincide con la página actual.
+                Enlaces.Add(new PaginasModel
+                {
+                    Pagina = i,  // Número de la página
+                    Activa = PaginaActual == i,  // Marca la página actual como activa
+                    Texto = i.ToString()  // Convierte el número de la página a texto
+                });
+            }
+        }
+
+        // Verifica si el enlace para la página siguiente debe estar habilitado.
+        // Si la página actual no es la última, el enlace "Siguiente" estará habilitado.
+        var enlaceSiguienteHabilitado = PaginaActual != PaginasTotales;
+
+        // Calcula el número de la página siguiente, sumando 1 a la página actual.
+        var enlaceSiguientePagina = PaginaActual + 1;
+
+        // Agrega un enlace para la página siguiente a la lista de enlaces.
+        Enlaces.Add(new PaginasModel
+        {
+            Texto = "Siguiente",   // Texto del enlace
+            Pagina = enlaceSiguientePagina,  // Página correspondiente al enlace
+            Habilitada = enlaceSiguienteHabilitado   // Habilita o deshabilita el enlace según la página actual
+        });
+    }
+
+
+    /// <summary>
+    /// Modelo que representa cada enlace de paginación.
+    /// </summary>
+    class PaginasModel
+    {
+        /// <summary>
+        /// Texto que se muestra en el enlace de la paginación.
+        /// </summary>
+        public string Texto { get; set; } = null!;
+
+        /// <summary>
+        /// Número de la página correspondiente al enlace.
+        /// </summary>
+        public int Pagina { get; set; }
+
+        /// <summary>
+        /// Determina si el enlace está habilitado o no.
+        /// </summary>
+        public bool Habilitada { get; set; } = true;
+
+        /// <summary>
+        /// Indica si el enlace representa la página actual.
+        /// </summary>
+        public bool Activa { get; set; } = false;
+    }
+}

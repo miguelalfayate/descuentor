@@ -2,7 +2,6 @@ using System.Net.Http.Json;
 using Blazored.LocalStorage;
 using Descuentor.Aplicacion.Dtos;
 using Descuentor.Aplicacion.Interfaces;
-using Descuentor.Web.Servicios;
 
 namespace Descuentor.WebAssembly.Servicios;
 
@@ -38,9 +37,6 @@ public class AuthService : IAuthService
             
             // Guardar tokens en localStorage
             await _tokenService.SetTokensAsync(authResponse?.AccessToken!, authResponse?.RefreshToken!, authResponse.ExpiresIn);
-            
-            //await _localStorage.SetItemAsync("accessToken", authResponse?.AccessToken);
-            //await _localStorage.SetItemAsync("refreshToken", authResponse?.RefreshToken);
             
             return authResponse;
         }
