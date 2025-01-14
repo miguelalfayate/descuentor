@@ -1,5 +1,4 @@
 using Descuentor.API.Servicios;
-using Descuentor.Aplicacion.Dtos;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Commands;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Queries;
 using MediatR;
@@ -36,5 +35,13 @@ public class ProductosController : ControllerBase
         HttpContext.InsertarParametrosPaginacionEnRespuesta(numeroProductos,numeroProductosPagina);
         
         return Ok(productos);
+    }
+    
+    [HttpGet("{id}")]
+    public async Task<IActionResult> ObtenerProducto(int id)
+    {
+        var query = new ObtenerProductoConIdQuery(id);
+        var producto = await _mediator.Send(query);
+        return Ok(producto);
     }
 }

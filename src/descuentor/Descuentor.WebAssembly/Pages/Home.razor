@@ -121,19 +121,19 @@ else
                     <td><img src="@producto.UrlImagen" style="width: 100px; height: 100px; object-fit: cover;" /></td>
                     <td>@producto.Nombre</td>
                     <td>@producto.TiendaNombre</td>
-                    <td>@producto.PrecioInical €</td>
+                    <td>@producto.PrecioInicial €</td>
                     <td>@producto.PrecioActual €</td>
-                    <td style="color: @(producto.PrecioActual > producto.PrecioInical ? "red" : producto.PrecioActual < producto.PrecioInical ? "green" : "black")">
-                        @((int)((producto.PrecioActual - producto.PrecioInical) / producto.PrecioInical * 100))%
+                    <td style="color: @(producto.PrecioActual > producto.PrecioInicial ? "red" : producto.PrecioActual < producto.PrecioInicial ? "green" : "black")">
+                        @Math.Round(producto.PorcentajeVariacion!.Value, 1)%
                     </td>
                     <td>
-                        <a href="/clientes/ver/@producto.Id" class="btn btn-success" role="button">
+                        <a href="/productos/ver/@producto.Id" class="btn btn-success" role="button">
                             Ver
                         </a>
-                        <a href="/clientes/editar/@producto.Id" class="btn btn-warning" role="button">
+                        <a href="/productos/editar/@producto.Id" class="btn btn-warning" role="button">
                             Editar
                         </a>
-                        <a href="/clientes/eliminar/@producto.Id" class="btn btn-danger" role="button">
+                        <a href="/productos/eliminar/@producto.Id" class="btn btn-danger" role="button">
                             Borrar
                         </a>
                     </td>

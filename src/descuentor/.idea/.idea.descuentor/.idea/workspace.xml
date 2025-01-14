@@ -25,18 +25,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Componentes/Paginacion.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Login.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Register.razor" afterDir="false" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se exponen todos los headers a las llamadas a la API">
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoVer.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Home.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/TokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,11 +64,12 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommand.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommand.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3ec93589f9c64e22b96b232895e2861031400/d2/5c48f7cd/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b3bca7808b94536956c535008df3fc6395000/02/32229b86/Expression.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c799c236b08a4458877f6ba872d7b92381000/eb/c34dea3b/IEmailSender`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cecc03baa6b1406d873901b9b4ce45e97ec00/0b/a76f3999/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b445ceb1c5ab1d07b7b55412b10a5e21169ec87228ca8ad8a18a6982f3278/ControllerBase.cs" root0="FORCE_HIGHLIGHTING" />
@@ -91,13 +89,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7dbdfb636eaf239e236f25602a4737bcea35d9853112016a49f55f460186b/IdentityConstants.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8056cd3f452fefb9834f05cdb275b762dd41f27b7766cd71174e78592dc495b/Monitor.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85eb2bbf9352111d14842aa043e285519ee5be4e54b5ff0445f4c85cf19d64c/IBrowserType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89c4224f79e6b275db5cce1623a97eec6e1bbd4755a617dd36d073d2347236a5/String.Manipulation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8cab54a42d3ff1d4ccd4bdbe42ce4d18503d57e552cac0ead6e4e2ad83629b/AuthorizeViewCore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a314ee147e1b172ae5fbc0b477aa7acbe6a3f2e07ab946ed05be04ed58b67/String.Comparison.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a7d079cdbfc06e921c4d8ab124b11aaa54632e5564af0e8f231963c3c989b96/AuthorizeView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b90d6b47d6330753e855af18818b97d4207f32c6ee4b793faffc029f069f4/String.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0fc52f29843d641f5bef4026ab9fddbafe649d2ce919dc82338413b9723f/AuthenticationState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c69576b4a074ad2839225611609498e344b7e2819997af48dbb2d2f8257f3/EntityFrameworkQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d66f12f9433816a8c7dc1b2acb9e1010f5418f5eeb51e8f1df57aa1dcab8d8a/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/db7395f4add94e6d10e515b3e55373f2821f8323de7dc8e314d78feefacf5584/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e358d67bcd5815a5083706ec88db8489a9872915d46156ba24277cd21bd662/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ed259e49cc3bb2398585cae8e4dffc366721e02a8b027d8a6b4985e3f1f8316/Type.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eddc51a49dddbdbde4ba2ca25b90ace5a2b5c63fd7d9ea946adb53ab61da735/AuthenticationStateProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eeaf281031b3ffe3d44a91e71a5808c8d236a9caabbb947871e6dc415bd8b/Migration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4bc324a395d24ed12db75b0a81536b642509aa14825bf114d9b7c934e2b/Mediator.cs" root0="FORCE_HIGHLIGHTING" />
@@ -118,31 +120,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.BlazorApp1: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.BlazorApp2: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Descuentor.API: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Descuentor.Web: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Descuentor.WebAssembly: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.BlazorApp1.Client.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Descuentor.Web.Client.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Descuentor.Web.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Scraper.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.Descuentor.Web/Dockerfile build.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.BlazorApp1: http.executor": "Run",
+    ".NET Launch Settings Profile.BlazorApp2: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
+    ".NET Project.BlazorApp1.Client.executor": "Run",
+    ".NET Project.Descuentor.Web.Client.executor": "Run",
+    ".NET Project.Descuentor.Web.executor": "Run",
+    ".NET Project.Scraper.executor": "Run",
+    "Docker.Descuentor.Web/Dockerfile build.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.API: http">
     <configuration name="BlazorApp1: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" />
@@ -409,7 +411,7 @@
       <workItem from="1735734199870" duration="59558000" />
       <workItem from="1736527298630" duration="25837000" />
       <workItem from="1736616633976" duration="32786000" />
-      <workItem from="1736773259908" duration="4702000" />
+      <workItem from="1736773259908" duration="28430000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -483,7 +485,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736721526919</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Añadida página principal donde se listan los artículos de los clientes">
+      <option name="closed" value="true" />
+      <created>1736782359244</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736782359244</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Si no hay PrecioActual en productoDto que se inicie con PrecioInical">
+      <option name="closed" value="true" />
+      <created>1736787994103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736787994103</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Se exponen todos los headers a las llamadas a la API">
+      <option name="closed" value="true" />
+      <created>1736788016853</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736788016853</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,23 +528,26 @@
     <MESSAGE value="Se añade el proyecto de la página web. Se crean las páginas de login, que guarda los tokens de respuesta de la API en el localStorage del navegador, y la página de registro." />
     <MESSAGE value="Añadida la lógica del back para recuperar los productos en el front" />
     <MESSAGE value="Modificada nomenclatura de PrecioInicial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificada nomenclatura de PrecioInicial" />
+    <MESSAGE value="Añadida página principal donde se listan los artículos de los clientes" />
+    <MESSAGE value="Si no hay PrecioActual en productoDto que se inicie con PrecioInical" />
+    <MESSAGE value="Se exponen todos los headers a las llamadas a la API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se exponen todos los headers a las llamadas a la API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs</url>
-          <line>101</line>
+          <line>54</line>
           <properties documentPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" containingFunctionPresentation="Method 'ObtenerProductosPaginacionConId'">
             <startOffsets>
-              <option value="3670" />
+              <option value="1626" />
             </startOffsets>
             <endOffsets>
-              <option value="3679" />
+              <option value="1925" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
