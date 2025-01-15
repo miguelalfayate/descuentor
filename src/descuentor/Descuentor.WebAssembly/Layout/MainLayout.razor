@@ -1,23 +1,94 @@
-﻿@inject NavigationManager Navigation
+﻿@using System.Net.Http.Headers
+@using Descuentor.Aplicacion.Interfaces
+@using Descuentor.WebAssembly.Servicios
+
+@inject NavigationManager Navigation
+@inject HttpClient Http
+@inject TokenService TokenService
+@inject IAuthService AuthService
 
 @inherits LayoutComponentBase
 
 
 <div class="page">
     <main>
-        @if (!IsLoginOrRegisterPage)
-        {
-            <div class="top-row px-4">
-                <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-            </div>
-        }
+
+        <div class="top-row px-4 d-flex align-items-center justify-content-start" style="height: 80px;">
+            <img src="logo.png" alt="Logo" style="height: 60px; margin-right: 10px;"/>
+            @if (!string.IsNullOrEmpty(userEmail))
+            {
+                <div class="ms-auto">
+                    <span>Bienvenido, <strong>@userEmail</strong></span> <br/>
+                    <a href="#" @onclick="Logout" class="btn btn-link">Salir</a>
+                    <a href="/editar-usuario" class="btn btn-link">Editar usuario</a>
+                </div>
+                
+            }
+        </div>
+
 
         <article class="content px-4">
             @Body
         </article>
+
+
     </main>
 </div>
 
 @code {
-    private bool IsLoginOrRegisterPage => Navigation.Uri.Contains("/login") || Navigation.Uri.Contains("/register");
+
+    private string? userEmail;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var accessToken = await TokenService.GetAccessTokenAsync();
+        if (string.IsNullOrEmpty(accessToken))
+        {
+            Navigation.NavigateTo("/login");
+            return;
+        }
+
+        var expiration = await TokenService.GetTokenExpirationAsync();
+        if (expiration < DateTime.UtcNow.AddMinutes(5))
+        {
+            var resultado = await AuthService.RefreshTokenAsync();
+            if (resultado)
+            {
+                accessToken = await TokenService.GetAccessTokenAsync();
+            }
+            else
+            {
+                Navigation.NavigateTo("/login");
+                return;
+            }
+        }
+
+        var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5095/identity/manage/info");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+        var response = await Http.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var userInfo = await response.Content.ReadFromJsonAsync<UserInfo>();
+            userEmail = userInfo?.Email;
+            StateHasChanged();
+        }
+        else
+        {
+            Navigation.NavigateTo("/login");
+        }
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.Logout();
+        Navigation.NavigateTo("/login");
+    }
+
+    private class UserInfo
+    {
+        public string Email { get; set; }
+        public bool IsEmailConfirmed { get; set; }
+    }
+
 }

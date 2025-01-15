@@ -4,6 +4,8 @@ namespace Descuentor.Aplicacion.Interfaces;
 
 public interface IAuthService
 {
-    Task<bool> Register(RegisterRequest request);
+    Task<HttpResponseMessage> Register(RegisterRequest request);
     Task<TokenResponse> Login(LoginRequest request);
+    Task<bool> RefreshTokenAsync();
+    Task Logout();
 }

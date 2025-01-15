@@ -101,3 +101,18 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.custom-container {
+    max-width: 800px; /* Ajusta el valor según tus necesidades */
+    margin: 0 auto; /* Centra el div */
+}
+
+.custom-background {
+    background-color: #f8f9fa; /* Gris claro */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.text-center {
+    text-align: center;
+}

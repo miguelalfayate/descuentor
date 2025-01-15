@@ -138,7 +138,11 @@ else
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
         var response = await Http.SendAsync(request);
-        producto = await response.Content.ReadFromJsonAsync<ProductoHistorialPreciosDto>();
+        
+        if (response.IsSuccessStatusCode)
+        {
+            producto = await response.Content.ReadFromJsonAsync<ProductoHistorialPreciosDto>();
+        }
     }
 
     private void EditarProducto()

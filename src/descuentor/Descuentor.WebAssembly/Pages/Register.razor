@@ -2,40 +2,56 @@
 
 @using Descuentor.Aplicacion.Dtos
 @using Descuentor.Aplicacion.Interfaces
+@using System.Net.Http
+@using System.Text.Json
 
 @inject IAuthService AuthService
 @inject NavigationManager NavigationManager
 
-<div class="container">
-    <h3>Registro</h3>
-    
-    <EditForm Model="@registerModel" OnValidSubmit="HandleRegistration">
-        <DataAnnotationsValidator />
-        
-        <div class="form-group">
-            <label>Email:</label>
-            <InputText @bind-Value="registerModel.Email" class="form-control" />
-            <ValidationMessage For="@(() => registerModel.Email)" />
-        </div>
-        
-        <div class="form-group">
-            <label>Contraseña:</label>
-            <InputText type="password" @bind-Value="registerModel.Password" class="form-control" />
-            <ValidationMessage For="@(() => registerModel.Password)" />
-        </div>
+@layout AuthLayout
 
-        <div class="form-group">
-            <label>Confirma contraseña:</label>
-            <InputText type="password" @bind-Value="registerModel.ConfirmPassword" class="form-control" />
-            <ValidationMessage For="@(() => registerModel.ConfirmPassword)" />
-        </div>
+<img src="logo.png" alt="Logo" style="height: 40px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto" />
+<h3 class="text-center" style="font-family: serif;">Nuevo usuario</h3>
+    
+<EditForm Model="@registerModel" OnValidSubmit="HandleRegistration">
+    <DataAnnotationsValidator />
         
-        <button type="submit" class="btn btn-primary">Registrar</button>
-    </EditForm>
-</div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <InputText @bind-Value="registerModel.Email" class="form-control" />
+        <ValidationMessage For="@(() => registerModel.Email)" />
+    </div>
+        
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <InputText type="password" @bind-Value="registerModel.Password" class="form-control" />
+        <ValidationMessage For="@(() => registerModel.Password)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Confirma contraseña:</label>
+        <InputText type="password" @bind-Value="registerModel.ConfirmPassword" class="form-control"/>
+        <ValidationMessage For="@(() => registerModel.ConfirmPassword)"/>
+    </div>
+        
+    <button type="submit" class="btn btn-primary w-100" style="margin-top: 20px;">Registrar</button>
+</EditForm>
+
+@if (errorMessages.Any())
+{
+    <div class="alert alert-danger" style="margin-top: 20px;">
+        <ul>
+            @foreach (var error in errorMessages)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
 
 @code {
     private RegisterRequest registerModel = new();
+    private List<string> errorMessages = new();
 
     private async Task HandleRegistration()
     {
@@ -43,14 +59,29 @@
         {
             Console.WriteLine("Comienza el registro");
             var result = await AuthService.Register(registerModel);
-            if (result)
+            if (result.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/login");
+            }
+            else
+            {
+                var responseContent = await result.Content.ReadFromJsonAsync<ApiErrorResponse>();
+                if (responseContent != null && responseContent.Errors != null)
+                {
+                    errorMessages = responseContent.Errors.SelectMany(e => e.Value).ToList();
+                }
             }
         }
         catch (Exception ex)
         {
             // Manejar el error
         }
+    }
+    public class ApiErrorResponse
+    {
+        public string Type { get; set; }
+        public string Title { get; set; }
+        public int Status { get; set; }
+        public Dictionary<string, List<string>> Errors { get; set; }
     }
 }

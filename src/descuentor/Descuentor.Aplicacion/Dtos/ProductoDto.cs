@@ -7,7 +7,8 @@ public class ProductoDto
     public string Nombre { get; set; } = null!;
     public string Url { get; set; } = null!;
     public string TiendaNombre { get; set; } = null!;
-    public decimal? PrecioInical { get; set; }
+    public decimal? PrecioInicial { get; set; }
     public decimal? PrecioActual { get; set; }
+    public decimal? PorcentajeVariacion { get; set; }
     
 }

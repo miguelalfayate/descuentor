@@ -45,9 +45,10 @@ public class
                 Nombre = p.Nombre!,
                 Url = p.Url,
                 UrlImagen = p.UrlImagen!,
-                PrecioInical = p.PrecioInicial,
-                PrecioActual = p.HistorialPrecios?.FirstOrDefault()?.Precio ?? p.PrecioInicial,
-                TiendaNombre = p.TiendaOnline.Nombre! ?? "Sin tienda"
+                PrecioInicial = p.PrecioInicial,
+                PrecioActual = p.HistorialPrecios?.FirstOrDefault()!.Precio,
+                TiendaNombre = p.TiendaOnline.Nombre!,
+                PorcentajeVariacion = Math.Round(((p.HistorialPrecios?.FirstOrDefault()?.Precio ?? 0) - (p.PrecioInicial ?? 0)) / (p.PrecioInicial ?? 1) * 100, 2)
             }).ToList();
 
         return (productosVisualizacion, numeroRegistros);

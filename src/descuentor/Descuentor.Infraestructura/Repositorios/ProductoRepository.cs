@@ -30,9 +30,14 @@ public class ProductoRepository : IProductoRepository
         return await productos;
     }
 
-    public Task<Producto> GetByIdAsync(int id)
+    public async Task<Producto> ObtenerProductoConHistorialById(int id)
     {
-        throw new NotImplementedException();
+        var producto = await _context.Productos
+            .Include(p => p.TiendaOnline)
+            .Include(p => p.HistorialPrecios!.Take(50))
+            .FirstOrDefaultAsync(p => p.Id == id);
+        if (producto != null) return producto;
+        return new Producto();
     }
 
     public Task UpdateAsync(Producto producto)
@@ -85,16 +90,18 @@ public class ProductoRepository : IProductoRepository
             else if (campo == "precioactual")
             {
                 if (ordenAscendente)
-                    queryable = queryable.OrderBy(x => x.HistorialPrecios!.FirstOrDefault()!.Precio);
+                    //queryable = queryable.OrderBy(x => x.HistorialPrecios!.Select(hp => hp.Precio).FirstOrDefault());
+                    queryable = queryable.OrderBy(x => x.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio);
                 else
-                    queryable = queryable.OrderByDescending(x => x.HistorialPrecios!.FirstOrDefault()!.Precio);
+                    //queryable = queryable.OrderByDescending(x => x.HistorialPrecios!.Select(hp => hp.Precio).FirstOrDefault());
+                    queryable = queryable.OrderByDescending(x => x.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio);
             }
             else if (campo == "porcentajevariacion")
             {
                 if (ordenAscendente)
-                    queryable = queryable.OrderBy(x => (x.HistorialPrecios!.FirstOrDefault()!.Precio-x.PrecioInicial)/x.PrecioInicial);
+                    queryable = queryable.OrderBy(x => (x.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio-x.PrecioInicial)/x.PrecioInicial);
                 else
-                    queryable = queryable.OrderByDescending(x => (x.HistorialPrecios!.FirstOrDefault()!.Precio-x.PrecioInicial)/x.PrecioInicial);
+                    queryable = queryable.OrderByDescending(x => (x.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio-x.PrecioInicial)/x.PrecioInicial);
                 ;
             }
             // Si no coincide con ningún campo, queryable se queda sin cambios

@@ -7,7 +7,7 @@ public class ObtenerProductosPaginacionQuery(
 ) : IRequest<(List<ProductoDto>, int)>
 {
     public int Pagina { get; set; } = 1;
-    public int NumeroProductosPagina { get; set; } = 5;
+    public int NumeroProductosPagina { get; set; } = 10;
     public string? CampoOrden { get; set; } = null;
     public bool OrdenAscendente { get; set; } = true;
 }

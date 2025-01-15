@@ -1,0 +1,113 @@
+@page "/productos/editar/{id:int}"
+@using Descuentor.Aplicacion.Dtos
+@using System.Net.Http.Headers
+@using Descuentor.WebAssembly.Servicios
+@inject HttpClient Http
+@inject TokenService TokenService
+@inject NavigationManager Navigation
+
+<h3 class="text-center">Editar producto</h3>
+
+<br/>
+
+@if (producto == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <EditForm Model="producto" OnValidSubmit="GuardarProducto">
+                    <DataAnnotationsValidator/>
+                    <ValidationSummary/>
+
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <InputText id="nombre" class="form-control" @bind-Value="producto.Nombre"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <InputTextArea id="descripcion" class="form-control" @bind-Value="producto.Descripcion"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urlImagen" class="form-label">URL Imagen</label>
+                        <InputText id="urlImagen" class="form-control" @bind-Value="producto.UrlImagen"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="url" class="form-label">URL</label>
+                        <InputText id="url" class="form-control" @bind-Value="producto.Url"/>
+                    </div>
+                    <div class="mb-3 col-md-3">
+                        <label for="precioInicial" class="form-label">Precio Inicial</label>
+                        <InputNumber id="precioInicial" class="form-control" @bind-Value="producto.PrecioInicial"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" @onclick="Volver">Cancelar</button>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    private ProductoEditarDto? producto;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarProducto();
+    }
+
+    private async Task CargarProducto()
+    {
+        var accessToken = await TokenService.GetAccessTokenAsync();
+        var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:5095/api/productos/{id}");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+        
+        var response = await Http.SendAsync(request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var productoRespuesta = await response.Content.ReadFromJsonAsync<ProductoHistorialPreciosDto>();
+            Console.WriteLine(productoRespuesta!.Nombre);
+
+            producto = new ProductoEditarDto
+            {
+                Nombre = productoRespuesta.Nombre,
+                Descripcion = productoRespuesta.Descripcion,
+                UrlImagen = productoRespuesta.UrlImagen,
+                Url = productoRespuesta.Url,
+                PrecioInicial = productoRespuesta.PrecioInicial
+            };
+        }
+    }
+
+    private async Task GuardarProducto()
+    {
+        var accessToken = await TokenService.GetAccessTokenAsync();
+        var request = new HttpRequestMessage(HttpMethod.Put, $"http://localhost:5095/api/productos/{id}");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+        request.Content = JsonContent.Create(producto);
+
+        var response = await Http.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo($"/productos/ver/{id}");
+        }
+        else
+        {
+            // Manejar el error
+        }
+    }
+
+    private void Volver()
+    {
+        Navigation.NavigateTo($"/");
+    }
+
+}

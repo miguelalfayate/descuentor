@@ -18,12 +18,12 @@ public class AuthService : IAuthService
         _tokenService = tokenService;
     }
 
-    public async Task<bool> Register(RegisterRequest request)
+    public async Task<HttpResponseMessage> Register(RegisterRequest request)
     {
         Console.WriteLine("Request: " + request.ConfirmPassword);
         var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/identity/register", request);
         Console.WriteLine("Response: " + response);
-        return response.IsSuccessStatusCode;
+        return response;
     }
 
     public async Task<TokenResponse> Login(LoginRequest request)
@@ -42,5 +42,32 @@ public class AuthService : IAuthService
         }
         
         throw new Exception("Error en el login");
+    }
+    
+    public async Task<bool> RefreshTokenAsync()
+    {
+        var refreshToken = await _tokenService.GetRefreshTokenAsync();
+        var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/identity/refresh", new RefreshTokenRequest { RefreshToken = refreshToken! });
+        
+        if (response.IsSuccessStatusCode)
+        {
+            var authResponse = await response.Content.ReadFromJsonAsync<TokenResponse>();
+            
+            // Guardar tokens en localStorage
+            await _tokenService.SetTokensAsync(authResponse?.AccessToken!, authResponse?.RefreshToken!, authResponse.ExpiresIn);
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+        throw new Exception("Error al refrescar el token");
+    }
+    
+    public async Task Logout()
+    {
+        await _tokenService.RemoveTokensAsync();
     }
 }

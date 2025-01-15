@@ -5,23 +5,38 @@
 @inject NavigationManager Navigation
 @inject IAuthService AuthService
 
+@layout AuthLayout
 
-<h3>Login</h3>
+@* <div class="container"> *@
+@*     <div class="row justify-content-center"> *@
+@*         <div class="col-md-6"> *@
+@*             <div class="card mt-5"> *@
+@*                 <div class="card-body"> *@
 
-<EditForm Model="_loginRequest" OnValidSubmit="HandleLogin">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+<img src="logo.png" alt="Logo" style="height: 40px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto" />
+<h3 class="text-center" style="font-family: serif;">Login</h3>
 
-    <div>
-        <label for="email">Email:</label>
-        <InputText id="email" @bind-Value="_loginRequest.Email" />
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <InputText id="password" @bind-Value="_loginRequest.Password" type="password" />
-    </div>
-    <button type="submit">Login</button>
-</EditForm>
+                    <EditForm Model="_loginRequest" OnValidSubmit="HandleLogin">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <InputText id="email" class="form-control" @bind-Value="_loginRequest.Email" />
+                            <ValidationMessage For="@(() => _loginRequest.Email)" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <InputText id="password" class="form-control" @bind-Value="_loginRequest.Password" type="password" />
+                            <ValidationMessage For="@(() => _loginRequest.Password)" />
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <a href="/register" class="d-block text-center mt-3">¿No tienes una cuenta? Regístrate aquí</a>
+                    </EditForm>
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
 
 @code {
     private LoginRequest _loginRequest = new LoginRequest();
