@@ -8,25 +8,55 @@
         body {
             width: 300px;
             padding: 10px;
+            font-family: Arial, sans-serif;
         }
 
         button {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #logoutBtn {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        #logoutBtn:hover {
+            text-decoration: underline;
         }
 
         #result {
             margin-top: 10px;
             word-wrap: break-word;
         }
+
+        img {
+            display: block;
+            margin: 0 auto 10px;
+            width: 150px;
+        }
     </style>
 </head>
 
 <body>
-    <h3>Descuentor</h3>
+    <img src="logo.png" alt="Logo">
     <button id="captureBtn">Añadir a Lista de deseos</button>
-    <button id="logoutBtn">Logout</button>
+    <a id="logoutBtn" href="#">Salir</a>
     <div id="result"></div>
     <!-- Cargar scripts en orden -->
     <script src="storeConfigs.js"></script>
