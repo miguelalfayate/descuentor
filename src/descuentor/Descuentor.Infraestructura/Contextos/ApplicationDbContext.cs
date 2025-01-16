@@ -22,6 +22,12 @@ public class ApplicationDbContext : IdentityDbContext<UsuarioAplicacion, RolApli
         builder.ApplyConfiguration(new RolesSeed());
         builder.ApplyConfiguration(new UsuariosSeed());
         builder.ApplyConfiguration(new UsuariosRolesSeed());
+        
+        // Mapeo IUsuario a UsuarioAplicacion
+        builder.Entity<Producto>()
+            .HasOne(p => (UsuarioAplicacion)p.Usuario)
+            .WithMany()
+            .HasForeignKey(p => p.UsuarioAplicacionId);
     }
     
     public DbSet<Producto> Productos { get; set; }
