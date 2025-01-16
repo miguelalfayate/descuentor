@@ -9,14 +9,12 @@ public class CrearProductoCommandHandler : IRequestHandler<CrearProductoCommand,
 {
     private readonly IProductoRepository _productoRepository;
     private readonly IHistorialPrecioRepository _historialPrecioRepository;
-    private readonly IUsuarioProductoRepository _usuarioProductoRepository;
     private readonly ICurrentUser _currentUser;
 
-    public CrearProductoCommandHandler(IProductoRepository productoRepository, ICurrentUser currentUser, IUsuarioProductoRepository usuarioProductoRepository, IHistorialPrecioRepository historialPrecioRepository)
+    public CrearProductoCommandHandler(IProductoRepository productoRepository, ICurrentUser currentUser, IHistorialPrecioRepository historialPrecioRepository)
     {
         _productoRepository = productoRepository;
         _currentUser = currentUser;
-        _usuarioProductoRepository = usuarioProductoRepository;
         _historialPrecioRepository = historialPrecioRepository;
     }
 
@@ -46,16 +44,6 @@ public class CrearProductoCommandHandler : IRequestHandler<CrearProductoCommand,
         
         await _historialPrecioRepository.AddAsync(historialPrecio);
         
-        //var userId = _currentUser.Id;
-        if (userId != null)
-        {
-            var usuarioProducto = new UsuarioProducto
-            {
-                UsuarioAplicacionId = int.Parse(userId),
-                ProductoId = result.Id
-            };
-            await _usuarioProductoRepository.AddAsync(usuarioProducto);
-        }
         return result.Id;
     }
 }

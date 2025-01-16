@@ -55,7 +55,7 @@ public class ProductoRepository : IProductoRepository
         int idUsuario)
     {
         var queryable = _context.Productos
-            .Where(p => p.UsuariosMonitoreadores!.Any(up => up.UsuarioAplicacionId == idUsuario))
+            .Where(p => p.UsuarioAplicacionId == idUsuario)
             .Include(p => p.TiendaOnline)
             .Include(p => p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).Take(1))
             .AsQueryable();
@@ -127,8 +127,7 @@ public class ProductoRepository : IProductoRepository
         var productos = await _context.Productos
             .Where(p => p.PrecioInicial > p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio)
             .Include(p => p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).Take(1))
-            .Include(p => p.UsuariosMonitoreadores!)
-            .ThenInclude(p => p.UsuarioAplicacion)
+            .Include(p => p.Usuario)
             .ToListAsync();
         return productos;
     }

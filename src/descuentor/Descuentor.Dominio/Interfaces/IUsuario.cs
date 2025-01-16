@@ -8,5 +8,4 @@ public interface IUsuario
     public string Apellidos { get; set; }
     DateTime FechaCreacion { get; set; }
     public ICollection<UsuarioConfiguracion>? Configuraciones { get; set; }
-    public ICollection<UsuarioProducto>? ArticulosMonitoreados { get; set; }
 }

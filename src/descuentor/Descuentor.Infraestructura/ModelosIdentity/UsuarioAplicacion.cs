@@ -18,7 +18,5 @@ public class UsuarioAplicacion : IdentityUser<int>, IUsuario
     // Relación con ConfiguracionUsuario
     public ICollection<UsuarioConfiguracion>? Configuraciones { get; set; }
     
-    // Relación con UsuarioArticulo
-    public ICollection<UsuarioProducto>? ArticulosMonitoreados { get; set; }
 }
     

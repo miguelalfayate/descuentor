@@ -48,7 +48,6 @@ public static class DependencyInjection
         services.AddTransient<INotificacionDescuentosService, NotificacionDescuentosService>();
 
         services.AddScoped<IProductoRepository, ProductoRepository>();
-        services.AddScoped<IUsuarioProductoRepository, UsuarioProductoRepository>();
         services.AddScoped<IHistorialPrecioRepository, HistorialPrecioRepository>();
         return services;
     }

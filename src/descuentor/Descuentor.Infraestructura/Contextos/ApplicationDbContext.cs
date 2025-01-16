@@ -31,7 +31,6 @@ public class ApplicationDbContext : IdentityDbContext<UsuarioAplicacion, RolApli
     }
     
     public DbSet<Producto> Productos { get; set; }
-    public DbSet<UsuarioProducto> UsuariosProductos { get; set; }
     public DbSet<HistorialPrecio> HistorialesPrecio { get; set; }
     public DbSet<Configuracion> Configuraciones { get; set; }
     public DbSet<TiendaOnline> TiendasOnline { get; set; }
