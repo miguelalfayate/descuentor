@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Descuentor.API.Servicios;
 using Descuentor.Aplicacion;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Commands;
@@ -20,7 +21,15 @@ public class Program
         builder.Services.AddInfraestructura(builder.Configuration);
         builder.Services.AddAplicacion();
 
-        builder.Services.AddControllers();
+        builder.Services.AddControllers().AddJsonOptions(x =>
+        {
+
+            // ignore omitted parameters on models to enable optional params (e.g. User update)
+            //x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+            
+            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+
+        });
         builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CrearProductoCommandHandler).Assembly));
         
         builder.Services.AddScoped<ICurrentUser, CurrentUser>();
