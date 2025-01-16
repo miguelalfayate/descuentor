@@ -15,5 +15,5 @@ public interface IProductoRepository
         bool ordenAscendente,
         int idUsuario);
     Task<bool> EliminarProductoByIdAsync(int id);
-    Task<List<Producto>> ObtenerProductosConDescuentoAsync(Dictionary<int, decimal> historialPrecios);
+    Task< List<IGrouping<int,Producto>>> ObtenerProductosConDescuentoAsync(Dictionary<int, decimal> historialPrecios);
 }

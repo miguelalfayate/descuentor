@@ -43,11 +43,13 @@ public static class DependencyInjection
             .AddDefaultTokenProviders();
 
         services.AddTransient<IEmailSender<UsuarioAplicacion>, EmailSender>();
+        services.AddTransient<IEnvioEmailService, EnvioEmailService>();
         services.AddTransient<IScrapingService, ScrapingService>();
         services.AddTransient<ITiendaOnlineFactory, TiendaOnlineFactory>();
         services.AddTransient<INotificacionDescuentosService, NotificacionDescuentosService>();
 
         services.AddScoped<IProductoRepository, ProductoRepository>();
+        services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         services.AddScoped<IHistorialPrecioRepository, HistorialPrecioRepository>();
         return services;
     }

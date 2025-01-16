@@ -25,38 +25,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ApiErrorResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/CambioPasswordRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductosConDescuentoDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/UsuarioEditarDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/EliminarProductoCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/EliminarProductoCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/INotificacionDescuentosService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/UsuarioEditar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChromeExtension/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChromeExtension/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/popup.html" afterDir="false" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario">
+      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IEnvioEmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/EnvioEmailService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/INotificacionDescuentosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/INotificacionDescuentosService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20250116112704_Inicial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20250116112704_Inicial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Register.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Servicios/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Web/Servicios/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Home.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoEditar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoEditar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoVer.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoVer.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Register.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/EmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/ActualizarPreciosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ActualizarPreciosController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +75,34 @@
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Controllers/ClientesController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Entidades/Producto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Entidades/Producto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Interfaces/IProductoRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/DependencyInjection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/DependencyInjection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/InsercionesDatos/UsuariosSeed.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/ModelosIdentity/UsuarioAplicacion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Web/Components/Pages/Register.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Web/Servicios/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/Home.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/ProductoEditar.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/ProductoVer.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/Register.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ActualizarPreciosController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ActualizarPreciosController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ActualizarPreciosController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ProductosController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3ec93589f9c64e22b96b232895e2861031400/d2/5c48f7cd/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b3bca7808b94536956c535008df3fc6395000/02/32229b86/Expression.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c799c236b08a4458877f6ba872d7b92381000/eb/c34dea3b/IEmailSender`1.cs" root0="FORCE_HIGHLIGHTING" />
@@ -147,7 +160,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.BlazorApp1: http.executor": "Run",
     ".NET Launch Settings Profile.BlazorApp2: http.executor": "Run",
-    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Debug",
     ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
     ".NET Project.BlazorApp1.Client.executor": "Run",
@@ -436,7 +449,7 @@
       <workItem from="1736616633976" duration="32786000" />
       <workItem from="1736773259908" duration="45411000" />
       <workItem from="1736938396560" duration="7523000" />
-      <workItem from="1736954907749" duration="22148000" />
+      <workItem from="1736954907749" duration="37796000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -550,7 +563,135 @@
       <option name="project" value="LOCAL" />
       <updated>1736941021259</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Mejora visual de los elementos de la extensión de Chrome">
+      <option name="closed" value="true" />
+      <created>1737030988776</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1737030988776</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Se añaden las funcionalidades de eliminar y modificar producto">
+      <option name="closed" value="true" />
+      <created>1737031172097</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031172097</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Se crean los archivos necesarios para notificar los descuentos por email">
+      <option name="closed" value="true" />
+      <created>1737031247004</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031247004</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Se añade el servicio de notificación de descuentos">
+      <option name="closed" value="true" />
+      <created>1737031285223</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031285223</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Cambios a proyecto Descuentor.Web descartado">
+      <option name="closed" value="true" />
+      <created>1737031388716</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031388716</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Página de edición de producto añadida">
+      <option name="closed" value="true" />
+      <created>1737031436714</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031436714</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Se añade el dto ApiErrorResponse">
+      <option name="closed" value="true" />
+      <created>1737031497722</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031497722</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Cambio en TiendaNombre del dto ProductoHistorialPreciosDto">
+      <option name="closed" value="true" />
+      <created>1737031576614</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031576614</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Cambios varios">
+      <option name="closed" value="true" />
+      <created>1737031596862</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031596862</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Se añade opción para que se ignoren la referencias circulares en Entity">
+      <option name="closed" value="true" />
+      <created>1737031644681</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031644681</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Se crean dtos para la edición de datos de usuarios">
+      <option name="closed" value="true" />
+      <created>1737031728568</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031728568</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Se añade CrearProductoCommandHandler el usuario id en el producto">
+      <option name="closed" value="true" />
+      <created>1737031802735</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031802735</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Se cambia ApplicationDbContext para mapear IUsuario a UsuarioAplicacion">
+      <option name="closed" value="true" />
+      <created>1737031836705</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031836705</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Con este cambio ya se incluye contraseña a los usuarios por defecto">
+      <option name="closed" value="true" />
+      <created>1737031870324</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031870324</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Se eliminan las migraciones y se comienza con una nueva base de datos">
+      <option name="closed" value="true" />
+      <created>1737031899940</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1737031899940</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario">
+      <option name="closed" value="true" />
+      <created>1737032996168</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1737032996168</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,11 +701,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core" />
-    <MESSAGE value="Se añade la inserción de datos de 2 usuarios y sus respectivos roles: admin y user1" />
-    <MESSAGE value="Se implementa la inserción de productos y se vinculan con un usuario" />
-    <MESSAGE value="Extensión de Chrome toma datos de Wallapop y Amazon.es y los envía a través de una llamada POST a la API correctamente" />
-    <MESSAGE value="Se habilita el endpoint ActualizarPrecios para poder activar el scraper y añada a la Base de datos los precios de los productos" />
     <MESSAGE value="Se añade el proyecto Descuentor.Web que corresponde a la página de la Blazor" />
     <MESSAGE value="Se añade el proyecto de la página web. Se crean las páginas de login, que guarda los tokens de respuesta de la API en el localStorage del navegador, y la página de registro." />
     <MESSAGE value="Añadida la lógica del back para recuperar los productos en el front" />
@@ -574,6 +710,22 @@
     <MESSAGE value="Se exponen todos los headers a las llamadas a la API" />
     <MESSAGE value="Se añade página para ver productos individuales" />
     <MESSAGE value="Añadidos recursos gráficos, mejora de la logueo de usuarios en la web" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadidos recursos gráficos, mejora de la logueo de usuarios en la web" />
+    <MESSAGE value="Mejora visual de los elementos de la extensión de Chrome" />
+    <MESSAGE value="Se añaden las funcionalidades de eliminar y modificar producto" />
+    <MESSAGE value="Se crean los archivos necesarios para notificar los descuentos por email" />
+    <MESSAGE value="Se añade el servicio de notificación de descuentos" />
+    <MESSAGE value="Cambios a proyecto Descuentor.Web descartado" />
+    <MESSAGE value="Página de edición de producto añadida" />
+    <MESSAGE value="Se añade el dto ApiErrorResponse" />
+    <MESSAGE value="Cambio en TiendaNombre del dto ProductoHistorialPreciosDto" />
+    <MESSAGE value="Cambios varios" />
+    <MESSAGE value="Se añade opción para que se ignoren la referencias circulares en Entity" />
+    <MESSAGE value="Se crean dtos para la edición de datos de usuarios" />
+    <MESSAGE value="Se añade CrearProductoCommandHandler el usuario id en el producto" />
+    <MESSAGE value="Se cambia ApplicationDbContext para mapear IUsuario a UsuarioAplicacion" />
+    <MESSAGE value="Con este cambio ya se incluye contraseña a los usuarios por defecto" />
+    <MESSAGE value="Se eliminan las migraciones y se comienza con una nueva base de datos" />
+    <MESSAGE value="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario" />
   </component>
 </project>

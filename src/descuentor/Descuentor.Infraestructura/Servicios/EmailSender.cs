@@ -1,4 +1,6 @@
 
+using System.Net;
+using System.Net.Mail;
 using Descuentor.Infraestructura.ModelosIdentity;
 using Microsoft.AspNetCore.Identity;
 
@@ -8,7 +10,19 @@ namespace Descuentor.Infraestructura.Servicios
     {
         public Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            // Implementa el envío de correo electrónico aquí
+            // var mail = "fedlop002@gmail.com";
+            // var pwd = "GRD!^9Jp2KuB";
+            //
+            // var client = new SmtpClient("smtp.gmail.com", 587)
+            // {
+            //     Credentials = new NetworkCredential(mail, pwd),
+            //     EnableSsl = true
+            // };
+            // return client.SendMailAsync(new MailMessage(from: mail,
+            //     to: email,
+            //     subject: subject,
+            //     body: htmlMessage
+            // ));
             return Task.CompletedTask;
         }
 

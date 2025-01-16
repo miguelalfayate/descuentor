@@ -1,4 +1,5 @@
 using Descuentor.Aplicacion.Funcionalidades.HistorialPrecios.Commands;
+using Descuentor.Aplicacion.Funcionalidades.NotificacionDescuentos.Commands;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Queries;
 using Descuentor.Aplicacion.Funcionalidades.Scraper.Commands;
 using MediatR;
@@ -26,7 +27,15 @@ public class ActualizarPreciosController : ControllerBase
 
         var preciosScrape = await _mediator.Send(new ObtenerPreciosScrapeCommand(productosUrls));
         
+        // Dictionary<int, decimal> preciosScrape = new();
+        // preciosScrape.Add(49, 220);
+        // preciosScrape.Add(47, 250);
+        // preciosScrape.Add(50, 10);
+        // preciosScrape.Add(51, 100);
+        
         var precios = await _mediator.Send(new CrearHistorialPreciosCommand(preciosScrape));
+        
+        var emailsEnviados = await _mediator.Send(new NotificacionDescuentosCommand(preciosScrape));
         
         return Ok(preciosScrape);
     }

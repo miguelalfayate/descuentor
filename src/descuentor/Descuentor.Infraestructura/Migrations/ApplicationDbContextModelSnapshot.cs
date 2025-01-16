@@ -158,32 +158,6 @@ namespace Descuentor.Infraestructura.Migrations
                     b.ToTable("UsuariosConfiguraciones");
                 });
 
-            modelBuilder.Entity("Descuentor.Dominio.Entidades.UsuarioProducto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("FechaInicioMonitoreo")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("ProductoId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UsuarioAplicacionId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductoId");
-
-                    b.HasIndex("UsuarioAplicacionId");
-
-                    b.ToTable("UsuariosProductos");
-                });
-
             modelBuilder.Entity("Descuentor.Infraestructura.ModelosIdentity.RolAplicacion", b =>
                 {
                     b.Property<int>("Id")
@@ -309,10 +283,10 @@ namespace Descuentor.Infraestructura.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3c3242e0-c384-4388-994d-9c8f8d9087ef",
+                            ConcurrencyStamp = "269ab1bd-8f34-4d25-b089-e49af4d62c28",
                             Email = "admin@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2025, 1, 16, 11, 27, 3, 526, DateTimeKind.Utc).AddTicks(4220),
+                            FechaCreacion = new DateTime(2025, 1, 16, 13, 2, 44, 461, DateTimeKind.Utc).AddTicks(4820),
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DOMAIN.COM",
                             NormalizedUserName = "ADMIN@DOMAIN.COM",
@@ -324,10 +298,10 @@ namespace Descuentor.Infraestructura.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f46563fb-7cfd-44ff-b89c-43c721a282c8",
+                            ConcurrencyStamp = "ced706e8-7d67-4d07-bc70-74dfd4afd39c",
                             Email = "user1@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2025, 1, 16, 11, 27, 3, 526, DateTimeKind.Utc).AddTicks(4290),
+                            FechaCreacion = new DateTime(2025, 1, 16, 13, 2, 44, 461, DateTimeKind.Utc).AddTicks(4900),
                             LockoutEnabled = false,
                             NormalizedEmail = "USER1@DOMAIN.COM",
                             NormalizedUserName = "USER1@DOMAIN.COM",
@@ -497,23 +471,6 @@ namespace Descuentor.Infraestructura.Migrations
                     b.Navigation("Configuracion");
                 });
 
-            modelBuilder.Entity("Descuentor.Dominio.Entidades.UsuarioProducto", b =>
-                {
-                    b.HasOne("Descuentor.Dominio.Entidades.Producto", "Producto")
-                        .WithMany("UsuariosMonitoreadores")
-                        .HasForeignKey("ProductoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Descuentor.Infraestructura.ModelosIdentity.UsuarioAplicacion", null)
-                        .WithMany("ArticulosMonitoreados")
-                        .HasForeignKey("UsuarioAplicacionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Producto");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Descuentor.Infraestructura.ModelosIdentity.RolAplicacion", null)
@@ -568,8 +525,6 @@ namespace Descuentor.Infraestructura.Migrations
             modelBuilder.Entity("Descuentor.Dominio.Entidades.Producto", b =>
                 {
                     b.Navigation("HistorialPrecios");
-
-                    b.Navigation("UsuariosMonitoreadores");
                 });
 
             modelBuilder.Entity("Descuentor.Dominio.Entidades.TiendaOnline", b =>
@@ -579,8 +534,6 @@ namespace Descuentor.Infraestructura.Migrations
 
             modelBuilder.Entity("Descuentor.Infraestructura.ModelosIdentity.UsuarioAplicacion", b =>
                 {
-                    b.Navigation("ArticulosMonitoreados");
-
                     b.Navigation("Configuraciones");
                 });
 #pragma warning restore 612, 618

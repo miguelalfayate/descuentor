@@ -122,12 +122,15 @@ public class ProductoRepository : IProductoRepository
         return eliminacion > 0;
     }
 
-    public async Task<List<Producto>> ObtenerProductosConDescuentoAsync(Dictionary<int, decimal> historialPrecios)
+    public async Task< List<IGrouping<int,Producto>>> ObtenerProductosConDescuentoAsync(Dictionary<int, decimal> historialPrecios)
     {
         var productos = await _context.Productos
-            .Where(p => p.PrecioInicial > p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio)
+            .Where(p => historialPrecios.Keys.Contains(p.Id))
+            .Where(p => p.PrecioInicial > p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio
+            && p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio > 0)
             .Include(p => p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).Take(1))
             .Include(p => p.Usuario)
+            .GroupBy(p => p.UsuarioAplicacionId)
             .ToListAsync();
         return productos;
     }

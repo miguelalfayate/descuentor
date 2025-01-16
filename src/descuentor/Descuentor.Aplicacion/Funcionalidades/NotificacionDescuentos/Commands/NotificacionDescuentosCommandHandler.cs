@@ -18,8 +18,22 @@ public class NotificacionDescuentosCommandHandler : IRequestHandler<Notificacion
     public async Task<int> Handle(NotificacionDescuentosCommand request, CancellationToken cancellationToken)
     {
         var listaProductos = await _productoRepository.ObtenerProductosConDescuentoAsync(request.HistorialPrecios);
+
+        var numeroEmailsEnviados = 0;
         
+        foreach (var grupo in listaProductos)
+        {
+            var clienteId = grupo.Key;
+            var productosCliente = grupo.ToList();
+            
+            var seEnviaEmail = await _notificacionDescuentosService.NotificarDescuentoEmailAsync(clienteId, productosCliente);
+
+            if (seEnviaEmail)
+            {
+                numeroEmailsEnviados++;
+            }
+        }
         
-        return listaProductos.Count;
+        return numeroEmailsEnviados;
     }
 }
