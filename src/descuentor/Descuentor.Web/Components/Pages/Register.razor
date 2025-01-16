@@ -45,7 +45,7 @@
         {
             Console.WriteLine("Comienza el registro");
             var result = await AuthService.Register(registerModel);
-            if (result)
+            if (result.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/login");
             }

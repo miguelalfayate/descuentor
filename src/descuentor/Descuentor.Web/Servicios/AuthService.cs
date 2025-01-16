@@ -25,6 +25,11 @@ public class AuthService : IAuthService
         return response.IsSuccessStatusCode;
     }
 
+    Task<HttpResponseMessage> IAuthService.Register(RegisterRequest request)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<TokenResponse> Login(LoginRequest request)
     {
         var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/identity/login", request);
@@ -44,5 +49,15 @@ public class AuthService : IAuthService
         }
         
         throw new Exception("Error en el login");
+    }
+
+    public Task<bool> RefreshTokenAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Logout()
+    {
+        throw new NotImplementedException();
     }
 }
