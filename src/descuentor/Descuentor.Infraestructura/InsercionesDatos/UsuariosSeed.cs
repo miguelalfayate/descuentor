@@ -39,13 +39,13 @@ public class UsuariosSeed : IEntityTypeConfiguration<UsuarioAplicacion>
     {
         var userManager = serviceProvider.GetRequiredService<UserManager<UsuarioAplicacion>>();
 
-        var adminUser = await userManager.FindByNameAsync("admin");
+        var adminUser = await userManager.FindByNameAsync("admin@domain.com");
         if (adminUser != null)
         {
             await userManager.AddPasswordAsync(adminUser, "Admin1234!");
         }
 
-        var normalUser = await userManager.FindByNameAsync("user1");
+        var normalUser = await userManager.FindByNameAsync("user1@domain.com");
         if (normalUser != null)
         {
                 await userManager.AddPasswordAsync(normalUser, "User1234!");
