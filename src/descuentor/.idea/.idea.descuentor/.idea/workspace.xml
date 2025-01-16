@@ -26,29 +26,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/RefreshTokenRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Layout/AuthLayout.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoEditar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChromeExtension/icon128.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/icon128.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChromeExtension/icon48.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/icon48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ApiErrorResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/CambioPasswordRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductosConDescuentoDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/UsuarioEditarDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/EliminarProductoCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/EliminarProductoCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/INotificacionDescuentosService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/UsuarioEditar.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChromeExtension/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChromeExtension/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/popup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Interfaces/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Descuentor.WebAssembly.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Descuentor.WebAssembly.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Register.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Servicios/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Web/Servicios/AuthService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Home.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoEditar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoEditar.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoVer.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoVer.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Register.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/icon-192.png" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/icon-192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/ActualizarPreciosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ActualizarPreciosController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ProductosController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descuentor.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,10 +87,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Controllers/ClientesController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Startup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3ec93589f9c64e22b96b232895e2861031400/d2/5c48f7cd/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b3bca7808b94536956c535008df3fc6395000/02/32229b86/Expression.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c799c236b08a4458877f6ba872d7b92381000/eb/c34dea3b/IEmailSender`1.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,6 +116,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a314ee147e1b172ae5fbc0b477aa7acbe6a3f2e07ab946ed05be04ed58b67/String.Comparison.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a7d079cdbfc06e921c4d8ab124b11aaa54632e5564af0e8f231963c3c989b96/AuthorizeView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b90d6b47d6330753e855af18818b97d4207f32c6ee4b793faffc029f069f4/String.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0fc52f29843d641f5bef4026ab9fddbafe649d2ce919dc82338413b9723f/AuthenticationState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c69576b4a074ad2839225611609498e344b7e2819997af48dbb2d2f8257f3/EntityFrameworkQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d66f12f9433816a8c7dc1b2acb9e1010f5418f5eeb51e8f1df57aa1dcab8d8a/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
@@ -135,32 +143,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.BlazorApp1: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.BlazorApp2: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Descuentor.API: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Descuentor.Web: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Descuentor.WebAssembly: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.BlazorApp1.Client.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Descuentor.Web.Client.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Descuentor.Web.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Scraper.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.Descuentor.Web/Dockerfile build.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.BlazorApp1: http.executor": "Run",
+    ".NET Launch Settings Profile.BlazorApp2: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
+    ".NET Project.BlazorApp1.Client.executor": "Run",
+    ".NET Project.Descuentor.Web.Client.executor": "Run",
+    ".NET Project.Descuentor.Web.executor": "Run",
+    ".NET Project.Scraper.executor": "Run",
+    "Docker.Descuentor.Web/Dockerfile build.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.WebAssembly: http">
+}]]></component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.API: http">
     <configuration name="BlazorApp1: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -427,7 +435,8 @@
       <workItem from="1736527298630" duration="25837000" />
       <workItem from="1736616633976" duration="32786000" />
       <workItem from="1736773259908" duration="45411000" />
-      <workItem from="1736938396560" duration="2215000" />
+      <workItem from="1736938396560" duration="7523000" />
+      <workItem from="1736954907749" duration="22148000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -533,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736870483956</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Añadidos recursos gráficos, mejora de la logueo de usuarios en la web">
+      <option name="closed" value="true" />
+      <created>1736941021258</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1736941021259</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,25 +573,7 @@
     <MESSAGE value="Si no hay PrecioActual en productoDto que se inicie con PrecioInical" />
     <MESSAGE value="Se exponen todos los headers a las llamadas a la API" />
     <MESSAGE value="Se añade página para ver productos individuales" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se añade página para ver productos individuales" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs</url>
-          <line>54</line>
-          <properties documentPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" containingFunctionPresentation="Method 'ObtenerProductosPaginacionConId'">
-            <startOffsets>
-              <option value="1626" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1925" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Añadidos recursos gráficos, mejora de la logueo de usuarios en la web" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadidos recursos gráficos, mejora de la logueo de usuarios en la web" />
   </component>
 </project>
