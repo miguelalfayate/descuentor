@@ -45,6 +45,7 @@ public static class DependencyInjection
         services.AddTransient<IEmailSender<UsuarioAplicacion>, EmailSender>();
         services.AddTransient<IScrapingService, ScrapingService>();
         services.AddTransient<ITiendaOnlineFactory, TiendaOnlineFactory>();
+        services.AddTransient<INotificacionDescuentosService, NotificacionDescuentosService>();
 
         services.AddScoped<IProductoRepository, ProductoRepository>();
         services.AddScoped<IUsuarioProductoRepository, UsuarioProductoRepository>();
