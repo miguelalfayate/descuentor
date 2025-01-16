@@ -1,0 +1,148 @@
+@page "/usuario/editar"
+@using Descuentor.Aplicacion.Dtos
+@using Descuentor.Aplicacion.Interfaces
+@using Descuentor.WebAssembly.Servicios
+@using System.Net.Http
+@using System.Text.Json
+
+@inject IAuthService AuthService
+@inject NavigationManager NavigationManager
+@inject HttpClient Http
+@inject TokenService TokenService
+
+<h3 class="text-center">Editar Usuario</h3>
+
+<!-- Formulario para editar información personal -->
+<EditForm Model="@usuarioEditarDto" OnValidSubmit="UsuarioEditarManejador">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <InputText @bind-Value="usuarioEditarDto.Nombre" class="form-control" />
+        <ValidationMessage For="@(() => usuarioEditarDto.Nombre)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="apellidos" class="form-label">Apellidos:</label>
+        <InputText @bind-Value="usuarioEditarDto.Apellidos" class="form-control" />
+        <ValidationMessage For="@(() => usuarioEditarDto.Apellidos)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Número de Teléfono:</label>
+        <InputText @bind-Value="usuarioEditarDto.Telefono" class="form-control" />
+        <ValidationMessage For="@(() => usuarioEditarDto.Telefono)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100" style="margin-top: 20px;">Guardar</button>
+</EditForm>
+
+@if (errorMessages.Any())
+{
+    <div class="alert alert-danger" style="margin-top: 20px;">
+        <ul>
+            @foreach (var error in errorMessages)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+
+<hr />
+
+<!-- Formulario para cambiar la contraseña -->
+<EditForm Model="@cambioPasswordRequest" OnValidSubmit="CambioPasswordManejador">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="oldPassword" class="form-label">Contraseña Antigua:</label>
+        <InputText type="password" @bind-Value="cambioPasswordRequest.OldPassword" class="form-control" />
+        <ValidationMessage For="@(() => cambioPasswordRequest.OldPassword)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="newPassword" class="form-label">Nueva Contraseña:</label>
+        <InputText type="password" @bind-Value="cambioPasswordRequest.NewPassword" class="form-control" />
+        <ValidationMessage For="@(() => cambioPasswordRequest.NewPassword)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="confirmNewPassword" class="form-label">Confirmar Nueva Contraseña:</label>
+        <InputText type="password" @bind-Value="cambioPasswordRequest.ConfirmPassword" class="form-control" />
+        <ValidationMessage For="@(() => cambioPasswordRequest.ConfirmPassword)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100" style="margin-top: 20px;">Cambiar Contraseña</button>
+</EditForm>
+
+@if (errorMessages.Any())
+{
+    <div class="alert alert-danger" style="margin-top: 20px;">
+        <ul>
+            @foreach (var error in errorMessages)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+
+@code {
+    private UsuarioEditarDto usuarioEditarDto = new();
+    private CambioPasswordRequest cambioPasswordRequest = new();
+    private List<string> errorMessages = new();
+
+    private async Task UsuarioEditarManejador()
+    {
+        var accessToken = await TokenService.GetAccessTokenAsync();
+
+        if (!string.IsNullOrEmpty(accessToken))
+        {
+            var result = await Http.PostAsJsonAsync("http://localhost:5095/api/usuarios", usuarioEditarDto);
+            if (result.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                var responseContent = await result.Content.ReadFromJsonAsync<ApiErrorResponse>();
+                if (responseContent != null && responseContent.Errors != null)
+                {
+                    errorMessages = responseContent.Errors.SelectMany(e => e.Value).ToList();
+                }
+            }
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/login");
+        }
+
+    }
+
+    private async Task CambioPasswordManejador()
+    {
+        try
+        {
+            var result = await Http.PostAsJsonAsync("http://localhost:5095/identity/manage/info", usuarioEditarDto);
+            if (result.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                var responseContent = await result.Content.ReadFromJsonAsync<ApiErrorResponse>();
+                if (responseContent != null && responseContent.Errors != null)
+                {
+                    errorMessages = responseContent.Errors.SelectMany(e => e.Value).ToList();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Manejar el error
+        }
+    }
+}
