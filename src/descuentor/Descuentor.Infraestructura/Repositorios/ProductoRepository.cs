@@ -40,9 +40,11 @@ public class ProductoRepository : IProductoRepository
         return new Producto();
     }
 
-    public Task UpdateAsync(Producto producto)
+    public async Task<int> UpdateAsync(Producto producto)
     {
-        throw new NotImplementedException();
+        _context.Productos.Update(producto);
+        var actualizacion = await _context.SaveChangesAsync();
+        return actualizacion;
     }
 
     public async Task<(List<Producto> Productos, int TotalRegistros)> ObtenerProductosPaginacionConId(
@@ -109,5 +111,25 @@ public class ProductoRepository : IProductoRepository
         
         var productos = await queryable.Paginar(cantidadRegistros, pagina).ToListAsync();
         return (productos, totalRegistros);
+    }
+
+    public async Task<bool> EliminarProductoByIdAsync(int id)
+    {
+        var producto = await _context.Productos.Where(p => p.Id == id).FirstOrDefaultAsync();
+        _context.Productos.Remove(producto!);
+        
+        var eliminacion = await _context.SaveChangesAsync();
+        return eliminacion > 0;
+    }
+
+    public async Task<List<Producto>> ObtenerProductosConDescuentoAsync(Dictionary<int, decimal> historialPrecios)
+    {
+        var productos = await _context.Productos
+            .Where(p => p.PrecioInicial > p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).FirstOrDefault()!.Precio)
+            .Include(p => p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).Take(1))
+            .Include(p => p.UsuariosMonitoreadores!)
+            .ThenInclude(p => p.UsuarioAplicacion)
+            .ToListAsync();
+        return productos;
     }
 }

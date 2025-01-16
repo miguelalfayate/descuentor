@@ -65,25 +65,34 @@ else
     private async Task CargarProducto()
     {
         var accessToken = await TokenService.GetAccessTokenAsync();
-        var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:5095/api/productos/{id}");
-        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
         
-        var response = await Http.SendAsync(request);
-
-        if (response.IsSuccessStatusCode)
+        if (!string.IsNullOrEmpty(accessToken))
         {
-            var productoRespuesta = await response.Content.ReadFromJsonAsync<ProductoHistorialPreciosDto>();
-            Console.WriteLine(productoRespuesta!.Nombre);
+            var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:5095/api/productos/{id}");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            
+            var response = await Http.SendAsync(request);
 
-            producto = new ProductoEditarDto
+            if (response.IsSuccessStatusCode)
             {
-                Nombre = productoRespuesta.Nombre,
-                Descripcion = productoRespuesta.Descripcion,
-                UrlImagen = productoRespuesta.UrlImagen,
-                Url = productoRespuesta.Url,
-                PrecioInicial = productoRespuesta.PrecioInicial
-            };
+                var productoRespuesta = await response.Content.ReadFromJsonAsync<ProductoHistorialPreciosDto>();
+                Console.WriteLine(productoRespuesta!.Nombre);
+
+                producto = new ProductoEditarDto
+                {
+                    Nombre = productoRespuesta.Nombre,
+                    Descripcion = productoRespuesta.Descripcion,
+                    TiendaOnlineId = productoRespuesta.Tienda.Id,
+                    UrlImagen = productoRespuesta.UrlImagen,
+                    Url = productoRespuesta.Url,
+                    PrecioInicial = productoRespuesta.PrecioInicial
+                    
+                };
+            }
+        }
+        else
+        {
+            Navigation.NavigateTo("/login");
         }
     }
 

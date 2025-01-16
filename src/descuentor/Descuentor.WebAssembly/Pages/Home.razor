@@ -7,6 +7,7 @@
 
 @inject HttpClient Http
 @inject TokenService TokenService
+@inject IJSRuntime JsRuntime
 
 
 <PageTitle>Descuentor</PageTitle>
@@ -19,116 +20,125 @@
 else
 {
     <h1 style="font-family: serif; text-align: center; margin-top: 20px">Lista de deseos</h1>
-    <h4 style="font-family: serif; text-align: center;">Puedes navegar por los productos, verlos, modificarlos o eliminarlos.</h4>
+    <h4 style="font-family: serif; text-align: center;">Puedes navegar por los productos, verlos, modificarlos o
+        eliminarlos.</h4>
     <div class="container d-flex justify-content-center" style="margin-top: 20px">
         <div class="row justify-content-center">
-                <table class="table table-striped align-middle table-bordered rounded">
-                    <thead class="table-danger">
-                        <tr>
-                            <th class="align-middle">Foto</th>
-                            <th class="align-middle">
-                                <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1" @onclick="() => OrdenarPor(campoNombre)">
-                                    <span style="font-weight:700">Nombre</span>
-                                    @if (campoOrdenamiento == campoNombre)
-                                    {
-                                        <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
-                                    }
-                                </button>
-                            </th>
-                            <th class="align-middle">
-                                <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1" @onclick="() => OrdenarPor(campoTienda)">
-                                    <span style="font-weight:700">Tienda</span>
-                                    @if (campoOrdenamiento == campoTienda)
-                                    {
-                                        <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
-                                    }
-                                </button>
-                            </th>
-                            <th class="align-middle">
-                                <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1" @onclick="() => OrdenarPor(campoPrecioInicial)">
-                                    <span style="font-weight:700">Precio Inicial</span>
-                                    @if (campoOrdenamiento == campoPrecioInicial)
-                                    {
-                                        <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
-                                    }
-                                </button>
-                            </th>
-                            <th class="align-middle">
-                                <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1" @onclick="() => OrdenarPor(campoPrecioActual)">
-                                    <span style="font-weight:700">Precio Actual</span>
-                                    @if (campoOrdenamiento == campoPrecioActual)
-                                    {
-                                        <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
-                                    }
-                                </button>
-                            </th>
-                            <th class="align-middle">
-                                <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1" @onclick="() => OrdenarPor(campoPorcentajeVariacion)">
-                                    <span style="font-weight:700">% de variación</span>
-                                    @if (campoOrdenamiento == campoPorcentajeVariacion)
-                                    {
-                                        <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
-                                    }
-                                    else
-                                    {
-                                        <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
-                                    }
-                                </button>
-                            </th>
-                            <th class="align-middle">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for (int i = 0; i < listaProductos!.Count; i++)
-                        {
-                            var producto = listaProductos[i];
-                            <tr>
-                                <td><img src="@producto.UrlImagen" style="width: 100px; height: 100px; object-fit: cover;" /></td>
-                                <td>@producto.Nombre</td>
-                                <td>@producto.TiendaNombre</td>
-                                <td>@producto.PrecioInicial €</td>
-                                <td>@producto.PrecioActual €</td>
-                                <td style="color: @(producto.PrecioActual > producto.PrecioInicial ? "red" : producto.PrecioActual < producto.PrecioInicial ? "green" : "black")">
-                                    @Math.Round(producto.PorcentajeVariacion!.Value, 1)%
-                                </td>
-                                <td>
-                                    <div class="text-center d-flex justify-content-center gap-2">
-                                        
-                                        <a href="/productos/ver/@producto.Id" class="btn btn-success rounded-circle mx-1" role="button">
-                                            <i class="bi bi-eye"></i>
-                                        </a>
-                                        <a href="/productos/editar/@producto.Id" class="btn btn-warning rounded-circle mx-1" role="button">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                        <a href="/productos/eliminar/@producto.Id" class="btn btn-danger rounded-circle mx-1" role="button" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
+            <table class="table table-striped align-middle table-bordered rounded">
+                <thead class="table-danger">
+                <tr>
+                    <th class="align-middle">Foto</th>
+                    <th class="align-middle">
+                        <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1"
+                                @onclick="() => OrdenarPor(campoNombre)">
+                            <span style="font-weight:700">Nombre</span>
+                            @if (campoOrdenamiento == campoNombre)
+                            {
+                                <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
+                            }
+                        </button>
+                    </th>
+                    <th class="align-middle">
+                        <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1"
+                                @onclick="() => OrdenarPor(campoTienda)">
+                            <span style="font-weight:700">Tienda</span>
+                            @if (campoOrdenamiento == campoTienda)
+                            {
+                                <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
+                            }
+                        </button>
+                    </th>
+                    <th class="align-middle">
+                        <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1"
+                                @onclick="() => OrdenarPor(campoPrecioInicial)">
+                            <span style="font-weight:700">Precio Inicial</span>
+                            @if (campoOrdenamiento == campoPrecioInicial)
+                            {
+                                <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
+                            }
+                        </button>
+                    </th>
+                    <th class="align-middle">
+                        <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1"
+                                @onclick="() => OrdenarPor(campoPrecioActual)">
+                            <span style="font-weight:700">Precio Actual</span>
+                            @if (campoOrdenamiento == campoPrecioActual)
+                            {
+                                <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
+                            }
+                        </button>
+                    </th>
+                    <th class="align-middle">
+                        <button class="btn btn-link text-dark text-decoration-none d-flex align-items-center gap-1"
+                                @onclick="() => OrdenarPor(campoPorcentajeVariacion)">
+                            <span style="font-weight:700">% de variación</span>
+                            @if (campoOrdenamiento == campoPorcentajeVariacion)
+                            {
+                                <i class="bi @(ordenAscendente ? "bi-arrow-up" : "bi-arrow-down")"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-arrow-down-up text-muted" style="opacity: 0.5;"></i>
+                            }
+                        </button>
+                    </th>
+                    <th class="align-middle">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                @for (int i = 0; i < listaProductos!.Count; i++)
+                {
+                    var producto = listaProductos[i];
+                    <tr>
+                        <td><img src="@producto.UrlImagen" style="width: 100px; height: 100px; object-fit: cover;"/>
+                        </td>
+                        <td>@producto.Nombre</td>
+                        <td>@producto.TiendaNombre</td>
+                        <td>@producto.PrecioInicial €</td>
+                        <td>@producto.PrecioActual €</td>
+                        <td style="color: @(producto.PrecioActual > producto.PrecioInicial ? "red" : producto.PrecioActual < producto.PrecioInicial ? "green" : "black")">
+                            @Math.Round(producto.PorcentajeVariacion!.Value, 1)%
+                        </td>
+                        <td>
+                            <div class="text-center d-flex justify-content-center gap-2">
 
+                                <a href="/productos/ver/@producto.Id" class="btn btn-success rounded-circle mx-1"
+                                   role="button">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a href="/productos/editar/@producto.Id" class="btn btn-warning rounded-circle mx-1"
+                                   role="button">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="#" class="btn btn-danger rounded-circle mx-1" role="button"
+                                   @onclick="() => ConfirmarEliminacion(producto.Id)">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
     <!-- Componente de paginación -->
@@ -227,7 +237,7 @@ else
 
         // Realiza la solicitud para obtener la lista de productos
         var accessToken = await TokenService.GetAccessTokenAsync();
-        
+
         if (!string.IsNullOrEmpty(accessToken))
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
@@ -240,9 +250,36 @@ else
                 listaProductos = await response.Content.ReadFromJsonAsync<List<ProductoDto>>();
                 paginasTotales = response.Headers.TryGetValues("Totalpaginas", out var valores) ? int.Parse(valores.FirstOrDefault()!) : 1;
             }
-
-            
         }
-           }
+    }
+    
+    private async Task ConfirmarEliminacion(int productoId)
+    {
+        if (await JsRuntime.InvokeAsync<bool>("confirm", "¿Estás seguro de que deseas eliminar este producto?"))
+        {
+            await EliminarProducto(productoId);
+        }
+    }
+    
+    private async Task EliminarProducto(int productoId)
+    {
+        var accessToken = await TokenService.GetAccessTokenAsync();
+        if (!string.IsNullOrEmpty(accessToken))
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"http://localhost:5095/api/productos/{productoId}");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+            var response = await Http.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                // Recargar la lista de productos después de la eliminación
+                await Cargar(paginaActual);
+            }
+            else
+            {
+                // Manejar el error
+            }
+        }
+    }
 
 }

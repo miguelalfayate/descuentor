@@ -1,4 +1,5 @@
 using Descuentor.API.Servicios;
+using Descuentor.Aplicacion.Dtos;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Commands;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Queries;
 using MediatR;
@@ -43,5 +44,30 @@ public class ProductosController : ControllerBase
         var query = new ObtenerProductoConIdQuery(id);
         var producto = await _mediator.Send(query);
         return Ok(producto);
+    }
+    
+    [HttpPut("{id}")]
+    public async Task<IActionResult> ActualizarProducto(int id, ProductoEditarDto producto)
+    {
+        var productoCommand = new ActualizarProductoCommand(
+            id,
+            producto.Nombre,
+            producto.Descripcion,
+            producto.TiendaOnlineId,
+            producto.UrlImagen,
+            producto.Url,
+            producto.PrecioInicial
+        );
+
+        var result = await _mediator.Send(productoCommand);
+        return Ok(result);
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> EliminarProducto(int id)
+    {
+        var command = new EliminarProductoCommand(id);
+        var result = await _mediator.Send(command);
+        return Ok(result);
     }
 }
