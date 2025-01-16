@@ -8,7 +8,7 @@ public class ProductoHistorialPreciosDto
     public string Descripcion { get; set; } = string.Empty;
     public string Url { get; set; } = string.Empty;
     public string UrlImagen { get; set; } = string.Empty;
-    public string TiendaNombre { get; set; } = string.Empty;
+    public TiendaOnline Tienda { get; set; } = null!;
     public decimal PrecioInicial { get; set; } = 0;
     public ICollection<HistorialPrecio>? HistorialPrecios { get; set; }
 }

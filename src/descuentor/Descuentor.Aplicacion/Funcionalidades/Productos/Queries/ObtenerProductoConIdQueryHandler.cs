@@ -25,7 +25,7 @@ public class ObtenerProductoConIdQueryHandler : IRequestHandler<ObtenerProductoC
             UrlImagen = producto.UrlImagen ?? "",
             PrecioInicial = producto.PrecioInicial ?? 0,
             HistorialPrecios = producto.HistorialPrecios?.ToList(),
-            TiendaNombre = producto.TiendaOnline.Nombre ?? ""
+            Tienda = producto.TiendaOnline
         };
         
         return productoVisualizacion;
