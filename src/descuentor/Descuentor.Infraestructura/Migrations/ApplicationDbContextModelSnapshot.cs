@@ -97,9 +97,14 @@ namespace Descuentor.Infraestructura.Migrations
                     b.Property<string>("UrlImagen")
                         .HasColumnType("text");
 
+                    b.Property<int>("UsuarioAplicacionId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TiendaOnlineId");
+
+                    b.HasIndex("UsuarioAplicacionId");
 
                     b.ToTable("Productos");
                 });
@@ -304,10 +309,10 @@ namespace Descuentor.Infraestructura.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c0f526f5-c692-423a-8084-84327082b995",
+                            ConcurrencyStamp = "3c3242e0-c384-4388-994d-9c8f8d9087ef",
                             Email = "admin@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2025, 1, 12, 21, 55, 20, 225, DateTimeKind.Utc).AddTicks(4340),
+                            FechaCreacion = new DateTime(2025, 1, 16, 11, 27, 3, 526, DateTimeKind.Utc).AddTicks(4220),
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DOMAIN.COM",
                             NormalizedUserName = "ADMIN@DOMAIN.COM",
@@ -319,10 +324,10 @@ namespace Descuentor.Infraestructura.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4d79018e-0bf6-495a-b5c9-c34b4897997e",
+                            ConcurrencyStamp = "f46563fb-7cfd-44ff-b89c-43c721a282c8",
                             Email = "user1@domain.com",
                             EmailConfirmed = false,
-                            FechaCreacion = new DateTime(2025, 1, 12, 21, 55, 20, 225, DateTimeKind.Utc).AddTicks(4410),
+                            FechaCreacion = new DateTime(2025, 1, 16, 11, 27, 3, 526, DateTimeKind.Utc).AddTicks(4290),
                             LockoutEnabled = false,
                             NormalizedEmail = "USER1@DOMAIN.COM",
                             NormalizedUserName = "USER1@DOMAIN.COM",
@@ -464,7 +469,15 @@ namespace Descuentor.Infraestructura.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Descuentor.Infraestructura.ModelosIdentity.UsuarioAplicacion", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioAplicacionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("TiendaOnline");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Descuentor.Dominio.Entidades.UsuarioConfiguracion", b =>
