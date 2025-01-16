@@ -25,24 +25,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario">
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IEnvioEmailService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/EnvioEmailService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/NotificacionDescuentos/Commands/NotificacionDescuentosCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/INotificacionDescuentosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/INotificacionDescuentosService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IProductoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20250116112704_Inicial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/20250116112704_Inicial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/EmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/EmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/ActualizarPreciosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/ActualizarPreciosController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Implementación del servicio de notificación por email de los descuentos de productos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -449,7 +432,7 @@
       <workItem from="1736616633976" duration="32786000" />
       <workItem from="1736773259908" duration="45411000" />
       <workItem from="1736938396560" duration="7523000" />
-      <workItem from="1736954907749" duration="37796000" />
+      <workItem from="1736954907749" duration="38267000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -691,7 +674,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737032996168</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Implementación del servicio de notificación por email de los descuentos de productos">
+      <option name="closed" value="true" />
+      <created>1737062721678</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1737062721678</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +692,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se añade el proyecto Descuentor.Web que corresponde a la página de la Blazor" />
     <MESSAGE value="Se añade el proyecto de la página web. Se crean las páginas de login, que guarda los tokens de respuesta de la API en el localStorage del navegador, y la página de registro." />
     <MESSAGE value="Añadida la lógica del back para recuperar los productos en el front" />
     <MESSAGE value="Modificada nomenclatura de PrecioInicial" />
@@ -726,6 +716,7 @@
     <MESSAGE value="Con este cambio ya se incluye contraseña a los usuarios por defecto" />
     <MESSAGE value="Se eliminan las migraciones y se comienza con una nueva base de datos" />
     <MESSAGE value="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario" />
+    <MESSAGE value="Implementación del servicio de notificación por email de los descuentos de productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementación del servicio de notificación por email de los descuentos de productos" />
   </component>
 </project>
