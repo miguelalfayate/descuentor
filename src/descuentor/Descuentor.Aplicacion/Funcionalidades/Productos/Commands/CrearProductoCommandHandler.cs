@@ -22,6 +22,8 @@ public class CrearProductoCommandHandler : IRequestHandler<CrearProductoCommand,
 
     public async Task<int> Handle(CrearProductoCommand request, CancellationToken cancellationToken)
     {
+        var userId = _currentUser.Id;
+        
         var producto = new Producto
         {
             Nombre = request.Nombre,
@@ -29,7 +31,8 @@ public class CrearProductoCommandHandler : IRequestHandler<CrearProductoCommand,
             Descripcion = request.Descripcion,
             UrlImagen = request.UrlImagen,
             TiendaOnlineId = request.TiendaOnlineId,
-            PrecioInicial = request.PrecioInicial
+            PrecioInicial = request.PrecioInicial,
+            UsuarioAplicacionId = !string.IsNullOrEmpty(userId) ? int.Parse(userId!) : 1
         };
 
         var result = await _productoRepository.AddAsync(producto);
@@ -43,7 +46,7 @@ public class CrearProductoCommandHandler : IRequestHandler<CrearProductoCommand,
         
         await _historialPrecioRepository.AddAsync(historialPrecio);
         
-        var userId = _currentUser.Id;
+        //var userId = _currentUser.Id;
         if (userId != null)
         {
             var usuarioProducto = new UsuarioProducto
