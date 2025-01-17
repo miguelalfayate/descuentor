@@ -25,7 +25,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Implementación del servicio de notificación por email de los descuentos de productos" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se crea la inserción de datos para TiendasOnline">
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/RolesUsuario/Command/AplicarRolUsuarioCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/RolesUsuario/Command/AplicarRolUsuarioCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Usuarios/Commands/CrearUsuarioCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Usuarios/Commands/CrearUsuarioCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/descuentor.API/Controllers/RolesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/descuentor.API/Controllers/UsuariosController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Descuentor.Aplicacion.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Descuentor.Aplicacion.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/TiendasOnlineSeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/InsercionesDatos/TiendasOnlineSeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +74,7 @@
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Startup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -95,6 +110,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1fe46d7855761ae9fde08d2bb7978cda13e5853695e85b3cc8d84e9cda231e/KeyValuePair.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/20f4825c4341fc5ca8bed5d846e4a6668c9b10eba31675d5d548fa8519db8/TaskContinuation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/20f65e79ceaad992a4c25241d6bf3582951761f90e6c362e79667f19afc/Queryable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/28c17d7aca69351fa93b7b19dd93f38ad16378c23924aa659ed4ca6542ab894/RegisterRequest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29898ce74e3763a786ac1bd9a6db2152e1af75769440b1e53b9cbdf1dda1bd99/SecuritySchemeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2b24ce9c80deeefe1484c6a777b21dbcfe64fbf581ece7174d0fa1b50ebcf50/InputNumber.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/35f3a54f5acb408a3e219b2de039f1a39557b7e4515f11238cba07b60c0ce/Task.cs" root0="FORCE_HIGHLIGHTING" />
@@ -432,7 +448,7 @@
       <workItem from="1736616633976" duration="32786000" />
       <workItem from="1736773259908" duration="45411000" />
       <workItem from="1736938396560" duration="7523000" />
-      <workItem from="1736954907749" duration="38267000" />
+      <workItem from="1736954907749" duration="45718000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -682,7 +698,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737062721678</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Se crea la inserción de datos para TiendasOnline">
+      <option name="closed" value="true" />
+      <created>1737063182650</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1737063182650</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,7 +716,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se añade el proyecto de la página web. Se crean las páginas de login, que guarda los tokens de respuesta de la API en el localStorage del navegador, y la página de registro." />
     <MESSAGE value="Añadida la lógica del back para recuperar los productos en el front" />
     <MESSAGE value="Modificada nomenclatura de PrecioInicial" />
     <MESSAGE value="Añadida página principal donde se listan los artículos de los clientes" />
@@ -717,6 +740,7 @@
     <MESSAGE value="Se eliminan las migraciones y se comienza con una nueva base de datos" />
     <MESSAGE value="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario" />
     <MESSAGE value="Implementación del servicio de notificación por email de los descuentos de productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementación del servicio de notificación por email de los descuentos de productos" />
+    <MESSAGE value="Se crea la inserción de datos para TiendasOnline" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crea la inserción de datos para TiendasOnline" />
   </component>
 </project>
