@@ -11,11 +11,13 @@ public class TiendasOnlineSeed : IEntityTypeConfiguration<TiendaOnline>
         builder.HasData(
             new TiendaOnline
             {
+                Id = 1,
                 Nombre = "Amazon",
                 UrlProducto = "amazon.es"
             },
             new TiendaOnline
             {
+                Id = 2,
                 Nombre = "Wallapop",
                 UrlProducto = "es.wallapop.com"
             });

@@ -19,4 +19,19 @@
       <Folder Include="Funcionalidades\HistorialPrecios\Queries\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Results">
+        <HintPath>..\..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\8.0.11\Microsoft.AspNetCore.Http.Results.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
+        <HintPath>..\..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\8.0.11\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+        <HintPath>..\..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\8.0.11\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Identity.Core">
+        <HintPath>..\..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\8.0.11\Microsoft.Extensions.Identity.Core.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

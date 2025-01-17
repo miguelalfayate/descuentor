@@ -22,6 +22,7 @@ public class ApplicationDbContext : IdentityDbContext<UsuarioAplicacion, RolApli
         builder.ApplyConfiguration(new RolesSeed());
         builder.ApplyConfiguration(new UsuariosSeed());
         builder.ApplyConfiguration(new UsuariosRolesSeed());
+        builder.ApplyConfiguration(new TiendasOnlineSeed());
         
         // Mapeo IUsuario a UsuarioAplicacion
         builder.Entity<Producto>()
