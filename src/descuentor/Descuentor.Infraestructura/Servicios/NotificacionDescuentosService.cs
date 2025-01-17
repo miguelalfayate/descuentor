@@ -1,24 +1,27 @@
 using Descuentor.Dominio.Entidades;
 using Descuentor.Dominio.Interfaces;
 using Descuentor.Infraestructura.ModelosIdentity;
+using Microsoft.AspNetCore.Identity;
 
 namespace Descuentor.Infraestructura.Servicios;
 
 public class NotificacionDescuentosService : INotificacionDescuentosService
 {
+    private readonly UserManager<UsuarioAplicacion> _userManager;
     private readonly IUsuarioRepository _usuarioRepository;
     private readonly IEnvioEmailService _envioEmailService;
 
-    public NotificacionDescuentosService(IUsuarioRepository usuarioRepository, IEnvioEmailService envioEmailService)
+    public NotificacionDescuentosService(IUsuarioRepository usuarioRepository, IEnvioEmailService envioEmailService, UserManager<UsuarioAplicacion> userManager)
     {
         _usuarioRepository = usuarioRepository;
         _envioEmailService = envioEmailService;
+        _userManager = userManager;
     }
 
     public async Task<bool> NotificarDescuentoEmailAsync(int usuarioId, List<Producto> productos)
     {
-        var usuario = (UsuarioAplicacion)await _usuarioRepository.ObtenerUsuarioById(usuarioId);
-        var email = usuario.Email;
+        var usuario = _userManager.Users.FirstOrDefault(u => u.Id == usuarioId);
+        var email = usuario!.Email;
 
         var mensaje = $@"
 <html>
@@ -48,8 +51,8 @@ public class NotificacionDescuentosService : INotificacionDescuentosService
         <tr class='producto'>
             <td><a href='{p.Url}'>{p.Nombre}</a></td>
             <td>{p.PrecioInicial:C}</td>
-            <td>{p.HistorialPrecios.OrderByDescending(hp => hp.FechaConsulta).First().Precio:C}</td>
-            <td>{((p.PrecioInicial - p.HistorialPrecios.OrderByDescending(hp => hp.FechaConsulta).First().Precio) / p.PrecioInicial * 100):F2}%</td>
+            <td>{p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).First().Precio:C}</td>
+            <td>{((p.PrecioInicial - p.HistorialPrecios!.OrderByDescending(hp => hp.FechaConsulta).First().Precio) / p.PrecioInicial * 100):F2}%</td>
         </tr>"))}
     </tbody>
 </table>
