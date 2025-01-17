@@ -65,10 +65,11 @@
             }
             else
             {
-                var responseContent = await result.Content.ReadFromJsonAsync<ApiErrorResponse>();
-                if (responseContent != null && responseContent.Errors != null)
+                var responseContent = await result.Content.ReadFromJsonAsync<List<ApiErrorDetailsResponse>>();
+                Console.WriteLine("Respuesta" + responseContent);
+                if (responseContent != null)
                 {
-                    errorMessages = responseContent.Errors.SelectMany(e => e.Value).ToList();
+                    errorMessages = responseContent.Select(e => e.Description).ToList();
                 }
             }
         }

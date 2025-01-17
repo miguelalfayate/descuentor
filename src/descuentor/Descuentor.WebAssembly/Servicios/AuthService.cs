@@ -21,7 +21,7 @@ public class AuthService : IAuthService
     public async Task<HttpResponseMessage> Register(RegisterRequest request)
     {
         Console.WriteLine("Request: " + request.ConfirmPassword);
-        var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/identity/register", request);
+        var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/api/usuarios", request);
         Console.WriteLine("Response: " + response);
         return response;
     }
