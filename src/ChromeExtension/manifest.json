@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Multi-Store Product Tracker",
+    "name": "Descuentor",
     "version": "1.0",
-    "description": "Captura información de productos de múltiples tiendas online",
+    "description": "Añade productos a tu lista de deseos y aprovecha las ofertas",
     "permissions": [
         "activeTab",
         "scripting",
