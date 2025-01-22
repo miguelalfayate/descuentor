@@ -32,6 +32,8 @@ public class NotificacionDescuentosService : INotificacionDescuentosService
         .producto {{ margin-bottom: 20px; }}
         .producto h2 {{ color: #333; }}
         .producto p {{ color: #666; }}
+        table, th, td {{ border: 1px solid black; border-collapse: collapse; }}
+        th, td {{ padding: 8px; text-align: left; }}
     </style>
 </head>
 <body>
