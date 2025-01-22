@@ -93,16 +93,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 if (response.ok) {
 
+                    // <div style="margin-top: 10px;">
+                    //     <strong>Título:</strong> ${datosProducto.result.nombre}<br>
+                    //     <strong>Precio:</strong> ${datosProducto.result.precioInicial}<br>
+                    //     <strong>Descripción:</strong> ${datosProducto.result.descripcion}<br>
+                    //     <strong>Imagen:</strong> ${datosProducto.result.urlImagen}<br>
+                    //     <strong>URL:</strong> ${datosProducto.result.url}<br>
+                    //     <strong>Tienda:</strong> ${datosProducto.result.tiendaOnlineId}
+                    // </div>
                     resultDiv.innerHTML = `
                     <div style="color: green;">✓ Producto capturado correctamente</div>
-                    <div style="margin-top: 10px;">
-                        <strong>Título:</strong> ${datosProducto.result.nombre}<br>
-                        <strong>Precio:</strong> ${datosProducto.result.precioInicial}<br>
-                        <strong>Descripción:</strong> ${datosProducto.result.descripcion}<br>
-                        <strong>Imagen:</strong> ${datosProducto.result.urlImagen}<br>
-                        <strong>URL:</strong> ${datosProducto.result.url}<br>
-                        <strong>Tienda:</strong> ${datosProducto.result.tiendaOnlineId}
-                    </div>`;
+                    `
+                    ;
                 } else {
                     throw new Error('Error al guardar el producto');
                 }
