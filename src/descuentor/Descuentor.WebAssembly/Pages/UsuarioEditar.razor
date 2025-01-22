@@ -3,6 +3,7 @@
 @using Descuentor.Aplicacion.Interfaces
 @using Descuentor.WebAssembly.Servicios
 @using System.Net.Http
+@using System.Net.Http.Headers
 @using System.Text.Json
 
 @inject IAuthService AuthService
@@ -13,7 +14,7 @@
 <h3 class="text-center">Editar Usuario</h3>
 
 <!-- Formulario para editar información personal -->
-<EditForm Model="@usuarioEditarDto" OnValidSubmit="UsuarioEditarManejador">
+<EditForm Model="@usuarioEditarDto" OnValidSubmit="UsuarioEditarManejador" class="col-md-6 offset-md-3">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -35,7 +36,10 @@
         <ValidationMessage For="@(() => usuarioEditarDto.Telefono)" />
     </div>
 
-    <button type="submit" class="btn btn-primary w-100" style="margin-top: 20px;">Guardar</button>
+    <div class="d-flex justify-content-between" style="margin-top: 20px; gap: 10px;">
+        <button type="submit" class="btn btn-primary w-50">Guardar</button>
+        <button type="button" class="btn btn-secondary w-50" @onclick="Volver">Volver</button>
+    </div>
 </EditForm>
 
 @if (errorMessages.Any())
@@ -50,50 +54,86 @@
     </div>
 }
 
-<hr />
-
-<!-- Formulario para cambiar la contraseña -->
-<EditForm Model="@cambioPasswordRequest" OnValidSubmit="CambioPasswordManejador">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div class="mb-3">
-        <label for="oldPassword" class="form-label">Contraseña Antigua:</label>
-        <InputText type="password" @bind-Value="cambioPasswordRequest.OldPassword" class="form-control" />
-        <ValidationMessage For="@(() => cambioPasswordRequest.OldPassword)" />
-    </div>
-
-    <div class="mb-3">
-        <label for="newPassword" class="form-label">Nueva Contraseña:</label>
-        <InputText type="password" @bind-Value="cambioPasswordRequest.NewPassword" class="form-control" />
-        <ValidationMessage For="@(() => cambioPasswordRequest.NewPassword)" />
-    </div>
-
-    <div class="mb-3">
-        <label for="confirmNewPassword" class="form-label">Confirmar Nueva Contraseña:</label>
-        <InputText type="password" @bind-Value="cambioPasswordRequest.ConfirmPassword" class="form-control" />
-        <ValidationMessage For="@(() => cambioPasswordRequest.ConfirmPassword)" />
-    </div>
-
-    <button type="submit" class="btn btn-primary w-100" style="margin-top: 20px;">Cambiar Contraseña</button>
-</EditForm>
-
-@if (errorMessages.Any())
-{
-    <div class="alert alert-danger" style="margin-top: 20px;">
-        <ul>
-            @foreach (var error in errorMessages)
-            {
-                <li>@error</li>
-            }
-        </ul>
-    </div>
-}
+@* <hr /> *@
+@* *@
+@* <!-- Formulario para cambiar la contraseña --> *@
+@* <EditForm Model="@cambioPasswordRequest" OnValidSubmit="CambioPasswordManejador"> *@
+@*     <DataAnnotationsValidator /> *@
+@*     <ValidationSummary /> *@
+@* *@
+@*     <div class="mb-3"> *@
+@*         <label for="oldPassword" class="form-label">Contraseña Antigua:</label> *@
+@*         <InputText type="password" @bind-Value="cambioPasswordRequest.OldPassword" class="form-control" /> *@
+@*         <ValidationMessage For="@(() => cambioPasswordRequest.OldPassword)" /> *@
+@*     </div> *@
+@* *@
+@*     <div class="mb-3"> *@
+@*         <label for="newPassword" class="form-label">Nueva Contraseña:</label> *@
+@*         <InputText type="password" @bind-Value="cambioPasswordRequest.NewPassword" class="form-control" /> *@
+@*         <ValidationMessage For="@(() => cambioPasswordRequest.NewPassword)" /> *@
+@*     </div> *@
+@* *@
+@*     <div class="mb-3"> *@
+@*         <label for="confirmNewPassword" class="form-label">Confirmar Nueva Contraseña:</label> *@
+@*         <InputText type="password" @bind-Value="cambioPasswordRequest.ConfirmPassword" class="form-control" /> *@
+@*         <ValidationMessage For="@(() => cambioPasswordRequest.ConfirmPassword)" /> *@
+@*     </div> *@
+@* *@
+@*     <button type="submit" class="btn btn-primary w-100" style="margin-top: 20px;">Cambiar Contraseña</button> *@
+@* </EditForm> *@
+@* *@
+@* @if (errorMessages.Any()) *@
+@* { *@
+@*     <div class="alert alert-danger" style="margin-top: 20px;"> *@
+@*         <ul> *@
+@*             @foreach (var error in errorMessages) *@
+@*             { *@
+@*                 <li>@error</li> *@
+@*             } *@
+@*         </ul> *@
+@*     </div> *@
+@* } *@
 
 @code {
     private UsuarioEditarDto usuarioEditarDto = new();
     private CambioPasswordRequest cambioPasswordRequest = new();
     private List<string> errorMessages = new();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarUsuario();
+    }
+
+    private async Task CargarUsuario()
+    {
+        var accessToken = await TokenService.GetAccessTokenAsync();
+
+        if (!string.IsNullOrEmpty(accessToken))
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5095/api/usuarios");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var response = await Http.SendAsync(request);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                var respuesta = await response.Content.ReadFromJsonAsync<ApiOkResponse>();
+                usuarioEditarDto = respuesta!.Value;
+            }
+            else
+            {
+                var responseContent = await response.Content.ReadFromJsonAsync<List<ApiErrorDetailsResponse>>();
+                Console.WriteLine("Respuesta" + responseContent);
+                if (responseContent != null)
+                {
+                    errorMessages = responseContent.Select(e => e.Description).ToList();
+                }
+            }
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/login");
+        }
+    }
 
     private async Task UsuarioEditarManejador()
     {
@@ -101,17 +141,24 @@
 
         if (!string.IsNullOrEmpty(accessToken))
         {
-            var result = await Http.PostAsJsonAsync("http://localhost:5095/api/usuarios", usuarioEditarDto);
-            if (result.IsSuccessStatusCode)
+            var request = new HttpRequestMessage(HttpMethod.Put, "http://localhost:5095/api/usuarios");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            request.Content = JsonContent.Create(usuarioEditarDto);
+            
+            var response = await Http.SendAsync(request);
+            
+            //var result = await Http.PutAsJsonAsync("http://localhost:5095/api/usuarios", usuarioEditarDto);
+            if (response.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/");
             }
             else
             {
-                var responseContent = await result.Content.ReadFromJsonAsync<ApiErrorResponse>();
-                if (responseContent != null && responseContent.Errors != null)
+                var responseContent = await response.Content.ReadFromJsonAsync<List<ApiErrorDetailsResponse>>();
+                Console.WriteLine("Respuesta" + responseContent);
+                if (responseContent != null)
                 {
-                    errorMessages = responseContent.Errors.SelectMany(e => e.Value).ToList();
+                    errorMessages = responseContent.Select(e => e.Description).ToList();
                 }
             }
         }
@@ -133,10 +180,11 @@
             }
             else
             {
-                var responseContent = await result.Content.ReadFromJsonAsync<ApiErrorResponse>();
-                if (responseContent != null && responseContent.Errors != null)
+                var responseContent = await result.Content.ReadFromJsonAsync<List<ApiErrorDetailsResponse>>();
+                Console.WriteLine("Respuesta" + responseContent);
+                if (responseContent != null)
                 {
-                    errorMessages = responseContent.Errors.SelectMany(e => e.Value).ToList();
+                    errorMessages = responseContent.Select(e => e.Description).ToList();
                 }
             }
         }
@@ -145,4 +193,10 @@
             // Manejar el error
         }
     }
+
+    private void Volver()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
 }

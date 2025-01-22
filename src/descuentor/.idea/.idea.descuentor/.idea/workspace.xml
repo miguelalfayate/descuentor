@@ -25,16 +25,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se modifica NotificacionDescuentosService para que funcione con UserManager">
-      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ApiErrorDetailsResponse.cs" afterDir="false" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ApiOkResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Usuarios/Commands/ActualizarUsuarioCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Usuarios/Commands/ActualizarUsuarioCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Usuarios/Queries/ObtenerUsuarioQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Usuarios/Queries/ObtenerUsuarioQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChromeExtension/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ChromeExtension/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ChromeExtension/popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ApiErrorResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Dtos/ApiErrorResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Descuentor.Dominio.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Descuentor.Dominio.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/App.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Layout/MainLayout.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Layout/MainLayout.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Layout/NavMenu.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Layout/NavMenu.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Pages/Counter.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Pages/Error.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Pages/Home.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Pages/Login.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Pages/Weather.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/Routes.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Components/_Imports.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/wwwroot/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/wwwroot/bootstrap/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/wwwroot/bootstrap/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp1/wwwroot/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/Register.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/App.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Layout/MainLayout.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Layout/MainLayout.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Layout/NavMenu.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Layout/NavMenu.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Counter.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Error.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Home.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Login.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Prueba.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Prueba2.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Register.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Pages/Weather.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/Routes.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Components/_Imports.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Descuentor.Web.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Proveedores/CustomAuthenticationStateProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Servicios/AuthService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Servicios/TokenRefreshService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/Servicios/TokenService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/wwwroot/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/wwwroot/bootstrap/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/wwwroot/bootstrap/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Web/wwwroot/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoVer.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/ProductoVer.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/UsuarioEditar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Pages/UsuarioEditar.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descuentor.API/Controllers/UsuariosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.API/Controllers/UsuariosController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,47 +126,7 @@
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Controllers/ClientesController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Startup.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/Descuentor/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Dtos/ProductoEditarDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Dtos/ProductoHistorialPreciosDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductoConIdQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Entidades/Producto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Entidades/Producto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Interfaces/IProductoRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Contextos/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/DependencyInjection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/DependencyInjection.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/InsercionesDatos/TiendasOnlineSeed.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/InsercionesDatos/TiendasOnlineSeed.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/InsercionesDatos/UsuariosSeed.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/ModelosIdentity/UsuarioAplicacion.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Web/Components/Pages/Register.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Web/Servicios/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/Home.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/ProductoEditar.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/ProductoVer.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Pages/Register.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ActualizarPreciosController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ActualizarPreciosController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ActualizarPreciosController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ProductosController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/UsuariosController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Descuentor.WebAssembly/obj/Debug/net8.0/Descuentor.WebAssembly.MvcApplicationPartsAssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3ec93589f9c64e22b96b232895e2861031400/d2/5c48f7cd/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b3bca7808b94536956c535008df3fc6395000/02/32229b86/Expression.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c799c236b08a4458877f6ba872d7b92381000/eb/c34dea3b/IEmailSender`1.cs" root0="FORCE_HIGHLIGHTING" />
@@ -456,7 +474,8 @@
       <workItem from="1736616633976" duration="32786000" />
       <workItem from="1736773259908" duration="45411000" />
       <workItem from="1736938396560" duration="7523000" />
-      <workItem from="1736954907749" duration="52252000" />
+      <workItem from="1736954907749" duration="63550000" />
+      <workItem from="1737219319532" duration="13337000" />
     </task>
     <task id="LOCAL-00001" summary="Implementación del sistema de registro y logueo de nuevos usuarios con Identity Core">
       <option name="closed" value="true" />
@@ -738,7 +757,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737115110930</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Se modifica la página de registro de la web para que funcione con el endpoint api/usuarios">
+      <option name="closed" value="true" />
+      <created>1737126273464</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1737126273464</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Resolución de error con el email">
+      <option name="closed" value="true" />
+      <created>1737126341220</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1737126341220</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -748,8 +783,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se exponen todos los headers a las llamadas a la API" />
-    <MESSAGE value="Se añade página para ver productos individuales" />
     <MESSAGE value="Añadidos recursos gráficos, mejora de la logueo de usuarios en la web" />
     <MESSAGE value="Mejora visual de los elementos de la extensión de Chrome" />
     <MESSAGE value="Se añaden las funcionalidades de eliminar y modificar producto" />
@@ -773,6 +806,8 @@
     <MESSAGE value="Se elimina el controlador para añadir roles" />
     <MESSAGE value="Se modifica el TiendasOnlineSeed. Faltaban los ids" />
     <MESSAGE value="Se modifica NotificacionDescuentosService para que funcione con UserManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se modifica NotificacionDescuentosService para que funcione con UserManager" />
+    <MESSAGE value="Se modifica la página de registro de la web para que funcione con el endpoint api/usuarios" />
+    <MESSAGE value="Resolución de error con el email" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolución de error con el email" />
   </component>
 </project>

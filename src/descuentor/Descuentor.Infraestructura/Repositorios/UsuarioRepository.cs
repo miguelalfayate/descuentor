@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Descuentor.Aplicacion.Dtos;
 using Descuentor.Dominio.Interfaces;
 using Descuentor.Infraestructura.ModelosIdentity;
 using Microsoft.AspNetCore.Identity;
@@ -33,5 +34,38 @@ public class UsuarioRepository : IUsuarioRepository
         await _userManager.AddToRoleAsync(user, "Usuario"); // O el rol que desees
 
         return new OkObjectResult(user);
+    }
+
+    public async Task<IActionResult> ModificarUsuario(int id, string nombre, string apellidos, string telefono)
+    {
+        var usuario = _userManager.Users.FirstOrDefault(u => u.Id == id);
+        
+        usuario!.Nombre = nombre;
+        usuario.Apellidos = apellidos;
+        usuario.PhoneNumber = telefono;
+        
+        var result = await _userManager.UpdateAsync(usuario);
+        
+        if (!result.Succeeded)
+        {
+            return new BadRequestObjectResult(result.Errors);
+        }
+
+        return new OkObjectResult(usuario);
+    }
+
+    public async Task<IActionResult> ObtenerUsuarioPorId(int id)
+    {
+        // var usuario = _userManager.Users.FirstOrDefault(u => u.Id == id);
+        var usuario = await _userManager.FindByIdAsync(id.ToString());
+        
+        var usuarioEditarDto = new UsuarioEditarDto()
+        {
+            Nombre = usuario.Nombre,
+            Apellidos = usuario.Apellidos,
+            Telefono = usuario.PhoneNumber
+        };
+
+        return new OkObjectResult(usuarioEditarDto);
     }
 }
