@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Descuentor.Dominio\Descuentor.Dominio.csproj" />
+      <ProjectReference Include="..\Descuentor.Shared\Descuentor.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,11 +1,12 @@
 @page "/productos/ver/{id:int}"
+
 @using System.Net.Http.Headers
-@using Descuentor.Aplicacion.Dtos
-@using Descuentor.WebAssembly.Servicios
 @using ApexCharts
-@using Descuentor.Dominio.Entidades
+@using Descuentor.Shared.Dtos
+@using Descuentor.WebAssembly.Interfaces
+
 @inject HttpClient Http
-@inject TokenService TokenService
+@inject ITokenService TokenService
 @inject NavigationManager Navigation
 
 @if (producto == null)
@@ -16,14 +17,14 @@ else
 {
     <div class="container custom-container mt-4">
         <h3 class="text-center">@producto.Nombre</h3>
-        <div class="text-center">
-            <button class="btn btn-primary btn-sm" @onclick="EditarProducto">
-                <i class="bi bi-pencil"></i>
-            </button>
-            <button class="btn btn-danger btn-sm" @onclick="EliminarProducto">
-                <i class="bi bi-trash"></i>
-            </button>
-        </div>
+        @* <div class="text-center"> *@
+        @*     <button class="btn btn-primary btn-sm" @onclick="EditarProducto"> *@
+        @*         <i class="bi bi-pencil"></i> *@
+        @*     </button> *@
+        @*     <button class="btn btn-danger btn-sm" @onclick="EliminarProducto"> *@
+        @*         <i class="bi bi-trash"></i> *@
+        @*     </button> *@
+        @* </div> *@
         <div class="row">
             <div class="col-md-6 text-center" style="padding: 50px;">
                 <a href="@producto.Url">
@@ -32,10 +33,10 @@ else
             </div>
             <div class="col-md-6" style="padding: 50px;">
                 <div class="custom-background mt-4" style="background-color: #f8f9fa; padding: 20px;">
-                    <ApexChart TItem="HistorialPrecio"
+                    <ApexChart TItem="HistorialPrecioDto"
                                Title="Historial de precios"
                                Options="options">
-                        <ApexPointSeries TItem="HistorialPrecio"
+                        <ApexPointSeries TItem="HistorialPrecioDto"
                                          Items="producto!.HistorialPrecios"
                                          Name="Precio de venta"
                                          SeriesType="SeriesType.Line"
@@ -50,7 +51,7 @@ else
                         <tbody>
                         <tr>
                             <td><strong>Tienda:</strong></td>
-                            <td>@producto.Tienda.Nombre</td>
+                            <td>@producto.TiendaNombre</td>
                         </tr>
                         <tr>
                             <td><strong>Precio Inicial:</strong></td>
@@ -69,44 +70,43 @@ else
                     <button class="btn btn-secondary" @onclick="Volver">Volver</button>
                 </div>
             </div>
-
         </div>
     </div>
 }
 
 @* *@
-    @* <div> *@
-    @*     <h2><a href="@producto.Url">@producto.Nombre</a></h2> *@
-    @*     <a href="@producto.Url"><img src="@producto.UrlImagen" style="width: 200px; height: 200px; object-fit: cover;" /></a> *@
-    @*     <p><strong>Tienda:</strong> @producto.TiendaNombre</p> *@
-    @*     <p><strong>Precio Inicial:</strong> @producto.PrecioInicial €</p> *@
-    @*     <p><strong>Descripción:</strong> @producto.Descripcion</p> *@
-    @* </div> *@
-    @* <ApexChart TItem="HistorialPrecio" *@
-    @*            Title="Historial de precios" *@
-    @*            Options="options"> *@
-    @* *@
-    @*     <ApexPointSeries TItem="HistorialPrecio" *@
-    @*                      Items="producto!.HistorialPrecios" *@
-    @*                      Name="Precio de venta" *@
-    @*                      SeriesType="SeriesType.Line" *@
-    @*                      XValue="e => e.FechaConsulta" *@
-    @*                      YValue="e=> e.Precio" *@
-    @*                       *@
-    @*                      /> *@
-    @*      *@
-    @* </ApexChart> *@
+@* <div> *@
+@*     <h2><a href="@producto.Url">@producto.Nombre</a></h2> *@
+@*     <a href="@producto.Url"><img src="@producto.UrlImagen" style="width: 200px; height: 200px; object-fit: cover;" /></a> *@
+@*     <p><strong>Tienda:</strong> @producto.TiendaNombre</p> *@
+@*     <p><strong>Precio Inicial:</strong> @producto.PrecioInicial €</p> *@
+@*     <p><strong>Descripción:</strong> @producto.Descripcion</p> *@
+@* </div> *@
+@* <ApexChart TItem="HistorialPrecioDto" *@
+@*            Title="Historial de precios" *@
+@*            Options="options"> *@
+@* *@
+@*     <ApexPointSeries TItem="HistorialPrecioDto" *@
+@*                      Items="producto!.HistorialPrecios" *@
+@*                      Name="Precio de venta" *@
+@*                      SeriesType="SeriesType.Line" *@
+@*                      XValue="e => e.FechaConsulta" *@
+@*                      YValue="e=> e.Precio" *@
+@* *@
+@*                      /> *@
+@* *@
+@* </ApexChart> *@
 
 
 @code {
     [Parameter] public int id { get; set; }
 
     private ProductoHistorialPreciosDto? producto;
-    private ApexChartOptions<HistorialPrecio> options;
+    private ApexChartOptions<HistorialPrecioDto> options;
 
     protected override async Task OnInitializedAsync()
     {
-        options = new ApexChartOptions<HistorialPrecio>();
+        options = new ApexChartOptions<HistorialPrecioDto>();
         options.Yaxis = new List<YAxis>();
         options.Yaxis.Add(new YAxis
             {
@@ -138,7 +138,7 @@ else
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
         var response = await Http.SendAsync(request);
-        
+
         if (response.IsSuccessStatusCode)
         {
             producto = await response.Content.ReadFromJsonAsync<ProductoHistorialPreciosDto>();

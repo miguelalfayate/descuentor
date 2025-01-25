@@ -1,6 +1,6 @@
-using Descuentor.Dominio.Entidades;
+//using Descuentor.Dominio.Entidades;
 
-namespace Descuentor.Aplicacion.Dtos;
+namespace Descuentor.Shared.Dtos;
 
 public class ProductoHistorialPreciosDto
 {
@@ -8,7 +8,8 @@ public class ProductoHistorialPreciosDto
     public string Descripcion { get; set; } = string.Empty;
     public string Url { get; set; } = string.Empty;
     public string UrlImagen { get; set; } = string.Empty;
-    public TiendaOnline Tienda { get; set; } = null!;
+    public string TiendaNombre { get; set; }  = string.Empty;
+    public int TiendaId { get; set; }
     public decimal PrecioInicial { get; set; } = 0;
-    public ICollection<HistorialPrecio>? HistorialPrecios { get; set; }
+    public ICollection<HistorialPrecioDto>? HistorialPrecios { get; set; }
 }

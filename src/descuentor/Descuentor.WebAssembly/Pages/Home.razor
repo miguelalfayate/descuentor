@@ -1,12 +1,11 @@
 ﻿@page "/"
-@using System.Net
 @using System.Net.Http.Headers
-@using Descuentor.Aplicacion.Dtos
+@using Descuentor.Shared.Dtos
 @using Descuentor.WebAssembly.Componentes
-@using Descuentor.WebAssembly.Servicios
+@using Descuentor.WebAssembly.Interfaces
 
 @inject HttpClient Http
-@inject TokenService TokenService
+@inject ITokenService TokenService
 @inject IJSRuntime JsRuntime
 
 

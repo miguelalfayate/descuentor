@@ -1,7 +1,7 @@
 using Descuentor.API.Servicios;
-using Descuentor.Aplicacion.Dtos;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Commands;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Queries;
+using Descuentor.Shared.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -1,15 +1,17 @@
 @page "/usuario/editar"
-@using Descuentor.Aplicacion.Dtos
-@using Descuentor.Aplicacion.Interfaces
-@using Descuentor.WebAssembly.Servicios
-@using System.Net.Http
+
 @using System.Net.Http.Headers
-@using System.Text.Json
+@using Descuentor.Shared.Dtos
+@using Descuentor.WebAssembly.Interfaces
+@using ApiErrorDetailsResponse = Descuentor.WebAssembly.Modelos.Responses.ApiErrorDetailsResponse
+@using ApiOkResponse = Descuentor.WebAssembly.Modelos.Responses.ApiOkResponse
+@using CambioPasswordRequest = Descuentor.WebAssembly.Modelos.Requests.CambioPasswordRequest
+@using IAuthService = Descuentor.WebAssembly.Interfaces.IAuthService
 
 @inject IAuthService AuthService
 @inject NavigationManager NavigationManager
 @inject HttpClient Http
-@inject TokenService TokenService
+@inject ITokenService TokenService
 
 <h3 class="text-center">Editar Usuario</h3>
 

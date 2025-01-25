@@ -1,7 +1,6 @@
-using System.Security.Claims;
-using Descuentor.Aplicacion.Dtos;
 using Descuentor.Dominio.Interfaces;
 using Descuentor.Infraestructura.ModelosIdentity;
+using Descuentor.Shared.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

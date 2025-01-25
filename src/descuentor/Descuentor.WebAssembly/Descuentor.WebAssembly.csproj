@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Descuentor.Aplicacion\Descuentor.Aplicacion.csproj" />
+      <ProjectReference Include="..\Descuentor.Shared\Descuentor.Shared.csproj" />
     </ItemGroup>
 
 </Project>

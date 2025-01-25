@@ -1,4 +1,4 @@
-using Descuentor.Aplicacion.Dtos;
+using Descuentor.Shared.Dtos;
 using MediatR;
 
 namespace Descuentor.Aplicacion.Funcionalidades.Productos.Queries;

@@ -1,4 +1,3 @@
-using Descuentor.Aplicacion.Dtos;
 using Descuentor.Aplicacion.Funcionalidades.Usuarios.Commands;
 using Descuentor.Aplicacion.Funcionalidades.Usuarios.Queries;
 using MediatR;

@@ -1,9 +1,10 @@
 @page "/productos/editar/{id:int}"
-@using Descuentor.Aplicacion.Dtos
+
 @using System.Net.Http.Headers
-@using Descuentor.WebAssembly.Servicios
+@using Descuentor.Shared.Dtos
+@using Descuentor.WebAssembly.Interfaces
 @inject HttpClient Http
-@inject TokenService TokenService
+@inject ITokenService TokenService
 @inject NavigationManager Navigation
 
 <h3 class="text-center">Editar producto</h3>
@@ -82,7 +83,7 @@ else
                 {
                     Nombre = productoRespuesta.Nombre,
                     Descripcion = productoRespuesta.Descripcion,
-                    TiendaOnlineId = productoRespuesta.Tienda.Id,
+                    TiendaOnlineId = productoRespuesta.TiendaId,
                     UrlImagen = productoRespuesta.UrlImagen,
                     Url = productoRespuesta.Url,
                     PrecioInicial = productoRespuesta.PrecioInicial

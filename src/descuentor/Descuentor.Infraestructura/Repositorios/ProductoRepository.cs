@@ -1,4 +1,3 @@
-using Descuentor.Aplicacion.Dtos;
 using Descuentor.Dominio.Entidades;
 using Descuentor.Dominio.Interfaces;
 using Descuentor.Infraestructura.Contextos;

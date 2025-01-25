@@ -1,5 +1,5 @@
-using Descuentor.Aplicacion.Dtos;
 using Descuentor.Dominio.Interfaces;
+using Descuentor.Shared.Dtos;
 using MediatR;
 
 namespace Descuentor.Aplicacion.Funcionalidades.Productos.Queries;
@@ -17,6 +17,12 @@ public class ObtenerProductoConIdQueryHandler : IRequestHandler<ObtenerProductoC
     {
         var producto = await _productoRepository.ObtenerProductoConHistorialById(request.Id);
         
+        var historialPrecios = producto.HistorialPrecios?.Select(hp => new HistorialPrecioDto
+        {
+            FechaConsulta = hp.FechaConsulta,
+            Precio = hp.Precio
+        }).ToList();
+        
         ProductoHistorialPreciosDto productoVisualizacion = new()
         {
             Nombre = producto.Nombre ?? "",
@@ -24,8 +30,9 @@ public class ObtenerProductoConIdQueryHandler : IRequestHandler<ObtenerProductoC
             Url = producto.Url ?? "",
             UrlImagen = producto.UrlImagen ?? "",
             PrecioInicial = producto.PrecioInicial ?? 0,
-            HistorialPrecios = producto.HistorialPrecios?.ToList(),
-            Tienda = producto.TiendaOnline
+            HistorialPrecios = historialPrecios,
+            TiendaNombre = producto.TiendaOnline.Nombre ?? "",
+            TiendaId = producto.TiendaOnline.Id
         };
         
         return productoVisualizacion;

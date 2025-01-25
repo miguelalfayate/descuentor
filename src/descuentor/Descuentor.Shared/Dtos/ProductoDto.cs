@@ -1,4 +1,4 @@
-namespace Descuentor.Aplicacion.Dtos;
+namespace Descuentor.Shared.Dtos;
 
 public class ProductoDto
 {
