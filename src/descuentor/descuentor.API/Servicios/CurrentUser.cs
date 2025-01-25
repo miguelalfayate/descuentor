@@ -1,5 +1,5 @@
 using System.Security.Claims;
-using Descuentor.Aplicacion.Interfaces;
+using Descuentor.Dominio.Interfaces;
 
 namespace Descuentor.API.Servicios;
 

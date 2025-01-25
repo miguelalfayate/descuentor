@@ -2,12 +2,11 @@ using System.Text.Json.Serialization;
 using Descuentor.API.Servicios;
 using Descuentor.Aplicacion;
 using Descuentor.Aplicacion.Funcionalidades.Productos.Commands;
-using Descuentor.Aplicacion.Interfaces;
+using Descuentor.Dominio.Interfaces;
 using Descuentor.Infraestructura;
 using Descuentor.Infraestructura.InsercionesDatos;
 using Descuentor.Infraestructura.ModelosIdentity;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.Filters;
 
 namespace Descuentor.API;
 
