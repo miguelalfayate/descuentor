@@ -1,10 +1,10 @@
 ﻿@using System.Net.Http.Headers
-@using Descuentor.Aplicacion.Interfaces
-@using Descuentor.WebAssembly.Servicios
+@using Descuentor.WebAssembly.Interfaces
+@using IAuthService = Descuentor.WebAssembly.Interfaces.IAuthService
 
 @inject NavigationManager Navigation
 @inject HttpClient Http
-@inject TokenService TokenService
+@inject ITokenService TokenService
 @inject IAuthService AuthService
 
 @inherits LayoutComponentBase
@@ -49,7 +49,9 @@
         }
 
         var expiration = await TokenService.GetTokenExpirationAsync();
-        if (expiration < DateTime.UtcNow.AddMinutes(5))
+        var ahora = DateTime.Now;
+        //Console.WriteLine($"Expiration: {expiration}, Ahora: {ahora}");
+        if (expiration < ahora)
         {
             var resultado = await AuthService.RefreshTokenAsync();
             if (resultado)

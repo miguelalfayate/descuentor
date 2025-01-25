@@ -1,4 +1,4 @@
-namespace Descuentor.Aplicacion.Interfaces;
+namespace Descuentor.Dominio.Interfaces;
 
 public interface ICurrentUser
 {

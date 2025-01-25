@@ -1,20 +1,18 @@
 using System.Net.Http.Json;
-using Blazored.LocalStorage;
-using Descuentor.Aplicacion.Dtos;
-using Descuentor.Aplicacion.Interfaces;
+using Descuentor.WebAssembly.Interfaces;
+using Descuentor.WebAssembly.Modelos.Requests;
+using Descuentor.WebAssembly.Modelos.Responses;
 
 namespace Descuentor.WebAssembly.Servicios;
 
 public class AuthService : IAuthService
 {
     private readonly HttpClient _httpClient;
-    private readonly TokenService _tokenService;
-    private readonly ILocalStorageService _localStorage;
-    
-    public AuthService(HttpClient httpClient, ILocalStorageService localStorage, TokenService tokenService)
+    private readonly ITokenService _tokenService;
+
+    public AuthService(HttpClient httpClient, ITokenService tokenService)
     {
         _httpClient = httpClient;
-        _localStorage = localStorage;
         _tokenService = tokenService;
     }
 

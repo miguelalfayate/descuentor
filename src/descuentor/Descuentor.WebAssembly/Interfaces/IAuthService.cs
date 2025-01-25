@@ -1,6 +1,7 @@
-using Descuentor.Aplicacion.Dtos;
+using Descuentor.WebAssembly.Modelos.Requests;
+using Descuentor.WebAssembly.Modelos.Responses;
 
-namespace Descuentor.Aplicacion.Interfaces;
+namespace Descuentor.WebAssembly.Interfaces;
 
 public interface IAuthService
 {

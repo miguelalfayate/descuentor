@@ -1,4 +1,3 @@
-using Descuentor.Aplicacion.Interfaces;
 using Descuentor.Dominio.Entidades;
 using Descuentor.Dominio.Interfaces;
 using MediatR;

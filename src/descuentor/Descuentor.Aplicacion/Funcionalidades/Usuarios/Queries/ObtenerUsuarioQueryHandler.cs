@@ -1,4 +1,3 @@
-using Descuentor.Aplicacion.Interfaces;
 using Descuentor.Dominio.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
