@@ -28,11 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit Dockerfile">
-      <change afterPath="$PROJECT_DIR$/Dockerfile.Api" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile.WebAssembly" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.API/Dockerfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/descuentor.sln" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -526,15 +522,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="35913000" />
-    </task>
-    <task id="LOCAL-00005" summary="Se habilita el endpoint ActualizarPrecios para poder activar el scraper y añada a la Base de datos los precios de los productos">
-      <option name="closed" value="true" />
-      <created>1736341947276</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1736341947276</updated>
+      <workItem from="1737499431424" duration="37599000" />
     </task>
     <task id="LOCAL-00006" summary="Se añade el proyecto Descuentor.Web que corresponde a la página de la Blazor">
       <option name="closed" value="true" />
@@ -920,7 +908,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738242440689</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Edit Dockerfile">
+      <option name="closed" value="true" />
+      <created>1738254363985</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1738254363986</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
