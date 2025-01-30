@@ -11,7 +11,7 @@ WORKDIR /src
 # Copiamos primero la solución
 COPY ["*.sln", "./"]
 
-# Copiamos todos los proyectos
+# Copiamos todos los proyectos manteniendo la consistencia en los nombres
 COPY ["Descuentor.API/Descuentor.API.csproj", "Descuentor.API/"]
 COPY ["Descuentor.Dominio/Descuentor.Dominio.csproj", "Descuentor.Dominio/"]
 COPY ["Descuentor.Aplicacion/Descuentor.Aplicacion.csproj", "Descuentor.Aplicacion/"]
@@ -25,38 +25,13 @@ RUN dotnet restore "Descuentor.API/Descuentor.API.csproj"
 COPY . .
 
 WORKDIR "/src/Descuentor.API"
-
-# Generamos el script SQL de migración durante el build
-RUN dotnet tool install --global dotnet-ef
-ENV PATH="$PATH:/root/.dotnet/tools"
-RUN dotnet ef migrations script -o /app/migrations.sql
-
-# Build
 RUN dotnet build "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# Define el stage de publish
 FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY --from=build /app/migrations.sql .
-# Instalamos postgres client para ejecutar el script SQL
-RUN apt-get update && apt-get install -y postgresql-client
-
-# Script de inicio
-COPY <<EOF /app/entrypoint.sh
-#!/bin/bash
-until PGPASSWORD=postgres psql -h db -U postgres -d descuentor -c '\q'; do
-  >&2 echo "Postgres is unavailable - sleeping"
-  sleep 1
-done
-  
->&2 echo "Postgres is up - executing migration"
-PGPASSWORD=postgres psql -h db -U postgres -d descuentor -f migrations.sql
-exec dotnet Descuentor.API.dll
-EOF
-
-RUN chmod +x /app/entrypoint.sh
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["dotnet", "Descuentor.API.dll"]

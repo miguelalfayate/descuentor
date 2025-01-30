@@ -3,6 +3,9 @@ using Descuentor.Infraestructura.InsercionesDatos;
 using Descuentor.Infraestructura.ModelosIdentity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Descuentor.Infraestructura.Contextos;
 
@@ -10,7 +13,16 @@ public class ApplicationDbContext : IdentityDbContext<UsuarioAplicacion, RolApli
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
-        
+        try
+        {
+                var migrator = Database.GetService<IMigrator>();
+                migrator.Migrate("InitialCreate");
+        }
+        catch (Exception ex)
+        {
+            // Manejar la excepción según sea necesario
+            throw new InvalidOperationException("Error aplicando migraciones", ex);
+        }
     }
     
     protected override void OnModelCreating(ModelBuilder builder)
