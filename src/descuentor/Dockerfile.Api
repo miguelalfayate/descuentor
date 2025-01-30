@@ -7,21 +7,21 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["descuentor.API/Descuentor.API.csproj", "Descuentor.API/"]
+COPY ["descuentor.API/descuentor.API.csproj", "Descuentor.API/"]
 COPY ["Descuentor.Dominio/Descuentor.Dominio.csproj", "Descuentor.Dominio/"]
 COPY ["Descuentor.Aplicacion/Descuentor.Aplicacion.csproj", "Descuentor.Aplicacion/"]
 COPY ["Descuentor.Infraestructura/Descuentor.Infraestructura.csproj", "Descuentor.Infraestructura/"]
 COPY ["Descuentor.Shared/Descuentor.Shared.csproj", "Descuentor.Shared/"]
-RUN dotnet restore "Descuentor.API/Descuentor.API.csproj"
+RUN dotnet restore "Descuentor.API/descuentor.API.csproj"
 COPY . .
 WORKDIR "/src/Descuentor.API"
-RUN dotnet build "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Descuentor.API.dll"]
+ENTRYPOINT ["dotnet", "descuentor.API.dll"]
