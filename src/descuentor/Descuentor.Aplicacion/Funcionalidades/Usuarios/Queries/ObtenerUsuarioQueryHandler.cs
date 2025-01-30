@@ -1,6 +1,5 @@
 using Descuentor.Dominio.Interfaces;
 using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Descuentor.Aplicacion.Funcionalidades.Usuarios.Queries;

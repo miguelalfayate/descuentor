@@ -27,7 +27,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Añado proyecto Descuentor.Tests" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Importante: Quito la dependencia del archivo csproj de Dominio">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +201,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.WebAssembly: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.API: http">
     <configuration name="BlazorApp1: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -523,23 +525,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="39671000" />
-    </task>
-    <task id="LOCAL-00008" summary="Añadida la lógica del back para recuperar los productos en el front">
-      <option name="closed" value="true" />
-      <created>1736721434640</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1736721434641</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Modificada nomenclatura de PrecioInicial">
-      <option name="closed" value="true" />
-      <created>1736721526919</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1736721526919</updated>
+      <workItem from="1737499431424" duration="40858000" />
     </task>
     <task id="LOCAL-00010" summary="Añadida página principal donde se listan los artículos de los clientes">
       <option name="closed" value="true" />
@@ -917,7 +903,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738257170074</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Importante: Se cambia el tipo de respuesta de los métodos de IUsuarioRepository.cs">
+      <option name="closed" value="true" />
+      <created>1738258608836</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1738258608836</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Importante: Quito la dependencia del archivo csproj de Dominio">
+      <option name="closed" value="true" />
+      <created>1738259021404</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1738259021405</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -927,8 +929,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario" />
-    <MESSAGE value="Implementación del servicio de notificación por email de los descuentos de productos" />
     <MESSAGE value="Se crea la inserción de datos para TiendasOnline" />
     <MESSAGE value="Se añade el controlador para añadir nuevos usuarios con el rol Usuario" />
     <MESSAGE value="Se elimina el controlador para añadir roles" />
@@ -952,6 +952,8 @@
     <MESSAGE value="Edit Dockerfile" />
     <MESSAGE value="Edit Dockerfile.Api" />
     <MESSAGE value="Añado proyecto Descuentor.Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añado proyecto Descuentor.Tests" />
+    <MESSAGE value="Importante: Se cambia el tipo de respuesta de los métodos de IUsuarioRepository.cs" />
+    <MESSAGE value="Importante: Quito la dependencia del archivo csproj de Dominio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Importante: Quito la dependencia del archivo csproj de Dominio" />
   </component>
 </project>
