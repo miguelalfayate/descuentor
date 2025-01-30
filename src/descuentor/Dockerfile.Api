@@ -34,4 +34,11 @@ RUN dotnet publish "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/publi
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Descuentor.API.dll"]
+
+# Instala las herramientas de Entity Framework
+RUN dotnet tool install --global dotnet-ef
+
+# Agrega la ruta de las herramientas de .NET al PATH
+ENV PATH="$PATH:/root/.dotnet/tools"
+
+ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Descuentor.API.dll"]

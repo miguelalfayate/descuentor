@@ -27,7 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Importante: quito referencias relativas a paquetes">
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio de puerto en docker-compose.yaml">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,6 +200,11 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.API: http">
@@ -477,9 +482,22 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="compose.yaml" />
+        </settings>
       </deployment>
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
@@ -495,6 +513,7 @@
       <item itemvalue=".NET Launch Settings Profile.Descuentor.API: http" />
       <item itemvalue=".NET Launch Settings Profile.Descuentor.Web: http" />
       <item itemvalue="Docker.Descuentor.WebAssembly/Dockerfile" />
+      <item itemvalue="Docker.compose.yaml: Compose Deployment" />
       <item itemvalue="Docker.BlazorApp1/Dockerfile" />
       <item itemvalue="Docker.Descuentor.Web/Dockerfile (1)" />
       <item itemvalue="Docker.Descuentor.API/Dockerfile" />
@@ -526,39 +545,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="42774000" />
-    </task>
-    <task id="LOCAL-00011" summary="Si no hay PrecioActual en productoDto que se inicie con PrecioInical">
-      <option name="closed" value="true" />
-      <created>1736787994103</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1736787994103</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Se exponen todos los headers a las llamadas a la API">
-      <option name="closed" value="true" />
-      <created>1736788016853</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1736788016853</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Se añade página para ver productos individuales">
-      <option name="closed" value="true" />
-      <created>1736870483956</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1736870483956</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Añadidos recursos gráficos, mejora de la logueo de usuarios en la web">
-      <option name="closed" value="true" />
-      <created>1736941021258</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1736941021259</updated>
+      <workItem from="1737499431424" duration="44494000" />
     </task>
     <task id="LOCAL-00015" summary="Mejora visual de los elementos de la extensión de Chrome">
       <option name="closed" value="true" />
@@ -920,7 +907,39 @@
       <option name="project" value="LOCAL" />
       <updated>1738260113644</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Edit Dockerfile.Api">
+      <option name="closed" value="true" />
+      <created>1738265020233</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1738265020233</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Add docker-compose.yaml">
+      <option name="closed" value="true" />
+      <created>1738273719362</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1738273719363</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Add docker-compose.yaml">
+      <option name="closed" value="true" />
+      <created>1738273904378</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1738273904378</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Cambio de puerto en docker-compose.yaml">
+      <option name="closed" value="true" />
+      <created>1738274239351</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1738274239351</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -930,8 +949,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se añade el controlador para añadir nuevos usuarios con el rol Usuario" />
-    <MESSAGE value="Se elimina el controlador para añadir roles" />
     <MESSAGE value="Se modifica el TiendasOnlineSeed. Faltaban los ids" />
     <MESSAGE value="Se modifica NotificacionDescuentosService para que funcione con UserManager" />
     <MESSAGE value="Se modifica la página de registro de la web para que funcione con el endpoint api/usuarios" />
@@ -950,11 +967,13 @@
     <MESSAGE value="Las requests y responses relevantes para WebAssembly se trasladan desde Aplicación al proyecto WebAssembly" />
     <MESSAGE value="Añadidos archivos para contenerizar Descuentor.WebAssembly" />
     <MESSAGE value="Edit Dockerfile" />
-    <MESSAGE value="Edit Dockerfile.Api" />
     <MESSAGE value="Añado proyecto Descuentor.Tests" />
     <MESSAGE value="Importante: Se cambia el tipo de respuesta de los métodos de IUsuarioRepository.cs" />
     <MESSAGE value="Importante: Quito la dependencia del archivo csproj de Dominio" />
     <MESSAGE value="Importante: quito referencias relativas a paquetes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Importante: quito referencias relativas a paquetes" />
+    <MESSAGE value="Edit Dockerfile.Api" />
+    <MESSAGE value="Add docker-compose.yaml" />
+    <MESSAGE value="Cambio de puerto en docker-compose.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio de puerto en docker-compose.yaml" />
   </component>
 </project>
