@@ -17,6 +17,6 @@ public class CrearUsuarioCommandHandler : IRequestHandler<CrearUsuarioCommand, I
     {
         var respuesta = await _usuarioRepository.CrearUsuarioConRol(request.Email, request.Password);
         
-        return respuesta;
+        return (IActionResult)respuesta;
     }
 }

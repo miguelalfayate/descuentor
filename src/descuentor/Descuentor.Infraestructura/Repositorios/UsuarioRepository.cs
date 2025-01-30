@@ -15,7 +15,7 @@ public class UsuarioRepository : IUsuarioRepository
         _userManager = userManager;
     }
 
-    public async Task<IActionResult> CrearUsuarioConRol(string email, string password)
+    public async Task<object> CrearUsuarioConRol(string email, string password)
     {
         var user = new UsuarioAplicacion()
         {
@@ -35,7 +35,7 @@ public class UsuarioRepository : IUsuarioRepository
         return new OkObjectResult(user);
     }
 
-    public async Task<IActionResult> ModificarUsuario(int id, string nombre, string apellidos, string telefono)
+    public async Task<object> ModificarUsuario(int id, string nombre, string apellidos, string telefono)
     {
         var usuario = _userManager.Users.FirstOrDefault(u => u.Id == id);
         
@@ -53,7 +53,7 @@ public class UsuarioRepository : IUsuarioRepository
         return new OkObjectResult(usuario);
     }
 
-    public async Task<IActionResult> ObtenerUsuarioPorId(int id)
+    public async Task<object> ObtenerUsuarioPorId(int id)
     {
         // var usuario = _userManager.Users.FirstOrDefault(u => u.Id == id);
         var usuario = await _userManager.FindByIdAsync(id.ToString());

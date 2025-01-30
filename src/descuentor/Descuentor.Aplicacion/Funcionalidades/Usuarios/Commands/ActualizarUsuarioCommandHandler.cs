@@ -21,6 +21,6 @@ public class ActualizarUsuarioCommandHandler : IRequestHandler<ActualizarUsuario
         
         var respuesta = await _usuarioRepository.ModificarUsuario(usuarioAplicacionId, request.Nombre, request.Apellidos, request.Telefono);
         
-        return respuesta;
+        return (IActionResult)respuesta;
     }
 }

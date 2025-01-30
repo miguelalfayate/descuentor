@@ -27,10 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit Dockerfile">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/descuentor.sln" beforeDir="false" afterPath="$PROJECT_DIR$/descuentor.sln" afterDir="false" />
-    </list>
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Añado proyecto Descuentor.Tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +75,10 @@
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Usuarios/Queries/ObtenerUsuarioQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Usuarios/Queries/ObtenerUsuarioQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/DependencyInjection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/ProductoRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
@@ -110,6 +110,7 @@
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Servicios/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Servicios/TokenService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/ProductosController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/UsuariosController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/UsuariosController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/UsuariosController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/descuentor.API/Controllers/UsuariosController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -522,23 +523,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="37599000" />
-    </task>
-    <task id="LOCAL-00006" summary="Se añade el proyecto Descuentor.Web que corresponde a la página de la Blazor">
-      <option name="closed" value="true" />
-      <created>1736499880214</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1736499880215</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Se añade el proyecto de la página web. Se crean las páginas de login, que guarda los tokens de respuesta de la API en el localStorage del navegador, y la página de registro.">
-      <option name="closed" value="true" />
-      <created>1736589525640</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1736589525640</updated>
+      <workItem from="1737499431424" duration="39671000" />
     </task>
     <task id="LOCAL-00008" summary="Añadida la lógica del back para recuperar los productos en el front">
       <option name="closed" value="true" />
@@ -916,7 +901,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738254363986</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Edit Dockerfile.Api">
+      <option name="closed" value="true" />
+      <created>1738257134125</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1738257134125</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Añado proyecto Descuentor.Tests">
+      <option name="closed" value="true" />
+      <created>1738257170074</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1738257170074</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -926,8 +927,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Con este cambio ya se incluye contraseña a los usuarios por defecto" />
-    <MESSAGE value="Se eliminan las migraciones y se comienza con una nueva base de datos" />
     <MESSAGE value="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario" />
     <MESSAGE value="Implementación del servicio de notificación por email de los descuentos de productos" />
     <MESSAGE value="Se crea la inserción de datos para TiendasOnline" />
@@ -951,6 +950,8 @@
     <MESSAGE value="Las requests y responses relevantes para WebAssembly se trasladan desde Aplicación al proyecto WebAssembly" />
     <MESSAGE value="Añadidos archivos para contenerizar Descuentor.WebAssembly" />
     <MESSAGE value="Edit Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Dockerfile" />
+    <MESSAGE value="Edit Dockerfile.Api" />
+    <MESSAGE value="Añado proyecto Descuentor.Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añado proyecto Descuentor.Tests" />
   </component>
 </project>
