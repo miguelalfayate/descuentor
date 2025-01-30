@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy the project files and restore dependencies
-COPY ["Descuentor.WebAssembly/Descuentor.WebAssembly.csproj", "Descuentor.WebAssembly/"]
+COPY ["Descuentor.WebAssembly.csproj", "Descuentor.WebAssembly/"]
 # COPY ["Descuentor.Shared/Descuentor.Shared.csproj", "Descuentor.Shared/"]
 RUN dotnet restore "Descuentor.WebAssembly/Descuentor.WebAssembly.csproj"
 
