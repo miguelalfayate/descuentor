@@ -27,7 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Importante: Quito la dependencia del archivo csproj de Dominio">
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Importante: quito referencias relativas a paquetes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +74,7 @@
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Queries/ObtenerProductosPaginacionQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Usuarios/Commands/ActualizarUsuarioCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Usuarios/Commands/ActualizarUsuarioCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Usuarios/Queries/ObtenerUsuarioQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Usuarios/Queries/ObtenerUsuarioQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Usuarios/Queries/ObtenerUsuarioQueryHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Dominio/Interfaces/IUsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
@@ -525,15 +526,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="40858000" />
-    </task>
-    <task id="LOCAL-00010" summary="Añadida página principal donde se listan los artículos de los clientes">
-      <option name="closed" value="true" />
-      <created>1736782359244</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1736782359244</updated>
+      <workItem from="1737499431424" duration="42774000" />
     </task>
     <task id="LOCAL-00011" summary="Si no hay PrecioActual en productoDto que se inicie con PrecioInical">
       <option name="closed" value="true" />
@@ -919,7 +912,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738259021405</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Importante: quito referencias relativas a paquetes">
+      <option name="closed" value="true" />
+      <created>1738260113644</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1738260113644</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -929,7 +930,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se crea la inserción de datos para TiendasOnline" />
     <MESSAGE value="Se añade el controlador para añadir nuevos usuarios con el rol Usuario" />
     <MESSAGE value="Se elimina el controlador para añadir roles" />
     <MESSAGE value="Se modifica el TiendasOnlineSeed. Faltaban los ids" />
@@ -954,6 +954,7 @@
     <MESSAGE value="Añado proyecto Descuentor.Tests" />
     <MESSAGE value="Importante: Se cambia el tipo de respuesta de los métodos de IUsuarioRepository.cs" />
     <MESSAGE value="Importante: Quito la dependencia del archivo csproj de Dominio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Importante: Quito la dependencia del archivo csproj de Dominio" />
+    <MESSAGE value="Importante: quito referencias relativas a paquetes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Importante: quito referencias relativas a paquetes" />
   </component>
 </project>
