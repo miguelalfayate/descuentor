@@ -27,9 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio de puerto en docker-compose.yaml">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio para que funcione la migración de Entity en Docker" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +61,7 @@
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Startup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/ChromeExtension/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.API/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/CrearProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -545,15 +544,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="44494000" />
-    </task>
-    <task id="LOCAL-00015" summary="Mejora visual de los elementos de la extensión de Chrome">
-      <option name="closed" value="true" />
-      <created>1737030988776</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1737030988776</updated>
+      <workItem from="1737499431424" duration="45250000" />
     </task>
     <task id="LOCAL-00016" summary="Se añaden las funcionalidades de eliminar y modificar producto">
       <option name="closed" value="true" />
@@ -939,7 +930,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738274239351</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Cambio para que funcione la migración de Entity en Docker">
+      <option name="closed" value="true" />
+      <created>1738275969908</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1738275969908</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -949,7 +948,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se modifica el TiendasOnlineSeed. Faltaban los ids" />
     <MESSAGE value="Se modifica NotificacionDescuentosService para que funcione con UserManager" />
     <MESSAGE value="Se modifica la página de registro de la web para que funcione con el endpoint api/usuarios" />
     <MESSAGE value="Resolución de error con el email" />
@@ -974,6 +972,7 @@
     <MESSAGE value="Edit Dockerfile.Api" />
     <MESSAGE value="Add docker-compose.yaml" />
     <MESSAGE value="Cambio de puerto en docker-compose.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio de puerto en docker-compose.yaml" />
+    <MESSAGE value="Cambio para que funcione la migración de Entity en Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio para que funcione la migración de Entity en Docker" />
   </component>
 </project>

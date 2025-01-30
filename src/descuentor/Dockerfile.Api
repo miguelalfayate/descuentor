@@ -27,6 +27,9 @@ COPY . .
 WORKDIR "/src/Descuentor.API"
 RUN dotnet build "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
+# Instala las herramientas de Entity Framework
+RUN dotnet tool install --global dotnet-ef
+
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
@@ -35,8 +38,8 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-# Instala las herramientas de Entity Framework
-RUN dotnet tool install --global dotnet-ef
+# Copia las herramientas de Entity Framework desde la etapa de construcción
+COPY --from=build /root/.dotnet /root/.dotnet
 
 # Agrega la ruta de las herramientas de .NET al PATH
 ENV PATH="$PATH:/root/.dotnet/tools"
