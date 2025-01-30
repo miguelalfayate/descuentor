@@ -7,7 +7,11 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Descuentor.API/Descuentor.API.csproj", "Descuentor.API/"]
+COPY ["descuentor.API/Descuentor.API.csproj", "Descuentor.API/"]
+COPY ["Descuentor.Dominio/Descuentor.Dominio.csproj", "Descuentor.Dominio/"]
+COPY ["Descuentor.Aplicacion/Descuentor.Aplicacion.csproj", "Descuentor.Aplicacion/"]
+COPY ["Descuentor.Infraestructura/Descuentor.Infraestructura.csproj", "Descuentor.Infraestructura/"]
+COPY ["Descuentor.Shared/Descuentor.Shared.csproj", "Descuentor.Shared/"]
 RUN dotnet restore "Descuentor.API/Descuentor.API.csproj"
 COPY . .
 WORKDIR "/src/Descuentor.API"
