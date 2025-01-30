@@ -27,7 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio para que funcione la migración de Entity en Docker" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio para migrar con Entity en Docker" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -544,15 +544,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="45250000" />
-    </task>
-    <task id="LOCAL-00016" summary="Se añaden las funcionalidades de eliminar y modificar producto">
-      <option name="closed" value="true" />
-      <created>1737031172097</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031172097</updated>
+      <workItem from="1737499431424" duration="45623000" />
     </task>
     <task id="LOCAL-00017" summary="Se crean los archivos necesarios para notificar los descuentos por email">
       <option name="closed" value="true" />
@@ -938,7 +930,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738275969908</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Cambio para migrar con Entity en Docker">
+      <option name="closed" value="true" />
+      <created>1738276277545</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1738276277545</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -948,7 +948,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se modifica NotificacionDescuentosService para que funcione con UserManager" />
     <MESSAGE value="Se modifica la página de registro de la web para que funcione con el endpoint api/usuarios" />
     <MESSAGE value="Resolución de error con el email" />
     <MESSAGE value="Terminado el formulario de edición de Usuario" />
@@ -973,6 +972,7 @@
     <MESSAGE value="Add docker-compose.yaml" />
     <MESSAGE value="Cambio de puerto en docker-compose.yaml" />
     <MESSAGE value="Cambio para que funcione la migración de Entity en Docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio para que funcione la migración de Entity en Docker" />
+    <MESSAGE value="Cambio para migrar con Entity en Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio para migrar con Entity en Docker" />
   </component>
 </project>
