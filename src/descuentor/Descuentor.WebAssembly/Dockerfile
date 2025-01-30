@@ -4,7 +4,7 @@ WORKDIR /src
 
 # Copy the project files and restore dependencies
 COPY ["Descuentor.WebAssembly.csproj", "Descuentor.WebAssembly/"]
-# COPY ["Descuentor.Shared/Descuentor.Shared.csproj", "Descuentor.Shared/"]
+COPY ["../Descuentor.Shared/Descuentor.Shared.csproj", "Descuentor.Shared/"]
 RUN dotnet restore "Descuentor.WebAssembly/Descuentor.WebAssembly.csproj"
 
 # Copy the remaining files and build the app
