@@ -27,10 +27,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio EF en Docker">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile.Api" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.Api" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit para EF en Docker. Migraciones programáticas">
+      <change beforePath="$PROJECT_DIR$/Descuentor.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.API/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +136,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29898ce74e3763a786ac1bd9a6db2152e1af75769440b1e53b9cbdf1dda1bd99/SecuritySchemeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2b24ce9c80deeefe1484c6a777b21dbcfe64fbf581ece7174d0fa1b50ebcf50/InputNumber.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/35f3a54f5acb408a3e219b2de039f1a39557b7e4515f11238cba07b60c0ce/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3bd4df5aff92cabbc4d630be64227073db1b8539b3a1e47786b4b189d7cdb7/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3c55d180f9e965139cdd3398b26189651ccdd354886f17ae0858685565a5c/OpenApiSecurityScheme.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4dc6591343fedfd8ca6d294ac5ef85179a5bbf5ede71f76b5bf5469c78d6c9a/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5098771c4515b115fc5e694d8e79c3523cebd8fda4a73efa7dfa672215a1c9/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
@@ -548,15 +547,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="46711000" />
-    </task>
-    <task id="LOCAL-00020" summary="Página de edición de producto añadida">
-      <option name="closed" value="true" />
-      <created>1737031436714</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031436714</updated>
+      <workItem from="1737499431424" duration="47537000" />
     </task>
     <task id="LOCAL-00021" summary="Se añade el dto ApiErrorResponse">
       <option name="closed" value="true" />
@@ -942,7 +933,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738278425280</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Edit para EF en Docker. Migraciones programáticas">
+      <option name="closed" value="true" />
+      <created>1738281251005</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1738281251005</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -952,7 +951,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Terminado el formulario de edición de Usuario" />
     <MESSAGE value="Añadir detalles definitivos de la extensión al manifest.json" />
     <MESSAGE value="Quitar los campos para debugging cuando se captura correctamente el producto" />
     <MESSAGE value="Se quitan los endpoint de weather precargados" />
@@ -977,6 +975,7 @@
     <MESSAGE value="Cambio para migrar con Entity en Docker" />
     <MESSAGE value="Idem" />
     <MESSAGE value="Cambio EF en Docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio EF en Docker" />
+    <MESSAGE value="Edit para EF en Docker. Migraciones programáticas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit para EF en Docker. Migraciones programáticas" />
   </component>
 </project>

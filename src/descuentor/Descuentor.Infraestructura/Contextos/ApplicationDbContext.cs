@@ -4,7 +4,6 @@ using Descuentor.Infraestructura.ModelosIdentity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Descuentor.Infraestructura.Contextos;
@@ -15,13 +14,25 @@ public class ApplicationDbContext : IdentityDbContext<UsuarioAplicacion, RolApli
     {
         try
         {
-                var migrator = Database.GetService<IMigrator>();
-                migrator.Migrate("InitialCreate");
+            var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
+            if (databaseCreator != null)
+            {
+                // Create the database if it doesn't exist
+                if (!databaseCreator.CanConnect())
+                {
+                    databaseCreator.Create();
+                }
+
+                // Create tables if they don't exist
+                if (!databaseCreator.HasTables())
+                {
+                    databaseCreator.CreateTables();
+                }
+            }
         }
         catch (Exception ex)
         {
-            // Manejar la excepción según sea necesario
-            throw new InvalidOperationException("Error aplicando migraciones", ex);
+            Console.WriteLine($"Database creation failed: {ex.Message}");
         }
     }
     
