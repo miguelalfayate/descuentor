@@ -9,24 +9,26 @@ public class AuthService : IAuthService
 {
     private readonly HttpClient _httpClient;
     private readonly ITokenService _tokenService;
+    private readonly string _baseUrl;
 
-    public AuthService(HttpClient httpClient, ITokenService tokenService)
+    public AuthService(HttpClient httpClient, ITokenService tokenService, IConfiguration configuration)
     {
         _httpClient = httpClient;
         _tokenService = tokenService;
+        _baseUrl = configuration.GetSection("ApiSettings:BaseUrl").Value!;
     }
 
     public async Task<HttpResponseMessage> Register(RegisterRequest request)
     {
         Console.WriteLine("Request: " + request.ConfirmPassword);
-        var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/api/usuarios", request);
+        var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/api/usuarios", request);
         Console.WriteLine("Response: " + response);
         return response;
     }
 
     public async Task<TokenResponse> Login(LoginRequest request)
     {
-        var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/identity/login", request);
+        var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/identity/login", request);
         Console.WriteLine("Response: " + response);
         
         if (response.IsSuccessStatusCode)
@@ -45,7 +47,7 @@ public class AuthService : IAuthService
     public async Task<bool> RefreshTokenAsync()
     {
         var refreshToken = await _tokenService.GetRefreshTokenAsync();
-        var response = await _httpClient.PostAsJsonAsync("http://localhost:5095/identity/refresh", new RefreshTokenRequest { RefreshToken = refreshToken! });
+        var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/identity/refresh", new RefreshTokenRequest { RefreshToken = refreshToken! });
         
         if (response.IsSuccessStatusCode)
         {

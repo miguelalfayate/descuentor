@@ -15,8 +15,17 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfraestructura(this IServiceCollection services, IConfiguration configuration)
     {
+        // services.AddDbContext<ApplicationDbContext>(options =>
+        //     options.UseNpgsql(configuration.GetConnectionString("defaultConnection"))
+        // );
+        
+        var connectionString = configuration.GetConnectionString(
+            configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT") == "Development" 
+                ? "developmentConnection" 
+                : "productionConnection");
+
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("defaultConnection"))
+            options.UseNpgsql(connectionString)
         );
 
         services.AddDataProtection();

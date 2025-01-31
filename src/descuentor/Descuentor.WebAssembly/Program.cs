@@ -17,6 +17,8 @@ public class Program
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
         
+        //builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
+        
         builder.Services.AddScoped<ITokenService, TokenService>(); // Registrar TokenService
         builder.Services.AddScoped<IAuthService, AuthService>();
         

@@ -27,8 +27,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit para EF en Docker. Migraciones programáticas">
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit EF en Docker">
+      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Configuracion/ApiSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/appsettings.Production.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Descuentor.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Infraestructura/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Descuentor.WebAssembly.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Descuentor.WebAssembly.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.WebAssembly/Servicios/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +52,13 @@
   </component>
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSON File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -59,10 +76,12 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Controllers/ClientesController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Versiones antiguas/EjercicioAPISol-v24 previo llevar a casa 21-11 17-00/EjercicioAPI.Server/Startup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/ChromeExtension/manifest.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Descuentor.WebAssembly/wwwroot/css/bootstrap/bootstrap.min.css.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.API/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Aplicacion/Funcionalidades/Productos/Commands/ActualizarProductoCommandHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -136,6 +155,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29898ce74e3763a786ac1bd9a6db2152e1af75769440b1e53b9cbdf1dda1bd99/SecuritySchemeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2b24ce9c80deeefe1484c6a777b21dbcfe64fbf581ece7174d0fa1b50ebcf50/InputNumber.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/35f3a54f5acb408a3e219b2de039f1a39557b7e4515f11238cba07b60c0ce/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3751f63369d883c5ea470ed57be8df2515b62dde23c49b86e1bbaf8c27b/CallSiteRuntimeResolver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ad82f9910d5c82d76b445db10584a60305639dcad2533e08e6c47f85e3b6d83/MethodBaseInvoker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3bd4df5aff92cabbc4d630be64227073db1b8539b3a1e47786b4b189d7cdb7/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3c55d180f9e965139cdd3398b26189651ccdd354886f17ae0858685565a5c/OpenApiSecurityScheme.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4dc6591343fedfd8ca6d294ac5ef85179a5bbf5ede71f76b5bf5469c78d6c9a/Program.cs" root0="FORCE_HIGHLIGHTING" />
@@ -143,11 +164,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61c385f367fd6f7ec5d88a97447717853ad6c059bf89947783b4268b28c2a949/HttpContextAccessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6fc42e86e61f40fb414f634b57c7b5ee22ee51bbb6c81dbd89f29b3a837b964/DateTime.Unix.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71f8a5297672ad56962c6af62f7241a092ad7d95eaee4ef564601be5d8e37b38/Int32.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d81b2d4f22bee75e5438c707251ae43cb0974c207db91ffc159118c84b4eb9/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7dbdfb636eaf239e236f25602a4737bcea35d9853112016a49f55f460186b/IdentityConstants.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7fd36f4c25be31f4665c2a5e161d86a91b3735f669865f8082d2e01d73263de/ComponentFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8056cd3f452fefb9834f05cdb275b762dd41f27b7766cd71174e78592dc495b/Monitor.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85eb2bbf9352111d14842aa043e285519ee5be4e54b5ff0445f4c85cf19d64c/IBrowserType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89c4224f79e6b275db5cce1623a97eec6e1bbd4755a617dd36d073d2347236a5/String.Manipulation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8cab54a42d3ff1d4ccd4bdbe42ce4d18503d57e552cac0ead6e4e2ad83629b/AuthorizeViewCore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/998633d512409332d99eaaa7b4172ea3040391523d8c859e490fd161753d5b/MethodBaseInvoker.Mono.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a314ee147e1b172ae5fbc0b477aa7acbe6a3f2e07ab946ed05be04ed58b67/String.Comparison.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a7d079cdbfc06e921c4d8ab124b11aaa54632e5564af0e8f231963c3c989b96/AuthorizeView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b90d6b47d6330753e855af18818b97d4207f32c6ee4b793faffc029f069f4/String.cs" root0="FORCE_HIGHLIGHTING" />
@@ -185,7 +209,7 @@
     ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebApp: http.executor": "Run",
-    ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Debug",
     ".NET Project.BlazorApp1.Client.executor": "Run",
     ".NET Project.Descuentor.Web.Client.executor": "Run",
     ".NET Project.Descuentor.Web.executor": "Run",
@@ -209,37 +233,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.API: http">
-    <configuration name="BlazorApp1: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="http" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="BlazorApp1: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="https" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.WebAssembly: http">
     <configuration name="Descuentor.API: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Descuentor.API/Descuentor.API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -257,36 +251,6 @@
     </configuration>
     <configuration name="Descuentor.API: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Descuentor.API/Descuentor.API.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="https" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Descuentor.WebApp: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Descuentor.WebApp/Descuentor.WebApp.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="http" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Descuentor.WebApp: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Descuentor.WebApp/Descuentor.WebApp.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -319,21 +283,6 @@
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Descuentor.WebAssembly/Descuentor.WebAssembly.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Descuentor.Web: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Descuentor.Web/Descuentor.Web.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="http" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -392,7 +341,7 @@
         <settings>
           <option name="imageTag" value="descuentor.webassembly" />
           <option name="containerName" value="descuentor.webassembly" />
-          <option name="contextFolderPath" value="$PROJECT_DIR$" />
+          <option name="contextFolderPath" value="." />
           <option name="portBindings">
             <list>
               <DockerPortBindingImpl>
@@ -505,15 +454,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue=".NET Launch Settings Profile.Descuentor.WebApp: http" />
-      <item itemvalue=".NET Launch Settings Profile.Descuentor.WebApp: https" />
       <item itemvalue=".NET Launch Settings Profile.Descuentor.WebAssembly: http" />
       <item itemvalue=".NET Launch Settings Profile.Descuentor.WebAssembly: https" />
-      <item itemvalue=".NET Launch Settings Profile.BlazorApp1: http" />
-      <item itemvalue=".NET Launch Settings Profile.BlazorApp1: https" />
       <item itemvalue=".NET Launch Settings Profile.Descuentor.API: https" />
       <item itemvalue=".NET Launch Settings Profile.Descuentor.API: http" />
-      <item itemvalue=".NET Launch Settings Profile.Descuentor.Web: http" />
       <item itemvalue="Docker.Descuentor.WebAssembly/Dockerfile" />
       <item itemvalue="Docker.compose.yaml: Compose Deployment" />
       <item itemvalue="Docker.BlazorApp1/Dockerfile" />
@@ -525,7 +469,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue=".NET Launch Settings Profile.Descuentor.Web: http" />
         <item itemvalue="Docker.Descuentor.Web/Dockerfile build" />
       </list>
     </recent_temporary>
@@ -547,15 +490,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="47537000" />
-    </task>
-    <task id="LOCAL-00021" summary="Se añade el dto ApiErrorResponse">
-      <option name="closed" value="true" />
-      <created>1737031497722</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031497722</updated>
+      <workItem from="1737499431424" duration="58174000" />
     </task>
     <task id="LOCAL-00022" summary="Cambio en TiendaNombre del dto ProductoHistorialPreciosDto">
       <option name="closed" value="true" />
@@ -941,7 +876,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738281251005</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Edit EF en Docker">
+      <option name="closed" value="true" />
+      <created>1738282266078</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1738282266078</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -951,7 +894,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Añadir detalles definitivos de la extensión al manifest.json" />
     <MESSAGE value="Quitar los campos para debugging cuando se captura correctamente el producto" />
     <MESSAGE value="Se quitan los endpoint de weather precargados" />
     <MESSAGE value="Se cambia a 5 los items por página en las queries de productos paginadas" />
@@ -976,6 +918,7 @@
     <MESSAGE value="Idem" />
     <MESSAGE value="Cambio EF en Docker" />
     <MESSAGE value="Edit para EF en Docker. Migraciones programáticas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit para EF en Docker. Migraciones programáticas" />
+    <MESSAGE value="Edit EF en Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit EF en Docker" />
   </component>
 </project>
