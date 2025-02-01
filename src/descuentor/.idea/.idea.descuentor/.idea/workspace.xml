@@ -27,7 +27,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit Dockerfile.Api para instalar powershell y drivers" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit Dockerfile.Api">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,7 +206,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.BlazorApp1: http.executor": "Run",
     ".NET Launch Settings Profile.BlazorApp2: http.executor": "Run",
-    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Debug",
+    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebApp: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
@@ -490,15 +492,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="71301000" />
-    </task>
-    <task id="LOCAL-00034" summary="Se modifica el TiendasOnlineSeed. Faltaban los ids">
-      <option name="closed" value="true" />
-      <created>1737115082325</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1737115082325</updated>
+      <workItem from="1737499431424" duration="72458000" />
     </task>
     <task id="LOCAL-00035" summary="Se modifica NotificacionDescuentosService para que funcione con UserManager">
       <option name="closed" value="true" />
@@ -884,7 +878,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738429859963</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Edit Dockerfile.Api">
+      <option name="closed" value="true" />
+      <created>1738433985042</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1738433985042</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -898,7 +900,6 @@
     <MESSAGE value="Importante: Se cambia el tipo de respuesta de los métodos de IUsuarioRepository.cs" />
     <MESSAGE value="Importante: Quito la dependencia del archivo csproj de Dominio" />
     <MESSAGE value="Importante: quito referencias relativas a paquetes" />
-    <MESSAGE value="Edit Dockerfile.Api" />
     <MESSAGE value="Add docker-compose.yaml" />
     <MESSAGE value="Cambio de puerto en docker-compose.yaml" />
     <MESSAGE value="Cambio para que funcione la migración de Entity en Docker" />
@@ -919,20 +920,21 @@
     <MESSAGE value="Edit a TryParse con los precios de scraper" />
     <MESSAGE value="Prueba para hacer ejecutable Playwright" />
     <MESSAGE value="Edit Dockerfile.Api para instalar powershell y drivers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Dockerfile.Api para instalar powershell y drivers" />
+    <MESSAGE value="Edit Dockerfile.Api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit Dockerfile.Api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs</url>
-          <line>70</line>
+          <line>71</line>
           <properties documentPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs" containingFunctionPresentation="Method 'ObtenerPrecioProducto'">
             <startOffsets>
-              <option value="2309" />
+              <option value="2445" />
             </startOffsets>
             <endOffsets>
-              <option value="2343" />
+              <option value="2479" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="14" />

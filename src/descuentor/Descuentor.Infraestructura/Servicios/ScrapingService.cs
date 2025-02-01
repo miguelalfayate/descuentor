@@ -33,15 +33,19 @@ public class ScrapingService : IScrapingService
     {
         using var playwright = await Playwright.CreateAsync();
 
-        var exitCode = Microsoft.Playwright.Program.Main(new[] { "install" });
-        if (exitCode != 0)
+        if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
         {
-            throw new Exception($"Playwright exited with code {exitCode}");
+            var exitCode = Microsoft.Playwright.Program.Main(new[] { "install" });
+            if (exitCode != 0)
+            {
+                throw new Exception($"Playwright exited with code {exitCode}");
+            }
         }
-
+        
         await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
         {
-            Headless = true
+            Headless = true,
+            ExecutablePath = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production" ? "/path/to/chromium" : null
         });
 
         var page = await browser.NewPageAsync();
