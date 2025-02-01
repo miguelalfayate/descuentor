@@ -27,10 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Modificación debugging para el script del actualizador">
-      <change beforePath="$PROJECT_DIR$/Dockerfile.Api" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.Api" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit a TryParse con los precios de scraper" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +96,7 @@
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/ScrapingService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -492,23 +490,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="69487000" />
-    </task>
-    <task id="LOCAL-00030" summary="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario">
-      <option name="closed" value="true" />
-      <created>1737032996168</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1737032996168</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Implementación del servicio de notificación por email de los descuentos de productos">
-      <option name="closed" value="true" />
-      <created>1737062721678</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1737062721678</updated>
+      <workItem from="1737499431424" duration="69743000" />
     </task>
     <task id="LOCAL-00032" summary="Se crea la inserción de datos para TiendasOnline">
       <option name="closed" value="true" />
@@ -886,7 +868,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738417737441</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Edit del Dockerfile.Api para hacer que funcione PlayWright">
+      <option name="closed" value="true" />
+      <created>1738428248447</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1738428248447</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Edit a TryParse con los precios de scraper">
+      <option name="closed" value="true" />
+      <created>1738428274847</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1738428274847</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -896,8 +894,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se Mejora el html de la notificación de email" />
-    <MESSAGE value="Las requests y responses relevantes para WebAssembly se trasladan desde Aplicación al proyecto WebAssembly" />
     <MESSAGE value="Añadidos archivos para contenerizar Descuentor.WebAssembly" />
     <MESSAGE value="Edit Dockerfile" />
     <MESSAGE value="Añado proyecto Descuentor.Tests" />
@@ -921,7 +917,9 @@
     <MESSAGE value="Se añade un test unitario" />
     <MESSAGE value="Cambio banal" />
     <MESSAGE value="Modificación debugging para el script del actualizador" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificación debugging para el script del actualizador" />
+    <MESSAGE value="Edit del Dockerfile.Api para hacer que funcione PlayWright" />
+    <MESSAGE value="Edit a TryParse con los precios de scraper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit a TryParse con los precios de scraper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -33,6 +33,7 @@ RUN dotnet publish "Descuentor.API.csproj" -c $BUILD_CONFIGURATION -o /app/publi
 
 FROM base AS final
 WORKDIR /app
-RUN chmod +x /.playwright/node/*/node
+# RUN chmod +x /.playwright/node/*/node
+RUN if [ -f /.playwright/node/*/node ]; then ln -s /usr/local/bin/node /.playwright/node/*/node && chmod +x /.playwright/node/*/node; fi
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Descuentor.API.dll"]
