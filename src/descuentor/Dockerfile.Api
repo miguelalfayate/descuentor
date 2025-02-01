@@ -53,6 +53,7 @@ RUN rm -rf playwright.ps1
 RUN apt remove wget powershell -yq
 RUN mv /root/.cache /home/app
 RUN chown -R app:app /home/app/.cache
+RUN chmod 777 /app/.playwright/node/linux-x64/node
 
 USER app
 
