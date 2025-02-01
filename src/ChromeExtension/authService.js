@@ -1,7 +1,7 @@
 // Gestión de autenticación y tokens
 class AuthService {
     constructor() {
-        this.API_URL = 'http://localhost:5095/identity';
+        this.API_URL = 'http://192.168.10.241:5095/identity';
         this.TOKEN_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutos
     }
 

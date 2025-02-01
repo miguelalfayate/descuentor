@@ -27,9 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio uri produccion">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Algo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,6 +96,7 @@
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -207,7 +206,7 @@
     ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebApp: http.executor": "Run",
-    ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Debug",
+    ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
     ".NET Project.BlazorApp1.Client.executor": "Run",
     ".NET Project.Descuentor.Web.Client.executor": "Run",
     ".NET Project.Descuentor.Web.executor": "Run",
@@ -488,23 +487,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="62504000" />
-    </task>
-    <task id="LOCAL-00024" summary="Se añade opción para que se ignoren la referencias circulares en Entity">
-      <option name="closed" value="true" />
-      <created>1737031644681</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031644681</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Se crean dtos para la edición de datos de usuarios">
-      <option name="closed" value="true" />
-      <created>1737031728568</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031728568</updated>
+      <workItem from="1737499431424" duration="62703000" />
     </task>
     <task id="LOCAL-00026" summary="Se añade CrearProductoCommandHandler el usuario id en el producto">
       <option name="closed" value="true" />
@@ -882,7 +865,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738362553812</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Añadidos uris cambian con el entorno">
+      <option name="closed" value="true" />
+      <created>1738370029327</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1738370029327</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Algo">
+      <option name="closed" value="true" />
+      <created>1738370038478</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1738370038478</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -892,8 +891,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se cambia a 5 los items por página en las queries de productos paginadas" />
-    <MESSAGE value="Se modifica el body html de las notificaciones para que se vea la tabla" />
     <MESSAGE value="Se eliminan proyectos sobrantes" />
     <MESSAGE value="Se llevan los Dtos al proyecto de clases Descuentor.Shared" />
     <MESSAGE value="Se eliminan las Dtos de la capa Aplicacion y se llevan a Shared" />
@@ -917,6 +914,8 @@
     <MESSAGE value="Edit EF en Docker" />
     <MESSAGE value="Opciones de entorno de producción implementadas" />
     <MESSAGE value="Cambio uri produccion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio uri produccion" />
+    <MESSAGE value="Añadidos uris cambian con el entorno" />
+    <MESSAGE value="Algo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Algo" />
   </component>
 </project>

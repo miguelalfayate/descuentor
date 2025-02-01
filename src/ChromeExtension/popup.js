@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
 
                 // Llamada a la API
-                const response = await fetch('http://localhost:5095/api/productos', {
+                const response = await fetch('http://192.168.10.241:5095/api/productos', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
