@@ -68,7 +68,8 @@ public class ScrapingService : IScrapingService
             string price = await priceElement.InnerTextAsync();
             price = price.Replace("€", "").Trim();
             Console.WriteLine($"Precio encontrado: {price}");
-            priceValue = decimal.Parse(price);
+            //priceValue = decimal.Parse(price);
+            decimal.TryParse(price, out priceValue);
         }
         else
         {
