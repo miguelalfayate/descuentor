@@ -27,7 +27,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio banal" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Modificación debugging para el script del actualizador">
+      <change beforePath="$PROJECT_DIR$/Dockerfile.Api" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.Api" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,7 +206,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.BlazorApp1: http.executor": "Run",
     ".NET Launch Settings Profile.BlazorApp2: http.executor": "Run",
-    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Debug",
     ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebApp: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
@@ -232,7 +235,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.WebAssembly: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Descuentor.API: http">
     <configuration name="Descuentor.API: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Descuentor.API/Descuentor.API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -489,15 +492,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="66692000" />
-    </task>
-    <task id="LOCAL-00029" summary="Se eliminan las migraciones y se comienza con una nueva base de datos">
-      <option name="closed" value="true" />
-      <created>1737031899940</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031899940</updated>
+      <workItem from="1737499431424" duration="69487000" />
     </task>
     <task id="LOCAL-00030" summary="Se elimina la tabla auxiliar UsuarioProducto. A partir de ahora todo producto está relacionado a un usuario">
       <option name="closed" value="true" />
@@ -883,7 +878,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738417357197</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Modificación debugging para el script del actualizador">
+      <option name="closed" value="true" />
+      <created>1738417737441</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1738417737441</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -893,7 +896,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se quitan las interfaces de Aplicacion y se llevan a Dominio unas y otras a WebAssembly" />
     <MESSAGE value="Se Mejora el html de la notificación de email" />
     <MESSAGE value="Las requests y responses relevantes para WebAssembly se trasladan desde Aplicación al proyecto WebAssembly" />
     <MESSAGE value="Añadidos archivos para contenerizar Descuentor.WebAssembly" />
@@ -918,6 +920,26 @@
     <MESSAGE value="Se añade contenedor Actualizador" />
     <MESSAGE value="Se añade un test unitario" />
     <MESSAGE value="Cambio banal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio banal" />
+    <MESSAGE value="Modificación debugging para el script del actualizador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificación debugging para el script del actualizador" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs</url>
+          <line>70</line>
+          <properties documentPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs" containingFunctionPresentation="Method 'ObtenerPrecioProducto'">
+            <startOffsets>
+              <option value="2309" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2343" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
