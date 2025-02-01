@@ -27,7 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit Dockerfile.Api">
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit ScrapingService.cs y Dockerfile.Api">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +98,7 @@
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Repositorios/UsuarioRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/NotificacionDescuentosService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/ScrapingService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.Infraestructura/Servicios/ScrapingService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -492,15 +493,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="72458000" />
-    </task>
-    <task id="LOCAL-00035" summary="Se modifica NotificacionDescuentosService para que funcione con UserManager">
-      <option name="closed" value="true" />
-      <created>1737115110930</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1737115110930</updated>
+      <workItem from="1737499431424" duration="73129000" />
     </task>
     <task id="LOCAL-00036" summary="Se modifica la página de registro de la web para que funcione con el endpoint api/usuarios">
       <option name="closed" value="true" />
@@ -886,7 +879,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738433985042</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Edit ScrapingService.cs y Dockerfile.Api">
+      <option name="closed" value="true" />
+      <created>1738438093844</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1738438093844</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -896,7 +897,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Añado proyecto Descuentor.Tests" />
     <MESSAGE value="Importante: Se cambia el tipo de respuesta de los métodos de IUsuarioRepository.cs" />
     <MESSAGE value="Importante: Quito la dependencia del archivo csproj de Dominio" />
     <MESSAGE value="Importante: quito referencias relativas a paquetes" />
@@ -921,20 +921,21 @@
     <MESSAGE value="Prueba para hacer ejecutable Playwright" />
     <MESSAGE value="Edit Dockerfile.Api para instalar powershell y drivers" />
     <MESSAGE value="Edit Dockerfile.Api" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Dockerfile.Api" />
+    <MESSAGE value="Edit ScrapingService.cs y Dockerfile.Api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit ScrapingService.cs y Dockerfile.Api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs</url>
-          <line>71</line>
+          <line>74</line>
           <properties documentPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs" containingFunctionPresentation="Method 'ObtenerPrecioProducto'">
             <startOffsets>
-              <option value="2445" />
+              <option value="2584" />
             </startOffsets>
             <endOffsets>
-              <option value="2479" />
+              <option value="2618" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="14" />

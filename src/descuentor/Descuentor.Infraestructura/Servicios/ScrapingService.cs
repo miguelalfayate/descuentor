@@ -45,7 +45,7 @@ public class ScrapingService : IScrapingService
         await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
         {
             Headless = true,
-            ExecutablePath = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production" ? "/path/to/chromium" : null
+            //ExecutablePath = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production" ? "/path/to/chromium" : null
         });
 
         var page = await browser.NewPageAsync();
