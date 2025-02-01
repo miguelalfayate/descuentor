@@ -27,4 +27,4 @@ update_response=$(curl -s -X POST "http://api:8080/api/ActualizarPrecios" \
 echo "Respuesta del endpoint de actualización de precios: $update_response"
 
 # Imprimir mensaje de finalización
-echo "Script de actualización de precios finalizado.": application/json"
+echo "Script de actualización de precios finalizado."
