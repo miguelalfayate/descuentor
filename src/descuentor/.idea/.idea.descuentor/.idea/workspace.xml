@@ -27,7 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se añade un test unitario" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio banal" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -489,15 +489,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="66353000" />
-    </task>
-    <task id="LOCAL-00028" summary="Con este cambio ya se incluye contraseña a los usuarios por defecto">
-      <option name="closed" value="true" />
-      <created>1737031870324</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031870324</updated>
+      <workItem from="1737499431424" duration="66692000" />
     </task>
     <task id="LOCAL-00029" summary="Se eliminan las migraciones y se comienza con una nueva base de datos">
       <option name="closed" value="true" />
@@ -883,7 +875,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738415837856</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Cambio banal">
+      <option name="closed" value="true" />
+      <created>1738417357197</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1738417357197</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -893,7 +893,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se eliminan las Dtos de la capa Aplicacion y se llevan a Shared" />
     <MESSAGE value="Se quitan las interfaces de Aplicacion y se llevan a Dominio unas y otras a WebAssembly" />
     <MESSAGE value="Se Mejora el html de la notificación de email" />
     <MESSAGE value="Las requests y responses relevantes para WebAssembly se trasladan desde Aplicación al proyecto WebAssembly" />
@@ -918,6 +917,7 @@
     <MESSAGE value="Algo" />
     <MESSAGE value="Se añade contenedor Actualizador" />
     <MESSAGE value="Se añade un test unitario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se añade un test unitario" />
+    <MESSAGE value="Cambio banal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio banal" />
   </component>
 </project>
