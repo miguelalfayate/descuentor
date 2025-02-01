@@ -51,7 +51,7 @@ RUN pwsh playwright.ps1 install chromium
 RUN pwsh playwright.ps1 install-deps chromium
 RUN rm -rf playwright.ps1
 RUN apt remove wget powershell -yq
-RUN mv -r /root/.cache /home/app
+RUN mv /root/.cache /home/app
 RUN chown -R app:app /home/app/.cache
 
 USER app
