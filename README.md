@@ -33,7 +33,7 @@ Descuentor es una aplicación que te permite hacer seguimiento de precios de pro
 git clone https://github.com/miguelalfayate/descuentor.git
 
 # Navegar al directorio
-cd descuentor
+cd descuentor/src/descuentor
 
 # Levantar con Docker Compose
 docker-compose up -d
@@ -48,117 +48,6 @@ docker-compose up -d
 ## 📖 Documentación
 
 Documentación completa disponible en la carpeta `/memoria`.
-
-Índice de las secciones:
-
-1. Introducción
-   1. Motivación
-   2. Objetivos
-   3. Alcance
-
-2. Contexto tecnológico
-   1. Análisis de la competencia
-   2. Tecnologías existentes
-   3. Comparativa de soluciones
-
-3. Análisis y Diseño
-   1. Requisitos
-         1. Funcionales
-         2. No Funcionales
-   2. Arquitectura
-      1. [Sistema](memoria/3-analisis-y-diseño/3.2-arquitectura/3.2.1-sistema.md)
-      2. [Base de Datos](memoria/3-analisis-y-diseño/3.2-arquitectura/3.2.2-base-de-datos.md)
-      3. API Endpoints
-      4. Integraciones
-
-4. Metodología
-   1. Proceso de desarrollo (Git Workflow)
-   2. Herramientas
-   3. Planificación (Timeline, Risk Assessment)
-
-5. Implementación
-   1. Frontend
-      1. Blazor WebApp
-      2. Chrome Extension
-   2. Backend
-      1. API
-      2. Scraper
-   3. Seguridad
-      1. Autenticación
-      2. Gestión de secretos
-      3. Protección de datos
-   4. Testing
-      1. Estrategia
-      2. Unit Tests
-      3. Integration Tests
-
-6. Despliegue
-   1. Entornos
-      1. Desarrollo local
-
-      2. Producción
-
-   2. Docker
-      1. Configuración
-      2. Imágenes
-
-   3. CI/CD
-      1. Pipeline
-      2. Automatización
-
-   4. Monitorización
-      1. Logging
-      2. Métricas
-      3. Alertas
-
-7. Resultados
-   1. Rendimiento
-      1. Pruebas de carga
-
-      2. Benchmarks
-
-      3. Optimizaciones
-
-   2. Métricas de uso
-
-   3. Feedback de usuarios
-
-8. Aspectos Legales
-   1. Licencias
-
-   2. Privacidad
-
-   3. Términos de uso
-
-   4. GDPR
-
-9. Conclusiones
-   1. Objetivos cumplidos
-
-   2. Limitaciones
-
-   3. Trabajo futuro
-      1. Mejoras propuestas
-
-      2. Nuevas funcionalidades
-
-10. Anexos
-    1. Guías
-       1. Instalación
-       2. Manual de usuario
-       3. Manual de administrador
-
-    2. Mantenimiento
-       1. Backups
-       2. Actualizaciones
-       3. Troubleshooting
-
-    3. Referencias técnicas
-       1. API Docs
-       2. Configuración del sistema
-
-
-Bibliografía
 
 ## 🔄 Arquitectura
 
