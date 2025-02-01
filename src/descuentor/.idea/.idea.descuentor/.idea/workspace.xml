@@ -27,11 +27,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Algo">
-      <change afterPath="$PROJECT_DIR$/Descuentor.Tests/Unitarios/ScrapingServiceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Descuentor.Tests/Descuentor.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Tests/Descuentor.Tests.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Se añade un test unitario" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -493,23 +489,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="65983000" />
-    </task>
-    <task id="LOCAL-00026" summary="Se añade CrearProductoCommandHandler el usuario id en el producto">
-      <option name="closed" value="true" />
-      <created>1737031802735</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031802735</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Se cambia ApplicationDbContext para mapear IUsuario a UsuarioAplicacion">
-      <option name="closed" value="true" />
-      <created>1737031836705</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031836705</updated>
+      <workItem from="1737499431424" duration="66353000" />
     </task>
     <task id="LOCAL-00028" summary="Con este cambio ya se incluye contraseña a los usuarios por defecto">
       <option name="closed" value="true" />
@@ -887,7 +867,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738370038478</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Se añade contenedor Actualizador">
+      <option name="closed" value="true" />
+      <created>1738415821705</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1738415821706</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Se añade un test unitario">
+      <option name="closed" value="true" />
+      <created>1738415837856</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1738415837856</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -897,8 +893,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se eliminan proyectos sobrantes" />
-    <MESSAGE value="Se llevan los Dtos al proyecto de clases Descuentor.Shared" />
     <MESSAGE value="Se eliminan las Dtos de la capa Aplicacion y se llevan a Shared" />
     <MESSAGE value="Se quitan las interfaces de Aplicacion y se llevan a Dominio unas y otras a WebAssembly" />
     <MESSAGE value="Se Mejora el html de la notificación de email" />
@@ -922,6 +916,8 @@
     <MESSAGE value="Cambio uri produccion" />
     <MESSAGE value="Añadidos uris cambian con el entorno" />
     <MESSAGE value="Algo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Algo" />
+    <MESSAGE value="Se añade contenedor Actualizador" />
+    <MESSAGE value="Se añade un test unitario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se añade un test unitario" />
   </component>
 </project>
