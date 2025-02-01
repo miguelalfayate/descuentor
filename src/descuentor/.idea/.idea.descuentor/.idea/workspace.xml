@@ -27,7 +27,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Algo" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Algo">
+      <change afterPath="$PROJECT_DIR$/Descuentor.Tests/Unitarios/ScrapingServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Descuentor.Tests/Descuentor.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Descuentor.Tests/Descuentor.Tests.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,9 +215,11 @@
     ".NET Project.Descuentor.Web.Client.executor": "Run",
     ".NET Project.Descuentor.Web.executor": "Run",
     ".NET Project.Scraper.executor": "Run",
+    "55c441e5-c011-4cc4-8356-8bc6e71e11a1.executor": "Debug",
     "Docker.Descuentor.Web/Dockerfile build.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "d5f9b785-40a0-4f4f-9d3d-acbcb9e1d8bb.executor": "Debug",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
@@ -487,7 +493,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="62703000" />
+      <workItem from="1737499431424" duration="65983000" />
     </task>
     <task id="LOCAL-00026" summary="Se añade CrearProductoCommandHandler el usuario id en el producto">
       <option name="closed" value="true" />
