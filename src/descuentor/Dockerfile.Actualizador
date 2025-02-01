@@ -1,0 +1,18 @@
+﻿# Usar la imagen base de Alpine Linux
+FROM alpine:latest
+
+# Instalar curl y jq
+RUN apk add --no-cache curl jq
+
+# Copiar el script de actualización
+COPY Actualizador/actualizar_precios.sh /usr/local/bin/update_prices.sh
+
+# Dar permisos de ejecución al script
+RUN chmod +x /usr/local/bin/update_prices.sh
+
+# Configurar cron para ejecutar el script diariamente
+# RUN echo "0 0 * * * /usr/local/bin/update_prices.sh" > /etc/crontabs/root
+RUN echo "*/5 * * * * /usr/local/bin/update_prices.sh" > /etc/crontabs/root
+
+# Iniciar cron
+CMD ["crond", "-f"]

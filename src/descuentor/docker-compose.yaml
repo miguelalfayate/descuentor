@@ -24,6 +24,13 @@ services:
     depends_on:
       - api
 
+  actualizador:
+    build:
+      context: .
+      dockerfile: Dockerfile.Actualizador
+    depends_on:
+      - api
+
   db:
     image: postgres:latest
     environment:
