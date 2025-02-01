@@ -33,7 +33,7 @@ Descuentor es una aplicación que te permite hacer seguimiento de precios de pro
 git clone https://github.com/miguelalfayate/descuentor.git
 
 # Navegar al directorio
-cd descuentor
+cd descuentor/src/descuentor
 
 # Levantar con Docker Compose
 docker-compose up -d
