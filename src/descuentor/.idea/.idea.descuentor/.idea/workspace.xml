@@ -27,7 +27,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit a TryParse con los precios de scraper" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Prueba para hacer ejecutable Playwright">
+      <change beforePath="$PROJECT_DIR$/Dockerfile.Api" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.Api" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -490,15 +493,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="69743000" />
-    </task>
-    <task id="LOCAL-00032" summary="Se crea la inserción de datos para TiendasOnline">
-      <option name="closed" value="true" />
-      <created>1737063182650</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1737063182650</updated>
+      <workItem from="1737499431424" duration="70337000" />
     </task>
     <task id="LOCAL-00033" summary="Se añade el controlador para añadir nuevos usuarios con el rol Usuario">
       <option name="closed" value="true" />
@@ -884,7 +879,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738428274847</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Prueba para hacer ejecutable Playwright">
+      <option name="closed" value="true" />
+      <created>1738429038250</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1738429038250</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -894,7 +897,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Añadidos archivos para contenerizar Descuentor.WebAssembly" />
     <MESSAGE value="Edit Dockerfile" />
     <MESSAGE value="Añado proyecto Descuentor.Tests" />
     <MESSAGE value="Importante: Se cambia el tipo de respuesta de los métodos de IUsuarioRepository.cs" />
@@ -919,7 +921,8 @@
     <MESSAGE value="Modificación debugging para el script del actualizador" />
     <MESSAGE value="Edit del Dockerfile.Api para hacer que funcione PlayWright" />
     <MESSAGE value="Edit a TryParse con los precios de scraper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit a TryParse con los precios de scraper" />
+    <MESSAGE value="Prueba para hacer ejecutable Playwright" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prueba para hacer ejecutable Playwright" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
