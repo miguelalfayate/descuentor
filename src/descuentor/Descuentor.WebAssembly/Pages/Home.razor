@@ -7,6 +7,7 @@
 @inject HttpClient Http
 @inject ITokenService TokenService
 @inject IJSRuntime JsRuntime
+@inject IConfiguration Configuration
 
 
 <PageTitle>Descuentor</PageTitle>
@@ -149,6 +150,7 @@ else
 
 @code {
 
+    private string _baseUrl = null!;
     /// <summary>
     /// Lista de clientes que se mostrarán en la tabla.
     /// </summary>
@@ -189,6 +191,8 @@ else
     /// </summary>
     protected override async Task OnInitializedAsync()
     {
+        _baseUrl = Configuration.GetSection("ApiSettings:BaseUrl").Value!;
+        
         await Cargar();
     }
 
@@ -232,7 +236,7 @@ else
     {
         // Construye la URL con los parámetros de ordenación y paginación
         var ordenamiento = string.IsNullOrEmpty(campoOrdenamiento) ? "" : $"&campoOrden={campoOrdenamiento}&ordenAscendente={ordenAscendente}";
-        var url = $"http://localhost:5095/api/productos?pagina={pagina}{ordenamiento}";
+        var url = $"{_baseUrl}/api/productos?pagina={pagina}{ordenamiento}";
 
         // Realiza la solicitud para obtener la lista de productos
         var accessToken = await TokenService.GetAccessTokenAsync();
@@ -265,7 +269,7 @@ else
         var accessToken = await TokenService.GetAccessTokenAsync();
         if (!string.IsNullOrEmpty(accessToken))
         {
-            var request = new HttpRequestMessage(HttpMethod.Delete, $"http://localhost:5095/api/productos/{productoId}");
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"{_baseUrl}/api/productos/{productoId}");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             var response = await Http.SendAsync(request);

@@ -6,6 +6,7 @@
 @inject HttpClient Http
 @inject ITokenService TokenService
 @inject IAuthService AuthService
+@inject IConfiguration Configuration
 
 @inherits LayoutComponentBase
 
@@ -37,10 +38,13 @@
 
 @code {
 
+    private string _baseUrl = null!;
     private string? userEmail;
 
     protected override async Task OnInitializedAsync()
     {
+        _baseUrl = Configuration.GetSection("ApiSettings:BaseUrl").Value!;
+        
         var accessToken = await TokenService.GetAccessTokenAsync();
         if (string.IsNullOrEmpty(accessToken))
         {
@@ -65,7 +69,7 @@
             }
         }
 
-        var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5095/identity/manage/info");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"{_baseUrl}/identity/manage/info");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
         var response = await Http.SendAsync(request);

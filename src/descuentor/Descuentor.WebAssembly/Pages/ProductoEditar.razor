@@ -6,6 +6,7 @@
 @inject HttpClient Http
 @inject ITokenService TokenService
 @inject NavigationManager Navigation
+@inject IConfiguration Configuration
 
 <h3 class="text-center">Editar producto</h3>
 
@@ -56,10 +57,13 @@ else
 @code {
     [Parameter] public int id { get; set; }
 
+    private string _baseUrl = null!;
     private ProductoEditarDto? producto;
 
     protected override async Task OnInitializedAsync()
     {
+        _baseUrl = Configuration.GetSection("ApiSettings:BaseUrl").Value!;
+        
         await CargarProducto();
     }
 
@@ -69,7 +73,7 @@ else
         
         if (!string.IsNullOrEmpty(accessToken))
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:5095/api/productos/{id}");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"{_baseUrl}/api/productos/{id}");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             
             var response = await Http.SendAsync(request);
@@ -100,7 +104,7 @@ else
     private async Task GuardarProducto()
     {
         var accessToken = await TokenService.GetAccessTokenAsync();
-        var request = new HttpRequestMessage(HttpMethod.Put, $"http://localhost:5095/api/productos/{id}");
+        var request = new HttpRequestMessage(HttpMethod.Put, $"{_baseUrl}/api/productos/{id}");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
         request.Content = JsonContent.Create(producto);
 

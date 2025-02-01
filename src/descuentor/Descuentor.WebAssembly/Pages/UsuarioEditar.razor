@@ -6,12 +6,11 @@
 @using ApiErrorDetailsResponse = Descuentor.WebAssembly.Modelos.Responses.ApiErrorDetailsResponse
 @using ApiOkResponse = Descuentor.WebAssembly.Modelos.Responses.ApiOkResponse
 @using CambioPasswordRequest = Descuentor.WebAssembly.Modelos.Requests.CambioPasswordRequest
-@using IAuthService = Descuentor.WebAssembly.Interfaces.IAuthService
 
-@inject IAuthService AuthService
 @inject NavigationManager NavigationManager
 @inject HttpClient Http
 @inject ITokenService TokenService
+@inject IConfiguration Configuration
 
 <h3 class="text-center">Editar Usuario</h3>
 
@@ -97,12 +96,16 @@
 @* } *@
 
 @code {
+    private string _baseUrl = null!;
+    
     private UsuarioEditarDto usuarioEditarDto = new();
     private CambioPasswordRequest cambioPasswordRequest = new();
     private List<string> errorMessages = new();
     
     protected override async Task OnInitializedAsync()
     {
+        _baseUrl = Configuration.GetSection("ApiSettings:BaseUrl").Value!;
+        
         await CargarUsuario();
     }
 
@@ -112,7 +115,7 @@
 
         if (!string.IsNullOrEmpty(accessToken))
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5095/api/usuarios");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"{_baseUrl}/api/usuarios");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             var response = await Http.SendAsync(request);
             
@@ -143,13 +146,13 @@
 
         if (!string.IsNullOrEmpty(accessToken))
         {
-            var request = new HttpRequestMessage(HttpMethod.Put, "http://localhost:5095/api/usuarios");
+            var request = new HttpRequestMessage(HttpMethod.Put, $"{_baseUrl}/api/usuarios");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             request.Content = JsonContent.Create(usuarioEditarDto);
             
             var response = await Http.SendAsync(request);
             
-            //var result = await Http.PutAsJsonAsync("http://localhost:5095/api/usuarios", usuarioEditarDto);
+            //var result = await Http.PutAsJsonAsync($"{_baseUrl}/api/usuarios", usuarioEditarDto);
             if (response.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/");

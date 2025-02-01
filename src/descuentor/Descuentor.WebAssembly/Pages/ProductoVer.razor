@@ -8,6 +8,7 @@
 @inject HttpClient Http
 @inject ITokenService TokenService
 @inject NavigationManager Navigation
+@inject IConfiguration Configuration
 
 @if (producto == null)
 {
@@ -101,11 +102,15 @@ else
 @code {
     [Parameter] public int id { get; set; }
 
+    private string _baseUrl = null!;
+    
     private ProductoHistorialPreciosDto? producto;
     private ApexChartOptions<HistorialPrecioDto> options;
 
     protected override async Task OnInitializedAsync()
     {
+        _baseUrl = Configuration.GetSection("ApiSettings:BaseUrl").Value!;
+        
         options = new ApexChartOptions<HistorialPrecioDto>();
         options.Yaxis = new List<YAxis>();
         options.Yaxis.Add(new YAxis
@@ -134,7 +139,7 @@ else
     private async Task CargarProducto()
     {
         var accessToken = await TokenService.GetAccessTokenAsync();
-        var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:5095/api/productos/{id}");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"{_baseUrl}/api/productos/{id}");
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
         var response = await Http.SendAsync(request);
