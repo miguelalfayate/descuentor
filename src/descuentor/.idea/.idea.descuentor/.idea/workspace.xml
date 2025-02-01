@@ -27,7 +27,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Opciones de entorno de producción implementadas" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Cambio uri produccion">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,6 +121,8 @@
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Servicios/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Servicios/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Servicios/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/miguel/Documents/Proyectos C#/descuentor/src/descuentor/Descuentor.WebAssembly/Servicios/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
@@ -153,6 +157,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3c55d180f9e965139cdd3398b26189651ccdd354886f17ae0858685565a5c/OpenApiSecurityScheme.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4dc6591343fedfd8ca6d294ac5ef85179a5bbf5ede71f76b5bf5469c78d6c9a/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5098771c4515b115fc5e694d8e79c3523cebd8fda4a73efa7dfa672215a1c9/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5555235f537c73bad3ed5397fa951468367fe360f4a1d75c13a4da898eaef3/Renderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5f59d85afb3b5ad18cca08a6d1adf2f868565d3fa5dc94309a17cd8bfb2067/RenderTreeDiffBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/61c385f367fd6f7ec5d88a97447717853ad6c059bf89947783b4268b28c2a949/HttpContextAccessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6fc42e86e61f40fb414f634b57c7b5ee22ee51bbb6c81dbd89f29b3a837b964/DateTime.Unix.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71f8a5297672ad56962c6af62f7241a092ad7d95eaee4ef564601be5d8e37b38/Int32.cs" root0="FORCE_HIGHLIGHTING" />
@@ -482,15 +488,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="59239000" />
-    </task>
-    <task id="LOCAL-00023" summary="Cambios varios">
-      <option name="closed" value="true" />
-      <created>1737031596862</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1737031596862</updated>
+      <workItem from="1737499431424" duration="62504000" />
     </task>
     <task id="LOCAL-00024" summary="Se añade opción para que se ignoren la referencias circulares en Entity">
       <option name="closed" value="true" />
@@ -876,7 +874,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738360496750</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Cambio uri produccion">
+      <option name="closed" value="true" />
+      <created>1738362553812</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1738362553812</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -886,7 +892,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Se quitan los endpoint de weather precargados" />
     <MESSAGE value="Se cambia a 5 los items por página en las queries de productos paginadas" />
     <MESSAGE value="Se modifica el body html de las notificaciones para que se vea la tabla" />
     <MESSAGE value="Se eliminan proyectos sobrantes" />
@@ -911,6 +916,7 @@
     <MESSAGE value="Edit para EF en Docker. Migraciones programáticas" />
     <MESSAGE value="Edit EF en Docker" />
     <MESSAGE value="Opciones de entorno de producción implementadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opciones de entorno de producción implementadas" />
+    <MESSAGE value="Cambio uri produccion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio uri produccion" />
   </component>
 </project>
