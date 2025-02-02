@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using System.Globalization;
 using Descuentor.Dominio.Interfaces;
 using Microsoft.Playwright;
 
@@ -73,7 +74,8 @@ public class ScrapingService : IScrapingService
             price = price.Replace("€", "").Trim();
             Console.WriteLine($"Precio encontrado: {price}");
             //priceValue = decimal.Parse(price);
-            decimal.TryParse(price, out priceValue);
+            //decimal.TryParse(price, out priceValue);
+            decimal.TryParse(price, NumberStyles.Currency, CultureInfo.GetCultureInfo("es-ES"), out priceValue);
         }
         else
         {

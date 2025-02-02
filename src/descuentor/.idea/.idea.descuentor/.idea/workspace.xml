@@ -27,7 +27,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit Dockerfile.Api" />
+    <list default="true" id="78d2676d-7dec-4e1a-90a0-bfc49da0ecf4" name="Changes" comment="Edit actualizar_precios.sh">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.descuentor/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,6 +151,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1fe46d7855761ae9fde08d2bb7978cda13e5853695e85b3cc8d84e9cda231e/KeyValuePair.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/20f4825c4341fc5ca8bed5d846e4a6668c9b10eba31675d5d548fa8519db8/TaskContinuation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/20f65e79ceaad992a4c25241d6bf3582951761f90e6c362e79667f19afc/Queryable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/23cb4d71234b6dd4ee0362bbcc2dd6b45eaf1c53e7b7c737fe2163c62f6f7a/Decimal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/28c17d7aca69351fa93b7b19dd93f38ad16378c23924aa659ed4ca6542ab894/RegisterRequest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/29898ce74e3763a786ac1bd9a6db2152e1af75769440b1e53b9cbdf1dda1bd99/SecuritySchemeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2b24ce9c80deeefe1484c6a777b21dbcfe64fbf581ece7174d0fa1b50ebcf50/InputNumber.cs" root0="FORCE_HIGHLIGHTING" />
@@ -186,9 +189,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eeaf281031b3ffe3d44a91e71a5808c8d236a9caabbb947871e6dc415bd8b/Migration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4bc324a395d24ed12db75b0a81536b642509aa14825bf114d9b7c934e2b/Mediator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9342fb513b7b524925c79d9822cd3ecaf072c50231aa3b469875f4c2cdf/IdentityDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file:///Volumes/Archivo/Trabajo/Proconsi/Para guardar/Programacion C#/Ejercicios inicio FCTs/EjercicioAPISol/EjercicioAPI.Server/Helpers/HttpContextExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file:///Volumes/Archivo/Trabajo/Proconsi/Para guardar/Programacion C#/Ejercicios inicio FCTs/EjercicioAPISol/EjercicioAPI.Server/Helpers/QueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file:///Volumes/Archivo/Trabajo/Proconsi/Para guardar/Programacion C#/Ejercicios inicio FCTs/EjercicioAPISol/EjercicioAPI.Shared/DTOs/PaginacionDTO.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -206,7 +206,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.BlazorApp1: http.executor": "Run",
     ".NET Launch Settings Profile.BlazorApp2: http.executor": "Run",
-    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Run",
+    ".NET Launch Settings Profile.Descuentor.API: http.executor": "Debug",
     ".NET Launch Settings Profile.Descuentor.Web: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebApp: http.executor": "Run",
     ".NET Launch Settings Profile.Descuentor.WebAssembly: http.executor": "Run",
@@ -492,15 +492,7 @@
       <workItem from="1736938396560" duration="7523000" />
       <workItem from="1736954907749" duration="63550000" />
       <workItem from="1737219319532" duration="13337000" />
-      <workItem from="1737499431424" duration="74188000" />
-    </task>
-    <task id="LOCAL-00039" summary="Añadir detalles definitivos de la extensión al manifest.json">
-      <option name="closed" value="true" />
-      <created>1737568186839</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1737568186839</updated>
+      <workItem from="1737499431424" duration="75898000" />
     </task>
     <task id="LOCAL-00040" summary="Quitar los campos para debugging cuando se captura correctamente el producto">
       <option name="closed" value="true" />
@@ -886,7 +878,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738445630904</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Edit actualizar_precios.sh">
+      <option name="closed" value="true" />
+      <created>1738447404702</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1738447404703</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -896,7 +896,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Importante: Quito la dependencia del archivo csproj de Dominio" />
     <MESSAGE value="Importante: quito referencias relativas a paquetes" />
     <MESSAGE value="Add docker-compose.yaml" />
     <MESSAGE value="Cambio de puerto en docker-compose.yaml" />
@@ -921,23 +920,24 @@
     <MESSAGE value="Edit ScrapingService.cs y Dockerfile.Api" />
     <MESSAGE value="Edit ScraperService" />
     <MESSAGE value="Edit Dockerfile.Api" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Dockerfile.Api" />
+    <MESSAGE value="Edit actualizar_precios.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit actualizar_precios.sh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs</url>
-          <line>74</line>
+          <line>78</line>
           <properties documentPath="$PROJECT_DIR$/Descuentor.Infraestructura/Servicios/ScrapingService.cs" containingFunctionPresentation="Method 'ObtenerPrecioProducto'">
             <startOffsets>
-              <option value="2586" />
+              <option value="2825" />
             </startOffsets>
             <endOffsets>
-              <option value="2620" />
+              <option value="2826" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
